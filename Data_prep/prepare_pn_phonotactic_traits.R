@@ -1,13 +1,13 @@
 ### EXTRACT BIPHONE DATA #############
 #   Name:      Jayden Macklin-Cordes #
 #   Created:   2019-07-15            #
-#   Last edit: 2019-07-22            #
+#   Last edit: 2019-12-09            #
 #   Last run:  2019-07-15            #
 ######################################
 
 # INITIAL SETUP
 
-# Private Github repositories fetched locally on 2019-07-15:
+# Private Github repositories fetched locally on 2019-12-09:
 #   - erichround/phonex
 #   - erichround/Ausphonlex
 
@@ -19,6 +19,8 @@
 
 library(Ausphonlex)
 library(tidyverse)
+
+set.seed(2019)
 
 # Load latest official version of Ausphonlex database as object 'aus'
 aus <- ausphonlex_v0.5
@@ -62,7 +64,7 @@ our_IDs <- unique(c(biphones$lex_ID, sound_classes$lex_ID))
 our_lgs <- get_aus_varname(our_IDs)
 
 # Get list of all languages in the cognate data
-cogs    <- read_tsv("Bouckaert_etal/Pny10-Export.tsv", col_names = FALSE)
+cogs    <- read_tsv("../Bouckaert_etal/Pny10-Export.tsv", col_names = FALSE)
 CBs_lgs <- unique(cogs$X4)
 
 # Get into Ausphonlex metatdata and make a table showing lex IDs,
@@ -76,8 +78,8 @@ Map_DB_Wordlists <- read_csv("~/Desktop/Github/erichround/Ausphonlex/dbs/Map-DB-
 # there is also cognate data in Pny10-Export.tsv but isn't included in Bouckaert et al.'s
 # subsequent phylogenetic analysis.
 
-missing_lgs <- filter(Map_DB_Wordlists, (lex_ID %in% biphones$lex_ID) & is.na(Map_DB_Wordlists$tax_label))$Name
-missing_lgs[missing_lgs %in% CBs_lgs]
+# missing_lgs <- filter(Map_DB_Wordlists, (lex_ID %in% biphones$lex_ID) & is.na(Map_DB_Wordlists$tax_label))$Name
+# missing_lgs[missing_lgs %in% CBs_lgs]
 
 # I include Waanyi in my analysis
 # UPDATE: Waanyi has NOT been included since, in addition to areal borrowing reasons described in Bouckaert et al, there is also a substantial difference in analysis of its contrastive segmental inventory between old and new sources, the choice of which may affect phonotactic stats. We only have access to the old source here.
