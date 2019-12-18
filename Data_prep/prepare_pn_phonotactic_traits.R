@@ -1,8 +1,8 @@
 ### EXTRACT BIPHONE DATA #############
 #   Name:      Jayden Macklin-Cordes #
 #   Created:   2019-07-15            #
-#   Last edit: 2019-12-16            #
-#   Last run:  2019-12-16            #
+#   Last edit: 2019-12-09            #
+#   Last run:  2019-07-15            #
 ######################################
 
 # INITIAL SETUP
@@ -64,7 +64,7 @@ our_IDs <- unique(c(biphones$lex_ID, sound_classes$lex_ID))
 our_lgs <- get_aus_varname(our_IDs)
 
 # Get list of all languages in the cognate data
-cogs    <- read_tsv("Bouckaert_etal/Pny10-Export.tsv", col_names = FALSE)
+cogs    <- read_tsv("../Bouckaert_etal/Pny10-Export.tsv", col_names = FALSE)
 CBs_lgs <- unique(cogs$X4)
 
 # Get into Ausphonlex metatdata and make a table showing lex IDs,

@@ -44,31 +44,31 @@
 
 # RUN HISTORY
 #
-# Last run: 16-12-2019
+# Last run: 22-07-2019
 #
 # With following system/software:
 # 
 # $ sw_vers
 # ProductName:	Mac OS X
 # ProductVersion:	10.12.6
-# BuildVersion:	16G2136
-# d-i89-194-163:PN_treebuilding jaydencordes$ bash --version
+# BuildVersion:	16G2016
+# 
+# $ bash --version
 # GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)
 # Copyright (C) 2007 Free Software Foundation, Inc.
-#
+# 
 # $ R --version
 # R version 3.5.1 (2018-07-02) -- "Feather Spray"
 # Copyright (C) 2018 The R Foundation for Statistical Computing
 # Platform: x86_64-apple-darwin15.6.0 (64-bit)
-# 
+#
 # R is free software and comes with ABSOLUTELY NO WARRANTY.
 # You are welcome to redistribute it under the terms of the
 # GNU General Public License versions 2 or 3.
 # For more information about these matters see
 # http://www.gnu.org/licenses/.
-# 
+#
 # $ perl --version
-# 
 # This is perl 5, version 18, subversion 2 (v5.18.2) built for darwin-thread-multi-2level
 # (with 2 registered patches, see perl -V for more detail)
 # 
