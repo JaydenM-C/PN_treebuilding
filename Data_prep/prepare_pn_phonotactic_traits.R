@@ -107,10 +107,10 @@ soundclass_traits <- filter(sound_classes, !is.na(sound_classes$tax_label)) %>%
 
 soundclass_traits <- soundclass_traits[, colSums(!is.na(soundclass_traits)) >= 4]
 
-write_tsv(biphone_traits, paste0("Data/biphone_traits_", Sys.Date(), ".tsv"), na = "?", col_names = FALSE)
-write_tsv(soundclass_traits, paste0("Data/soundclass_traits_", Sys.Date(), ".tsv"), na = "?", col_names = FALSE)
+write_tsv(biphone_traits, paste0("Data/biphone_traits_", Sys.Date(), ".tsv"), na = "?")
+write_tsv(soundclass_traits, paste0("Data/soundclass_traits_", Sys.Date(), ".tsv"), na = "?")
 
 # Filter cognate data to languages for which we also have phonotactic data
 # and save output
 cog_data <- filter(cogs, X4 %in% unique(c(biphone_traits$tax_label, soundclass_traits$tax_label)))
-write_tsv(cog_data, paste0("Data_prep/Pny10-Export_filtered_", Sys.Date(), ".tsv"), col_names = FALSE)
+write_tsv(cog_data, paste0("Data_prep/Pny10-Export_filtered_", Sys.Date(), ".tsv"))
