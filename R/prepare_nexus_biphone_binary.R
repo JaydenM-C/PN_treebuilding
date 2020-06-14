@@ -8,6 +8,13 @@ library(ape)
 # Get newest binary phonotactic dataset
 datfile <- rev(list.files("../Data/csv", "biphone_binary"))[1]
 
+# Drop variables with all NAs
+drop_empty_sites <- function (dat) {
+  NAs <- colSums(is.na(dat))
+  all_na <- NAs == nrow(dat)
+  dat[,!all_na]
+}
+
 # Function to drop uninformative variables (where all values are NA or zero)
 drop_invariant_sites <- function(dat) {
   uniquelength <- sapply(dat, function(x) length(unique(x[!is.na(x)])))
@@ -22,8 +29,7 @@ drop_singleton_sites <- function(dat) {
 }
 
 bindat <- read_csv(paste0("../Data/csv/", datfile)) %>%
-  drop_invariant_sites %>%
-  drop_singleton_sites
+  drop_empty_sites
 
 # Turn dataframe into list
 bindat_list <- lapply(split(bindat[,-1], 1:nrow(bindat)), as.list) %>%

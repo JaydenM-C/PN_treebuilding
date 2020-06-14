@@ -1,0 +1,156 @@
+---
+title: "Phonotactic variation in Pama-Nyungan tree inferece"
+subtitle: 
+author: 
+site: bookdown::bookdown_site
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    keep_tex: yes
+    toc: no
+    citation_package: biblatex
+link-citations: yes
+bibliography: references.bib
+biblatexoptions: [bibstyle=biblatex-sp-unified, citestyle=sp-authoryear-comp]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(kableExtra)
+```
+
+Summary: This paper evaluates whether phylogenetic tree inference in linguistics is strengthened by the inclusion of phonotactic information. We take ~2k binary phonotactic variables and several hundred frequency variables and combine them with lexical cognate data from 111 Pama-Nyungan languages. The first part of the study explores the evolutionary dynamics of the phonotactic data. This is necessary to ascertain the best evolutionary model with which to infer a tree, since no one has used this kind of data in linguistic tree inference before. The second part of the study compares two models for inferring a Pama-Nyungan phylogeny using Bayesian methods. In one, a phonotactic data partition and lexical cognate partition are used jointly to infer trees. In the other these partitions are kept separate for the purpose of tree inference. Bayes factors for these two models are compared. We find that the combination of phonotactic data with lexical data **does/does not** significantly strengthen tree inference.
+
+Introduction {#pn-tree-intro}
+================================================================================
+
+_This section clearly needs fleshing out, but actually not too much. Aim is to keep it sharp and concise_.
+
+Background:
+
+Phylogenies in linguistics are a big deal.
+
+Lots of tree building been happening.
+
+Phylogenies are also crucial for advances in comparative langauge sciences, studies of human history generally.
+
+Data mainly limited to cognates. Some use of structural characters, but these tend to suffer from restricted state space.
+
+In biology, @parins-fukuchi_use_2018 find that combining continuous morphological characters to more traditional, categorical data can strengthen tree inference. An example of integration of continuous morphological data and genomic data @domel_combining_2019.
+
+Prev. study [@macklin-cordes_phylogenetic_2020] found phylogenetic signal in phonotactics. The hypothesis was that phonotactic systems are likely to evolve in an historically conservative way, reflect linguistic phylogenies and therefore be useful for tree inference. That finding was encouraging support for this hypothesis but not definitive proof by any means. Just because something has phylogenetic signal does not mean, by itself, that you can infer phylogenetic trees from it. For example, geography often has a pretty strong phylogenetic signal. In this study, we put the hypothesis to the test by attempting to infer a linguistic phylogeny with the aid of phonotactics.
+
+Data and methods {#pn-tree-methods}
+================================================================================
+
+Cognate data comes from [@bouckaert_origin_2018]. Phonotactic data comes from Ausphonlex database of Australian language lexicons [@round_ausphon-lexicon_2017], which extends the Chirila database [@bowern_chirila_2016] by providing phonemicised wordforms and various parameters for phonemic normalisation choices between wordlists. In this study, we restrict attention to wordlists which i) represent Pama-Nyungan language varieties that are also included in @bouckaert_origin_2018, ii) have been published or are publicly accessible in some way, iii) have been compiled by trained linguists and iv) were compiled using some degree of in-person elicitation or audio recordings (reconstitutions using exclusively archival written records were not included). 111 Ausphonlex wordlists meet these criteria. Original wordlist sources and phonemic normalisation choices are listed in the Supplementary Materials.
+
+_Insert map of languages around here. Centroids colour-coded by subgroup._
+
+From each wordlist, we extract data on the presence and frequencies of _biphones_, sequences of two segments (where each segment is either a phoneme or a word boundary). We extract two datasests. The first is a binary dataset marking the presence or absence of a given biphone in a language. A biphone is marked '1' if it is present in a language's wordlist (even if only once). If the biphone consists of two segments that are part of the language's phonemic inventory (and therefore the biphone could, in principle, occur in the language) but the biphone never occurs, it is marked '0' for absent. If one or both segments in the biphone are not part of the language's phonemic inventory, then it is marked as a gap '-' in the data. The second dataset A language's phonotactic system consists of rules governing how phonemic segments may combine into larger syllables and words. To represent phonotactics, we extract data on the presence and frequencies of _biphones_, two-segment sequences, from language wordlists. The second dataset extracts frequencies of transitions between segments. We extract forward transition frequencies---that is, the frequency of segment $y$ following segment $x$, normalised over all instances of $x$. We also extract backward frequency transitions---the frequency of segment $x$ preceding segment $y$, normalised over all instances of $y$.
+
+We are motivated to extract these frequency datasets for a couple of reasons. Firstly, it allows us to capture a finer grained level of information than binary data would allow. Binary data is more similar to the kind of phonotactic information one might find in a published language grammar, where a description of phonotactics that one would typically encounter involves a series of statements on the (binary) permissibility or otherwise of certain combination of segments. This information does not, however, account for quantitative differences between common, high frequency sequences of segments versus dispreferred sequences that rarely arise in a language's lexicon. There is considerable evidence to suggest that speakers are psychologically attuned to these kinds of phonological frequencies [@coleman_stochastic_1997; @zuraw_patterned_2000; @ernestus_predicting_2003; @albright_rules_2003; @eddington_spanish_2004; @hayes_stochastic_2006; @gordon_phonological_2016]. The second reason is that the relatively rapid, semi-automated extraction of transition frequencies from wordlists captures structural variation between languages at a scale and degree of precision that would be difficult to attain from manual data coding methods (as preferred for the coding of lexical cognate data and grammatical data used in previous linguistic phylogenetic work). @macklin-cordes_phylogenetic_2020 show that this transition frequency dataset contains stronger phylogenetic signal than its binary equivalent. There is one limitation of the frequency transition data, which is that presently we require positive values to use for tree inference (more on evolutionary models and tree inference below). Biphones of zero frequency (recorded as '0' in the binary dataset) get transformed to gaps in the dataset. By including the binary dataset in this study, we retain a distinction between biphones that are impossible in a language (because one or both of the segments are absent from the language's phonemic inventory) and biphones that are possible in principle but are never observed. Our phonotactic data captures information on which phonemic segments may combine immediately adjacent to one another and the frequencies at which they do so. This is phonotactics in the simplest sense, and does not directly capture phonotactic restrictions that depend on sequences beyond two segments, syllable structure or morpheme boundaries. Nevertheless, @macklin-cordes_phylogenetic_2020 confirm that this simple level of phonotactic data is sufficieent to detect strong phylogenetic signal.
+
+Another argument might be that our method avoids _observer bias_. We don't have to rely on an expert picking and choosing which parts of a grammatical or lexical system are interesting and worth coding. This is described as an advantage of large-scale extraction of continuous morphological characters in biology too [@wright_systematists_2019]. Another advantage of encoding structural variation with continuous characters over categorical ones: "phylogenetic error is very high for characters with ... very high rates of evolution (due to homoplasy of changes). Continuous characters do not display this relationship as strongly due to their large state space, though more research is needed to demonstrate this effect empirically." [@wright_bayesian_2014]. Applicable to grammatical variables in linguistic phylogenetic tree inference, which show high rates of evolution and lots of homoplasy, due at least in part to tightly contrained state space [@greenhill_evolutionary_2017]. We don't have to worry about correcting for acquisition bias since the datasets reflect the full range of logically possible biphones in every language. We can include invariant sites (where all values are the same. These don't matter much for topology but are important for dating/branch lengths) and we don't need to correct for ascertainment bias [@leache_short_2015].
+
+We use a Bayesian computational approach to infer linguistic phylogenies using BEAST phylogenetic software (v1.10.4) [@suchard_bayesian_2018]. This is similar to earlier work on the Pama-Nyungan phylogeny [@bowern_computational_2012; @bouckaert_origin_2018] which used BEAST2 [@bouckaert_beast_2019]. We selected BEAST over BEAST2 because it offers the ability to infer trees with continuous characters. Throughout, we generally try to follow @bouckaert_origin_2018 as closely as possible. We follow @bouckaert_origin_2018 in constraining the tree topology using clade priors for well-established and commonly accepted Pama-Nyungan subgroups, as established by @ogrady_languages_1966, @muhlhausler_atlas_1996 and @koch_languages_2014 and subsequently recovered in computational phylogenetic analysis by @bowern_computational_2012. Dating the Pama-Nyungan tree is a central focus of @bouckaert_origin_2018, combining lexical cognate data with geographical data and archaeological calibration points to give a best-available estimate of the geographic and temporal point of origin of the family. Accordingly, we retain their calibration prior on the Wati subgroup, which places a 95% probability of the subgroup's origin dating between 3,000-5,000 years, with most of the probability density skewing towards the younger end of that range (a gamma distribution of $\alpha = 2$, $\beta = 359$, with 3,000 year offset) based on a synthesis of archaeological evidence [see @bouckaert_origin_2018, p. 746]. We place a prior on the root age of the Pama-Nyungan family centred on a mean of 5,791 years B.P., following the findings of @bouckaert_origin_2018. 5,791 years is the mean root age of the posterior for their best supported hypothesis on Pama-Nyungan's origins. We model this as a normal distribution (SD = 730) approximating the 95% range of posterior root age estimates. One aspect in which we differ from @bouckaert_origin_2018 is tip dates. @bouckaert_origin_2018 use a birth-death skyline tree model which allows for tip dates to differ and includes a parameter corresponding to the proportion of total taxa sampled at a given point in time. This is reasonable since they use language sources span over 200 years. In contrast, we assume all tips are contemporaneous. In our case, since we restrict attention to relatively modern sources, any extra precision to be gained from including tip dates is not worth the reduced tree model choice in BEAST and extra computational expence.
+
+Results {#pn-tree-results}
+================================================================================
+
+## Phonotactic evolutionary model {#phonotactic-evo-model}
+
+There have been a bunch of studies using lexical cognate data and some standards are beginning to emerge, for example covarion model seems widely preferred. [check state of the art language comparison article]. However, this is to the best of our knowledge the first attempt at tree inference with binary biphone characters as we use here [unless Gerhart tried it?] so we need to do a good deal of preliminary exploration testing various prior settings to get the best supported evolutionary model and set of sensible priors.
+
+For each model specification, 2 independent chains of 25,000,000 iterations, with parameters logged every 10,000 iterations. Log marginal likelihood is calculated using BEAST's path sampling/stepping stone sampling procedure [@baele_improving_2012; @baele_accurate_2013] consisting of 50 path steps of 500,000 iterations, with parameters logged every 10,000 iterations, conducted on each chain then combined to get an overall marginal likelihood. We conducted autocorrelation and convergence checks using Tracer v1.7.1 software [@rambaut_posterior_2018]. Note that the results here are a preliminary exploration of model parameters to determine the best parameter settings for the tree inference presented in Section \@ref(pn-tree-combined) below. We do not anticipate that binary biphone characters will produce especially high quality or realistic language phylogenies on their own. The goal is to get a handle on how best to model the evolutionary dynamics of this dataset when used in combination with other sources of evidence.
+
+### Site model
+
+We start by evaluating different site models that describe how binary biphone characters evolve through time. For this stage of evaluation, we fix the clock model to a strict clock (no variation in evolutionary rates between branches) and fix the tree model to a simple calibrated Yule tree model with a uniform birth rate prior (Yule tree models do not allow for extinction events). We then test all eight combinations of three site model parameters: 
+
+  - A simple continuous time Markov chain (CTMC) model (which contains a single estimated parameter that specifies the frequencies with which biphones are gained and lost) versus a covarion model (which allows sites to switch between fast and slow states). The covarion model is the preferred model of lexical cognate evolution in @bouckaert_corrections_2012, @bouckaert_origin_2018 and @kolipakam_bayesian_2018, although @chang_ancestry-constrained_2015 [p. 219] find little difference between them and opt for the increased simplicity of the former model.
+  - Empirical character state frequencies versus estimated character state frequencies.
+  - Site homogeneity (fixed evolutionary rates across all character sites) versus heterogeneity (estimated using four gamma distributed categories, following @kolipakam_bayesian_2018). For cognate data, @bouckaert_origin_2018 find a better fit with homgenous rates but @kolipakam_bayesian_2018 find a better fit with heterogenous ones.
+  
+We use Bayes factors to determine the best supported site model. Bayes factors give an indication of the support for one model over another and are calculated by calculating the ratio of the log marginal likelihoods of each model. A Bayes factor of 5 to 20 is taken as substantial support, greater than 20 as strong support, and greater than 100 as decisive [@kass_bayes_1995]. We table Bayes factors comparing each combination of site model settings in Table \@ref(tab:site-models). The names of each model indicate site settings as follows: (S)imple CTMC versus (C)ovarion model, e(M)pirical versus e(S)timated character frequencies, (H)omogenous rates versus (G)amma-distributed heterogenous rates. All models contain the suffix "-SY" since they all contain a (S)trict clock and calibrated (Y)ule tree prior. So, for example, the model termed "CMH" consists of a covarion model with empirical frequencies and homogenous rates across all sites.
+
+```{r site-models}
+MLEs <- tibble(model = c("SMH-SY", "SSH-SY", "SMG-SY", "SSG-SY",
+                         "CMH-SY", "CSH-SY", "CMG-SY", "CSG-SY"),
+               MLE = c(-16143, -16149, -14866, -14830, 31068, 82019, 78761, 152322))
+
+BFs <- lapply(1:nrow(MLEs), function (x) unlist(sapply(1:nrow(MLEs), function (y) {bf <- MLEs[x,2] - MLEs[y,2];
+                                                                                   names(bf) <- MLEs[y,1];
+                                                                                   bf})))
+names(BFs) <- MLEs$model
+
+BFs_table <- tibble(`Site model` = MLEs$model, bind_rows(BFs))
+BFs_table[BFs_table == 0] <- NA
+
+options(knitr.kable.NA = "--")
+
+kable(BFs_table, digits = 2, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), linesep = c('', '', '', '\\addlinespace'), caption = "Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.")
+```
+
+The covarion model overwhelmingly outperforms the CTMC model in all instances. Furthermore, there is support for allowing evolutionary rates to vary across character sites. Unfortunately, this great increase in parameters results in a corresponding increase in computational demand. Models with heterogenous rates require 3--4 times as long as equivalent models with fixed rates. Lastly, there is decisive support for estimating character state frequencies rather than simply taking the observed frequencies when the covarion model is used, although the opposite is true with a CTMC model. A covarion model with estimated frequencies and homogenous evolutionary rates will beat a model where rates are allowed to vary but empirical frequencies are used. All up, we determine the best site model to be a covarion model with estimated frequencies and rate heterogeneity.
+
+_Note to self:_ Improper [0,Inf] uniform prior would have been okay for Yule birth rate since we have node calibrations (https://groups.google.com/forum/#!topic/beast-users/H_PjNgiZMe8). But I think [0,1] uniform prior is okay because the birth rate never gets anywhere near upper bound of 1 in the posteriors anyway. @kolipakam_bayesian_2018 uses bounded [0,1] birth rate while @bouckaert_origin_2018 uses [0,Inf].
+
+_Optional extension to this:_ Would be nice to test stochastic Dollo model, which has been implemented with some success for cognate data in linguistics (although covarion model seems to be winning these days). Stochastic Dollo only allows characters to spring into existance once and any losses are permanent. I wasn't too worried about SD because I figured it's a bit more realistic for cognates, since the state space of possible words is practically infinite (i.e. the chance of different people inventing the same word for the same thing independently is very low, although of course it does happen sometimes)[^1]. By contrast, there are only so many possible biphone combinations, many unrelated/distantly related languages share biphones (consider, for example, shared biphones between English and Pama-Nyungan languages) and it seems fairly unreasonable to assume a single common point of origin for all of them. Nevertheless, it would nice to test to be sure. Unfortunately, I was getting some nasty errors in BEAST that seem difficult to resolve when the SD model is selected. I wasn't really worried about this because I figured covarion is likely more realistic anyway.
+
+[^1]: That said, SD isn't super realistic for cognates either since it doesn't allow for borrowing, which appears as two independent origin points when plotted on a phylogenetic tree. This is likely why covarion tends to work better. As an aside, a dream phylogeographic model of cognate evolution would allow for independent points of origin with very low probability (the likelihood of chance resemblances) plus a relatively high probability of an independent point of origin springing up when a language is geographically adjacent to another where the cognate is already present (this wouldn't really reflect an independent point of origin but rather a borrowing). Computationally expensive though.
+
+### Clock and tree model
+
+We take the best performing site model and compare it to the same model with a lognormally-distributed uncorrelated relaxed clock and a birth-death tree prior. This relaxed clock model generally has been found to outperform a strict clock when modelling lexical cognate evolution [@bouckaert_origin_2018; @kolipakam_bayesian_2018]. The birth-death speciation model allows for extinction events and more closely approximates the birth-death skyline model favoured in @bouckaert_origin_2018, although a Yule speciation model was preferred in @bowern_computational_2012 and @kolipakam_bayesian_2018.
+
+Bayes factors are presented in Table \@ref(tab:tree-models). The model naming convention is as above. The suffix reflects the clock and tree prior settings: (S)trict clock versus (R)elaxed clock and calibrated (Y)ule versus (B)irth-death speciation.
+
+_AWAITING RESULTS: Currently running on Awoonga computer cluster. Output expected Tue, 16 June._
+
+```{r tree-models}
+MLEs <- tibble(model = c("CSG-SY", "CSG-RY", "CSG-SB", "CSG-RB"),
+               MLE = c(NA, NA, NA, NA))
+
+BFs <- lapply(1:nrow(MLEs), function (x) unlist(sapply(1:nrow(MLEs), function (y) {bf <- MLEs[x,2] - MLEs[y,2];
+                                                                                   names(bf) <- MLEs[y,1];
+                                                                                   bf})))
+names(BFs) <- MLEs$model
+
+BFs_table <- tibble(`Clock/tree model` = MLEs$model, bind_rows(BFs))
+BFs_table[BFs_table == 0] <- NA
+
+options(knitr.kable.NA = "--")
+
+kable(BFs_table, digits = 2, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), linesep = c('', '\\addlinespace'), caption = "Comparison of models with different clock and tree settings.")
+```
+
+## Combined cognate and phonotactics tree inference {#pn-tree-combined}
+
+Evolutionary model for phonotactic frequency dataset is more straightforward. We take a standard, lightweight Brownian motion model in which frequency values can wander up or down with equal probability through time. We are limited to this model by software constraints, but that is not a major limitation at this point. Firstly, Brownian motion is a standard starting point in comparable biological studies that jointly infer trees with continuous data. Secondly, it is the same model used in @macklin-cordes_phylogenetic_2020. One difference between @macklin-cordes_phylogenetic_2020 and this study is that @macklin-cordes_phylogenetic_2020 use raw frequency values whereas we use log-transformed frequency values. We observe that biphone transition frequencies tend to be skewed such that lexicons tend to contain relatively few high frequency biphone transitions and many low frequency transitions. It follows then that these biphone transition frequencies are more likely the outcome of an evolutionary process where characters wander along a skewed, lognormal scale than one in which they wander along a normal distribution (although, in practice, it may not matter too much. @macklin-cordes_phylogenetic_2020 find no significant difference in phylogenetic signal using raw values versus log-transformed values). These skewed distributions echo the skewed distributions of single segments observed by @macklin-cordes_re-evaluating_2020. As @macklin-cordes_re-evaluating_2020 makes clear, this does not mean that biphone transition frequencies are necessarily drawn from a lognormal distribution and a more sophisticated maximum likelihood test would be needed to distinguish between the lognormal and several other similarly skewed distribution types. Nevertheless, the lognormal distribution is a sufficient approximation of the skewed distribution of biphone transition frequencies for our purposes in this study.
+
+Thinking briefly about what would be a realistic model of evolution for biphone transition frequencies. We would expect there to be two main forces impacting these frequencies. The first is the introduction of new vocabulary to a language via lexical innovation or borrowing. Each new word entering a lexicon will alter minutely the frequencies of biphone transitions in the language (similarly, transition frequencies will decline as words are replaced or fall out of usage). This is the kind of gradual accumulation of changes that we might expect to follow a Brownian motion-like pattern of evolution (although maybe the rates of going up and down are not equal). Further, since speakers show a preference for high frequency phonotactic sequences over low frequency sequences when coining new words, we might expect this accumulation of changes to follow a kind of 'rich get richer' process which would result in the kind of skewed frequency distributions that we observe. Also, when languages borrow vocabulary, the trend is for foreign words with dispreferred phonotactic sequences to shift towards more natively preferred patterns (sometimes gradually over a long period of time, i.e. look at various French words in English, stress has shifted to English pattern in some but not yet in others), which would strengthen this kind of 'rich get richer' process and also keep phonotactic frequency data historically conservative. The second major force on biphone frequencies is sound change. We would expect sound changes to result in sudden jumps in the frequencies of affected biphones, sometimes to 0 or 1. Our binary characters capture some of these effects to a limited extent. For example, perhaps a language has some frequency value for sequences of a nasal followed by a stop with a different place of articulation. If that nasal undergoes place assimilation, the biphone frequency will drop to 0 and thus disappears as a gap in the frequency dataset since evolutionary model requires non-zero values. On the other hand, this assimilation will be recorded in the binary data as a shift from '1' to '0'. In other instances, biphone characters may shift from missing to present and vice versa in both the frequency and binary datasets. For example, if a contrastive vowel length distinction emerges, certain biphones (namely those with long vowels) will go from being a gap in a language's biphone transition frequency data to some positive, non-missing value. In the case of a merger between short and long vowels, the opposite will be true. Our model, at present, simply does not account well for sound change. In this respect, there is an advantage to studying Australian languages, since Australian languages show uniquely constrained variation in phonological inventories [REFS] (easier to match biphones between languages, less dataset sparsity) and less history of identified sound changes relative to other parts of the world (historical linguists have long turned to sources of historical evidence in other parts of language like morphology etc. [REFS]). We return to this subject in Section \@ref(pn-tree-discussion).
+
+For the cognate data partition, we approximate as much as possible the best supported priors from @bouckaert_origin_2018. We use a covarion model with a relaxed clock and fixed rates across cognate classes.
+
+Discussion {#pn-tree-discussion}
+================================================================================
+
+Discussion in biology regarding combination of morphological and genomic datasets. "Simultaneous" approach where both morphological and genomic data are used jointly to infer the tree versus "scaffolding" approach where only genomic data is used to infer tree topology, then morphological data is used to assess e.g. dating (using fossil record) while being constrained to genomic tree topology [@lee_morphological_2015]. Must be aware of the potential circularity of tracing the evolution of characters on a phylogeny which was itself partly based on those characters [@de_queiroz_including_1996].
+
+Limitations:
+
+  - Logical dependencies between variables (because of sound changes, phonotactic restrictions affecting natural classes)
+  - Logical dependencies between binary/continuous partitions (non-gap in freq data = 1 in binary data. 0 in binary data = gap in freq data)
+  - Didn't account for sound change
+  - Limitations of Brownian motion model
+  
+If we get a negative result (no significant difference between trees inferred with/without phonotactic data partition) then I would speculate that it's probably got a lot to do with the inability of our Brownian motion evolutionary model to capture the effects of sound change, which would manifest as sudden jumps in frequencies.
+
+If we get a positive result, then we would advocate for the use of phonotactic data in combination with other sources of evidence, such as cognate data, to infer linguistic phylogenies. 
+
+  - Could be used to help resolve phylogenetic conflicts in places where there is more phylogenetic uncertainty. Could be used to help with dating and branch lengths in places where otherwise the topology is quite well understood.
+  - Could help in under-resourced places that don't have as much lexical data. Studies of Pama-Nyungan phylogeny have benefitted from reasonably extensive cognate coding over nearly 300 meaning classes, but a lot of places will be limited to the scale of Swadesh lists or even less. (The opposite is true in biology, where morphological datasets make up ever shrinking proportion of total combined dataset when combined with genomic datasets that keep getting bigger)
+  - Could be used for quick and dirty tree inference where some phylogenetic information is required/better than nothing (for example, using phylogenetic comparative methods) but doesn't necessarily have to be perfect. e.g. could combine with very small lexical datasets/automatic cognate identification. Perhaps could be combined with, e.g. glottolog classifications to get something consistent with glottolog tree but fully resolved.
+

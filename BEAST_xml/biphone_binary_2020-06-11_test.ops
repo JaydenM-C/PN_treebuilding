@@ -1,0 +1,17 @@
+
+Operator analysis
+Operator                                          Tuning   Count      Time     Time/Op  Pr(accept) 
+scale(ucld.mean)                                  0.901   100582     82033    0.82     0.2325      
+scale(ucld.stdev)                                 0.78    101083     84149    0.83     0.2329      
+up:nodeHeights(treeModel) down:ucld.mean          0.998   100785     93545    0.93     0.2314      
+swapOperator(branchRates.categories)                      335485     118101   0.35     0.2765      
+uniformInteger(branchRates.categories)                    336239     108114   0.32     0.3985      
+subtreeSlide(treeModel)                           36.783  1005261    255852   0.25     0.2385      
+Narrow Exchange(treeModel)                                1006345    189216   0.19     0.0745      
+Wide Exchange(treeModel)                                  100848     3419     0.03     0.0008      
+wilsonBalding(treeModel)                                  100607     9610     0.1      0.0017      
+scale(treeModel.rootHeight)                       0.176   100982     27908    0.28     0.2393      
+uniform(nodeHeights(treeModel))                           1007502    324717   0.32     0.3497      
+scale(skyline.popSize)                            0.237   502861     61399    0.12     0.2391      
+skyline.groupSize                                         201420     22661    0.11     0.4181      
+
