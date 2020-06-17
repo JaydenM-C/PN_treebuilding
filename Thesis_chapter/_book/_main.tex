@@ -190,6 +190,8 @@ The covarion model overwhelmingly outperforms the CTMC model in all instances. F
 
 We take the best performing site model and compare it to the same model with a lognormally-distributed uncorrelated relaxed clock and a birth-death tree prior. This relaxed clock model generally has been found to outperform a strict clock when modelling lexical cognate evolution \autocites{bouckaert_origin_2018}{kolipakam_bayesian_2018}. The birth-death speciation model allows for extinction events and more closely approximates the birth-death skyline model favoured in \textcite{bouckaert_origin_2018}, although a Yule speciation model was preferred in \textcite{bowern_computational_2012} and \textcite{kolipakam_bayesian_2018}.
 
+For the relaxed clock, we used an uncorrelated lognormal setting with a uniform prior {[}0,1{]} following \textcite{kolipakam_bayesian_2018}. \textcite{bouckaert_origin_2018} constrain the upper bound to 1.0E-4 to reduce burn-in time since, in practice, the mean clock value never approaches even that level. We chose the less informative upper bound given the uncertainty of working with a novel data type (but it doesn't matter too much).
+
 Bayes factors are presented in Table \ref{tab:tree-models}. The model naming convention is as above. The suffix reflects the clock and tree prior settings: (S)trict clock versus (R)elaxed clock and calibrated (Y)ule versus (B)irth-death speciation.
 
 \emph{AWAITING RESULTS: Currently running on Awoonga computer cluster. Output expected Tue, 16 June.}
@@ -202,11 +204,11 @@ Bayes factors are presented in Table \ref{tab:tree-models}. The model naming con
 \toprule
 Clock/tree model & CSG-SY & CSG-RY & CSG-SB & CSG-RB\\
 \midrule
-CSG-SY & -- & -- & -- & --\\
-CSG-RY & -- & -- & -- & --\\
+CSG-SY & -- & -75,114 & -9,571 & -16,306\\
+CSG-RY & 75,114 & -- & 65,543 & 58,808\\
 \addlinespace
-CSG-SB & -- & -- & -- & --\\
-CSG-RB & -- & -- & -- & --\\
+CSG-SB & 9,571 & -65,543 & -- & -6,735\\
+CSG-RB & 16,306 & -58,808 & 6,735 & --\\
 \bottomrule
 \end{tabular}
 \end{table}
