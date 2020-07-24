@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+#PBS -A UQ-HASS-LC
+#PBS -l select=1:ncpus=8:mpiprocs=8:mem=16GB:vmem=16GB,walltime=24:00:00
+#PBS -J 0-11
+
+model=("CMGR" "CMGS" "CMHR" "CMHS" "CSGR" "CSGS" "CSHR" "CSHS" "SMGR" "SMGS" "SMHR" "SMHS" "SSGR" "SSGS" "SSHR" "SSHS")
+
+cp -r $HOME/biphone_binary_2020-07-23/biphone_binary_${model[$PBS_ARRAY_INDEX]}/xml $TMPDIR
+cp -r $HOME/BEAST/BEASTv1.10.4 $TMPDIR
+
+cd $TMPDIR
+
+module load beagle
+
+BEASTv1.10.4/bin/beast -threads $NCPUS xml/biphone_binary_${model[$PBS_ARRAY_INDEX]}_2020-07-23_ch2.xml
+
+cp $TMPDIR/biphone_binary* $HOME/biphone_binary_2020-07-23/biphone_binary_${model[$PBS_ARRAY_INDEX]}/output
+
+module purge
