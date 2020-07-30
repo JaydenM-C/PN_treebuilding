@@ -75,7 +75,7 @@ We start by evaluating different site models that describe how binary biphone ch
   
 We use Bayes factors to determine the best supported site model. Bayes factors give an indication of the support for one model over another and are calculated by calculating the ratio of the log marginal likelihoods of each model. A Bayes factor of 5 to 20 is taken as substantial support, greater than 20 as strong support, and greater than 100 as decisive [@kass_bayes_1995]. We table Bayes factors comparing each combination of site model settings in Table \@ref(tab:site-models). The names of each model indicate site settings as follows: (S)imple CTMC versus (C)ovarion model, e(M)pirical versus e(S)timated character frequencies, (H)omogenous rates versus (G)amma-distributed heterogenous rates. All models contain the suffix "-SY" since they all contain a (S)trict clock and calibrated (Y)ule tree prior. So, for example, the model termed "CMH" consists of a covarion model with empirical frequencies and homogenous rates across all sites.
 
-```{r site-models}
+```{r site-models-old}
 MLEs <- tibble(model = c("SMH-SY", "SSH-SY", "SMG-SY", "SSG-SY",
                          "CMH-SY", "CSH-SY", "CMG-SY", "CSG-SY"),
                MLE = c(-16143, -16149, -14866, -14830, 31068, 82019, 78761, 152322))
@@ -91,6 +91,51 @@ BFs_table[BFs_table == 0] <- NA
 options(knitr.kable.NA = "--")
 
 kable(BFs_table, digits = 2, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), linesep = c('', '', '', '\\addlinespace'), caption = "Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.")
+```
+
+```{r clock-models}
+MLEs <- tibble(model = c("CMG-R", "CMG-S", "CMH-R", "CMH-S",
+                         "CSG-R", "CSG-S", "CSH-R", "CSH-S",
+                         "SMG-R", "SMG-H", "SMH-R", "SMH-S",
+                         "SSG-R", "SSG-S", "SSH-R", "SSH-S"),
+               MLE = c(45102, 24828, 571, 24356,
+                       78942, 62026, 2685, 23068,
+                       -14695, -14864, -15947, -16148,
+                       -14691, -14830, -15934, -16144)
+               )
+
+clock_bfs <- function () {
+  
+}
+relaxed_vs_strict <- tibble(model = c("CMG", "CMH", "CSG", "CSH",
+                                      "SMG", "SMH", "SSG", "SSH"),
+                            bf = sapply(seq(1, 15, by = 2), 
+                                        function (i) {MLEs[i,2] + MLEs[(i+1), 2]})
+                            )
+```
+
+```{r site-models}
+MLEs <- tibble(model = c("CMG-R", "CMG-S", "CMH-R", "CMH-S",
+                         "CSG-R", "CSG-S", "CSH-R", "CSH-S",
+                         "SMG-R", "SMG-H", "SMH-R", "SMH-S",
+                         "SSG-R", "SSG-S", "SSH-R", "SSH-S"),
+               MLE = c(45102, 24828, 571, 24356,
+                       78942, 62026, 2685, 23068,
+                       -14695, -14864, -15947, -16148,
+                       -14691, -14830, -15934, -16144)
+               )
+
+BFs <- lapply(1:nrow(MLEs), function (x) unlist(sapply(1:nrow(MLEs), function (y) {bf <- MLEs[x,2] - MLEs[y,2];
+                                                                                   names(bf) <- MLEs[y,1];
+                                                                                   bf})))
+names(BFs) <- MLEs$model
+
+BFs_table <- tibble(`Site model` = MLEs$model, bind_rows(BFs))
+BFs_table[BFs_table == 0] <- NA
+
+options(knitr.kable.NA = "--")
+
+kable(BFs_table, digits = 2, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), linesep = c('', '', '', '\\addlinespace'), caption = "Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.") %>% landscape() %>% kable_styling(font_size = 8)
 ```
 
 The covarion model overwhelmingly outperforms the CTMC model in all instances. Furthermore, there is support for allowing evolutionary rates to vary across character sites. Unfortunately, this great increase in parameters results in a corresponding increase in computational demand. Models with heterogenous rates require 3--4 times as long as equivalent models with fixed rates. Lastly, there is decisive support for estimating character state frequencies rather than simply taking the observed frequencies when the covarion model is used, although the opposite is true with a CTMC model. A covarion model with estimated frequencies and homogenous evolutionary rates will beat a model where rates are allowed to vary but empirical frequencies are used. All up, we determine the best site model to be a covarion model with estimated frequencies and rate heterogeneity.

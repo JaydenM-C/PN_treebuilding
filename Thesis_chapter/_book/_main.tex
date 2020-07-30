@@ -160,7 +160,7 @@ We use Bayes factors to determine the best supported site model. Bayes factors g
 
 \begin{table}
 
-\caption{\label{tab:site-models}Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.}
+\caption{\label{tab:site-models-old}Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.}
 \centering
 \begin{tabular}[t]{lrrrrrrrr}
 \toprule
@@ -179,6 +179,39 @@ CSG-SY & 168,465 & 168,471 & 167,188 & 167,152 & 121,254 & 70,303 & 73,561 & --\
 \end{tabular}
 \end{table}
 
+\begin{landscape}\begin{table}
+
+\caption{\label{tab:site-models}Bayes factors for different site models. Each Bayes Factor represents the support for one model (listed left) against another (listed top). A positive value indicates the first model (left) is supported, and conversely, a negative value indicates the second model (top) is supported. A value over 100 is considered decisive.}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{lrrrrrrrrrrrrrrrr}
+\toprule
+Site model & CMG-R & CMG-S & CMH-R & CMH-S & CSG-R & CSG-S & CSH-R & CSH-S & SMG-R & SMG-H & SMH-R & SMH-S & SSG-R & SSG-S & SSH-R & SSH-S\\
+\midrule
+CMG-R & -- & 20,274 & 44,531 & 20,746 & -33,840 & -16,924 & 42,417 & 22,034 & 59,797 & 59,966 & 61,049 & 61,250 & 59,793 & 59,932 & 61,036 & 61,246\\
+CMG-S & -20,274 & -- & 24,257 & 472 & -54,114 & -37,198 & 22,143 & 1,760 & 39,523 & 39,692 & 40,775 & 40,976 & 39,519 & 39,658 & 40,762 & 40,972\\
+CMH-R & -44,531 & -24,257 & -- & -23,785 & -78,371 & -61,455 & -2,114 & -22,497 & 15,266 & 15,435 & 16,518 & 16,719 & 15,262 & 15,401 & 16,505 & 16,715\\
+CMH-S & -20,746 & -472 & 23,785 & -- & -54,586 & -37,670 & 21,671 & 1,288 & 39,051 & 39,220 & 40,303 & 40,504 & 39,047 & 39,186 & 40,290 & 40,500\\
+\addlinespace
+CSG-R & 33,840 & 54,114 & 78,371 & 54,586 & -- & 16,916 & 76,257 & 55,874 & 93,637 & 93,806 & 94,889 & 95,090 & 93,633 & 93,772 & 94,876 & 95,086\\
+CSG-S & 16,924 & 37,198 & 61,455 & 37,670 & -16,916 & -- & 59,341 & 38,958 & 76,721 & 76,890 & 77,973 & 78,174 & 76,717 & 76,856 & 77,960 & 78,170\\
+CSH-R & -42,417 & -22,143 & 2,114 & -21,671 & -76,257 & -59,341 & -- & -20,383 & 17,380 & 17,549 & 18,632 & 18,833 & 17,376 & 17,515 & 18,619 & 18,829\\
+CSH-S & -22,034 & -1,760 & 22,497 & -1,288 & -55,874 & -38,958 & 20,383 & -- & 37,763 & 37,932 & 39,015 & 39,216 & 37,759 & 37,898 & 39,002 & 39,212\\
+\addlinespace
+SMG-R & -59,797 & -39,523 & -15,266 & -39,051 & -93,637 & -76,721 & -17,380 & -37,763 & -- & 169 & 1,252 & 1,453 & -4 & 135 & 1,239 & 1,449\\
+SMG-H & -59,966 & -39,692 & -15,435 & -39,220 & -93,806 & -76,890 & -17,549 & -37,932 & -169 & -- & 1,083 & 1,284 & -173 & -34 & 1,070 & 1,280\\
+SMH-R & -61,049 & -40,775 & -16,518 & -40,303 & -94,889 & -77,973 & -18,632 & -39,015 & -1,252 & -1,083 & -- & 201 & -1,256 & -1,117 & -13 & 197\\
+SMH-S & -61,250 & -40,976 & -16,719 & -40,504 & -95,090 & -78,174 & -18,833 & -39,216 & -1,453 & -1,284 & -201 & -- & -1,457 & -1,318 & -214 & -4\\
+\addlinespace
+SSG-R & -59,793 & -39,519 & -15,262 & -39,047 & -93,633 & -76,717 & -17,376 & -37,759 & 4 & 173 & 1,256 & 1,457 & -- & 139 & 1,243 & 1,453\\
+SSG-S & -59,932 & -39,658 & -15,401 & -39,186 & -93,772 & -76,856 & -17,515 & -37,898 & -135 & 34 & 1,117 & 1,318 & -139 & -- & 1,104 & 1,314\\
+SSH-R & -61,036 & -40,762 & -16,505 & -40,290 & -94,876 & -77,960 & -18,619 & -39,002 & -1,239 & -1,070 & 13 & 214 & -1,243 & -1,104 & -- & 210\\
+SSH-S & -61,246 & -40,972 & -16,715 & -40,500 & -95,086 & -78,170 & -18,829 & -39,212 & -1,449 & -1,280 & -197 & 4 & -1,453 & -1,314 & -210 & --\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
+
 The covarion model overwhelmingly outperforms the CTMC model in all instances. Furthermore, there is support for allowing evolutionary rates to vary across character sites. Unfortunately, this great increase in parameters results in a corresponding increase in computational demand. Models with heterogenous rates require 3--4 times as long as equivalent models with fixed rates. Lastly, there is decisive support for estimating character state frequencies rather than simply taking the observed frequencies when the covarion model is used, although the opposite is true with a CTMC model. A covarion model with estimated frequencies and homogenous evolutionary rates will beat a model where rates are allowed to vary but empirical frequencies are used. All up, we determine the best site model to be a covarion model with estimated frequencies and rate heterogeneity.
 
 \emph{Note to self:} Improper {[}0,Inf{]} uniform prior would have been okay for Yule birth rate since we have node calibrations (\url{https://groups.google.com/forum/\#!topic/beast-users/H_PjNgiZMe8}). But I think {[}0,1{]} uniform prior is okay because the birth rate never gets anywhere near upper bound of 1 in the posteriors anyway. \textcite{kolipakam_bayesian_2018} uses bounded {[}0,1{]} birth rate while \textcite{bouckaert_origin_2018} uses {[}0,Inf{]}.
@@ -192,9 +225,7 @@ We take the best performing site model and compare it to the same model with a l
 
 For the relaxed clock, we used an uncorrelated lognormal setting with a uniform prior {[}0,1{]} following \textcite{kolipakam_bayesian_2018}. \textcite{bouckaert_origin_2018} constrain the upper bound to 1.0E-4 to reduce burn-in time since, in practice, the mean clock value never approaches even that level. We chose the less informative upper bound given the uncertainty of working with a novel data type (but it doesn't matter too much).
 
-Bayes factors are presented in Table \ref{tab:tree-models}. The model naming convention is as above. The suffix reflects the clock and tree prior settings: (S)trict clock versus (R)elaxed clock and calibrated (Y)ule versus (B)irth-death speciation.
-
-\emph{AWAITING RESULTS: Currently running on Awoonga computer cluster. Output expected Tue, 16 June.}
+Bayes factors are presented in Table \ref{tab:tree-models}. The model naming convention is as above. The suffix reflects the clock and tree prior settings: (S)trict clock versus (R)elaxed clock and calibrated (Y)ule versus (B)irth-death speciation. We find that the marginal likelihoods of relaxed clock models are decisively stronger than strict clock models, regardless of which tree prior is used. Of the two relaxed clock models, the calibrated Yule prior beats the birth-death model.
 
 \begin{table}
 
