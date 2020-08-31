@@ -69,6 +69,6 @@ unique_vals <- function (i) {
 
 freq_filtered <- select_if(freq_filtered, c(TRUE, sapply(2:ncol(freq_filtered), function (i) {unique_vals(i) > 1})))
 
-write_tsv(freq_filtered, paste0("../Data/biphone_frequency_", Sys.Date(), ".tsv"))
+write_tsv(freq_filtered, paste0("../Data/biphone_frequency_", Sys.Date(), ".tsv"), na = "-")
 
 
