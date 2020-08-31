@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+
+<beast version="1.10.4">
+
+<pathSamplingAnalysis fileName="biphone_binary_SMGS_2020-07-23_ch1.mle.log biphone_binary_SMGS_2020-07-23_ch2.mle.log" resultsFileName="biphone_binary_SMGS_2020-07-23.mle.result.log">
+<likelihoodColumn name="pathLikelihood.delta"/>
+<thetaColumn name="pathLikelihood.theta"/>
+</pathSamplingAnalysis>
+
+<!-- Stepping-stone sampling estimator from collected samples                -->
+<steppingStoneSamplingAnalysis fileName="biphone_binary_SMGS_2020-07-23_ch1.mle.log biphone_binary_SMGS_2020-07-23_ch2.mle.log" resultsFileName="biphone_binary_SMGS_2020-07-23.mle.result.log">
+<likelihoodColumn name="pathLikelihood.delta"/>
+<thetaColumn name="pathLikelihood.theta"/>
+</steppingStoneSamplingAnalysis>
+
+</beast>
