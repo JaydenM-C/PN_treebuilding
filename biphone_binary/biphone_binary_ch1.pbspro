@@ -2,7 +2,7 @@
 #
 #PBS -A UQ-HASS-LC
 #PBS -l select=1:ncpus=8:mpiprocs=8:mem=16GB:vmem=16GB,walltime=24:00:00
-#PBS -J 12-15
+#PBS -J 0-15
 
 model=("CMGR" "CMGS" "CMHR" "CMHS" "CSGR" "CSGS" "CSHR" "CSHS" "SMGR" "SMGS" "SMHR" "SMHS" "SSGR" "SSGS" "SSHR" "SSHS")
 
