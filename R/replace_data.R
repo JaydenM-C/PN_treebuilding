@@ -39,6 +39,7 @@ remove_arandic <- function (file) {
   xml <- xml[-grep('<monophylyStatistic idref\\="monophyly\\(Arandic\\)"/>', xml)]
   xml <- xml[-grep('<tmrcaStatistic idref\\="tmrca\\(Arandic\\)"/>', xml)]
   xml <- xml[-grep('<tmrcaStatistic idref\\="age\\(Arandic\\)"/>', xml)]
+  writeLines(xml, file)
 }
 
 sapply(xml_files, remove_arandic)
