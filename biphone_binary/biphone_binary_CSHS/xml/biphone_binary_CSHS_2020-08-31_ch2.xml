@@ -127,9 +127,6 @@
 	</taxa>
 	
 	
-	<taxa id="Arandic">
-		<taxon idref="WesternArrarnta"/>
-	</taxa>
 	<taxa id="Bandjalangic">
 		<taxon idref="Bandjalang"/>
 		<taxon idref="Githabul"/>
@@ -764,10 +761,6 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	<!-- Generate a random starting tree under the coalescent process            -->
 	<coalescentSimulator id="startingTree">
 		<coalescentSimulator>
-			<taxa idref="Arandic"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
 			<taxa idref="Bandjalangic"/>
 			<constantSize idref="initialDemo"/>
 		</coalescentSimulator>
@@ -871,24 +864,6 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<!-- Taxon Sets                                                              -->
 	
-	<tmrcaStatistic id="tmrca(Arandic)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="Arandic"/>
-		</mrca>
-		<treeModel idref="treeModel"/>
-	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Arandic)" absolute="true" includeStem="false">
-		<mrca>
-			<taxa idref="Arandic"/>
-		</mrca>
-		<treeModel idref="treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Arandic)">
-		<mrca>
-			<taxa idref="Arandic"/>
-		</mrca>
-		<treeModel idref="treeModel"/>
-	</monophylyStatistic>
 	<tmrcaStatistic id="tmrca(Bandjalangic)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Bandjalangic"/>
@@ -1330,7 +1305,6 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 					<monophylyStatistic idref="monophyly(PamaMaric)"/>
 					<monophylyStatistic idref="monophyly(SouthWest)"/>
 					<monophylyStatistic idref="monophyly(ThuraYura)"/>
-					<monophylyStatistic idref="monophyly(Arandic)"/>
 					<monophylyStatistic idref="monophyly(Mayi)"/>
 					<monophylyStatistic idref="monophyly(Kalkatungic)"/>
 					<monophylyStatistic idref="monophyly(Gumbaynggiric)"/>
@@ -1406,7 +1380,6 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<parameter idref="treeModel.rootHeight"/>
 			<tmrcaStatistic idref="age(root)"/>
 			<treeLengthStatistic idref="treeLength"/>
-			<tmrcaStatistic idref="tmrca(Arandic)"/>
 			<tmrcaStatistic idref="tmrca(Bandjalangic)"/>
 			<tmrcaStatistic idref="tmrca(CentralNSW)"/>
 			<tmrcaStatistic idref="tmrca(Gumbaynggiric)"/>
@@ -1425,7 +1398,6 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<tmrcaStatistic idref="tmrca(Warluwaric)"/>
 			<tmrcaStatistic idref="tmrca(Wati)"/>
 			<tmrcaStatistic idref="tmrca(Yolngu)"/>
-			<tmrcaStatistic idref="age(Arandic)"/>
 			<tmrcaStatistic idref="age(Bandjalangic)"/>
 			<tmrcaStatistic idref="age(CentralNSW)"/>
 			<tmrcaStatistic idref="age(Gumbaynggiric)"/>
