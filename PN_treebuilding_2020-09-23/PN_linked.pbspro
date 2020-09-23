@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#PBS -A UQ-HASS-LC
+#PBS -l select=1:ncpus=8:mpiprocs=8:mem=16GB:vmem=16GB,walltime=24:00:00
+#PBS -J 1-4
+
+cp -r $HOME/PN_treebuilding_2020-09-23/PN_linked/xml $TMPDIR
+cp -r $HOME/BEAST/BEASTv1.10.4 $TMPDIR
+
+cd $TMPDIR
+
+module load beagle
+
+BEASTv1.10.4/bin/beast -threads $NCPUS xml/PN_linked_2020-09-23_ch$PBS_ARRAY_INDEX.xml
+
+cp PN_linked* $HOME/PN_treebuilding_2020-09-23/PN_linked/output
+
+module purge
+

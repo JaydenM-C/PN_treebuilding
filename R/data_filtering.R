@@ -19,6 +19,7 @@
 
 library(tidyverse)
 library(ape)
+library(car)
 
 bin <- rev(list.files("../Data", "biphone_binary_raw", full.names = TRUE))[1] %>%
   read_csv
@@ -52,9 +53,10 @@ nex <- gsub("0123456789", "01", nex)
 writeLines(nex, paste0("../Data/biphone_binary_", Sys.Date(), ".nex"))
 
 # BIPHONE TRANSITION FREQUENCY DATA
-# Convert 0s to NAs, filter out invariant sites, re-write as tsv with "-" as NA symbol
+# Convert 0s and 1s to NAs, filter out invariant sites, logit transform frequencies and re-write as tsv with "-" as NA symbol
 
 freq[freq == 0] <- NA
+freq[freq == 1] <- NA
 
 freq_filtered <- freq %>%
   # Selects columns with at least one digit (i.e. not all NAs)
@@ -68,5 +70,7 @@ unique_vals <- function (i) {
 }
 
 freq_filtered <- select_if(freq_filtered, c(TRUE, sapply(2:ncol(freq_filtered), function (i) {unique_vals(i) > 1})))
+
+freq_filtered[,-1] <- apply(freq_filtered[,-1], 2, logit, adjust = 0)
 
 write_tsv(freq_filtered, paste0("../Data/biphone_frequency_", Sys.Date(), ".tsv"))
