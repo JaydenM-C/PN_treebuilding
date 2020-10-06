@@ -22,6 +22,10 @@ library(kableExtra)
 
 Summary: This paper evaluates whether phylogenetic tree inference in linguistics is strengthened by the inclusion of phonotactic information. We take ~2k binary phonotactic variables and several hundred frequency variables and combine them with lexical cognate data from 111 Pama-Nyungan languages. The first part of the study explores the evolutionary dynamics of the phonotactic data. This is necessary to ascertain the best evolutionary model with which to infer a tree, since no one has used this kind of data in linguistic tree inference before. The second part of the study compares two models for inferring a Pama-Nyungan phylogeny using Bayesian methods. In one, a phonotactic data partition and lexical cognate partition are used jointly to infer trees. In the other these partitions are kept separate for the purpose of tree inference. Bayes factors for these two models are compared. We find that the combination of phonotactic data with lexical data **does/does not** significantly strengthen tree inference.
 
+**Notes:**
+
+Bayes factors are robust [@brown_importance_2007]
+
 Introduction {#pn-tree-intro}
 ================================================================================
 
