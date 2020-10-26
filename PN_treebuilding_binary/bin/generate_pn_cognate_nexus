@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#######################################################
+#  GENERATE NEXUS FILE OF PN COGNATE DATA	#
+#			#
+#    Jayden Macklin-Cordes		#
+#    Created: 2020-08-31		#
+#    Last edit: 2020-10-12		#
+#			#
+#######################################################
+
+# INPUT:
+#    - Data/WPN_cognates_2020-10-26.tsv, which is produced using the R script cognate_data_wrangling.R
+#    - In directory Bouckaert_etal, a Perl script called pny10.pl
+# OUTPUT:
+#    - Data/PN_cognates_[date].nex
+#    - Data/PN_cognates_[date].pl
+# REQUIREMENTS:
+#    - Software: bash, Perl
+
+# SOURCES
+#
+# Pama-Nyungan cognate data is sourced from the Zenodo record for the following reference:
+#
+#   Bouckaert, Remco, Bowern, Claire, & Atkinson, Quentin. (2018). 
+#   The origin and expansion of Pama–Nyungan languages across Australia: Cognate Data (Version 1.) [Data set].
+#   Nature Ecology and Evolution. http://doi.org/10.1038/s41559-018-0489-3
+#
+#   Zenodo record: https://zenodo.org/record/1320471 (Accessed, downloaded 2019-07-08)
+#
+# The Zenodo record contains a spreadsheet of original cognate data and a Perl script for converting the data to Nexus format.
+# The Perl script was created for Bouckaert et al.'s in-house research purposes and requires a little intervention to insert the cognate data into the script successfully.
+# Original Zenodo downloads are preserved, untouched, in Bouckaert_etal directory.
+
+date=`date '+%Y-%m-%d'`
+
+# Delete single quotes from glosses/translations (these mess up the Perl script)
+sed -i '' "s/'//g" Data/PN_cognates_2020-10-26.tsv
+
+# Copy original Perl script to Data folder, delete the first five lines (where the cognate dataset will be inserted)
+sed '1,5d' Bouckaert_etal/pny10.pl > Data/temp.pl
+
+# Wrap cognate data in Perl command $='[DATA]'; and concatenate to Perl Script
+echo "\$s='$(cat Data/PN_cognates_2020-10-26.tsv)';" | cat - Data/temp.pl > Data/PN_cognates_$date.pl
+rm Data/temp.pl
+
+# Run the Perl script and write output to nexus file
+filename="PN_cognates_$date.nex"
+perl Data/PN_cognates_$date.pl > Data/$filename
