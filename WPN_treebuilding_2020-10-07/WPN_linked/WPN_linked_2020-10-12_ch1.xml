@@ -39271,7 +39271,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Define MCMC                                                             -->
-	<mcmc id="mcmc" chainLength="25000000" autoOptimize="true" operatorAnalysis="WPN_linked_2020-10-12.ops">
+	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="WPN_linked_2020-10-12.ops">
 		<joint id="joint">
 			<prior id="prior">
 				<booleanLikelihood>
@@ -39594,7 +39594,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		<operators idref="operators"/>
 
 		<!-- write log to screen                                                     -->
-		<log id="screenLog" logEvery="250000">
+		<log id="screenLog" logEvery="1000000">
 			<column label="Joint" dp="4" width="12">
 				<joint idref="joint"/>
 			</column>
@@ -39684,7 +39684,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	<!-- START Marginal Likelihood Estimator                                     -->
 
 	<!-- Define marginal likelihood estimator (PS/SS) settings                   -->
-	<marginalLikelihoodEstimator chainLength="500000" pathSteps="50" pathScheme="betaquantile" alpha="0.3">
+	<marginalLikelihoodEstimator chainLength="1000000" pathSteps="100" pathScheme="betaquantile" alpha="0.3">
 		<samplers>
 			<mcmc idref="mcmc"/>
 		</samplers>
@@ -39696,19 +39696,19 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 				<prior idref="prior"/>
 			</destination>
 		</pathLikelihood>
-		<log id="MLELog" logEvery="10000" fileName="WPN_linked_2020-10-12.mle_ch1.log">
+		<log id="MLELog" logEvery="10000" fileName="WPN_linked_2020-10-12_ch1.mle.log">
 			<pathLikelihood idref="pathLikelihood"/>
 		</log>
 	</marginalLikelihoodEstimator>
 
 	<!-- Path sampling estimator from collected samples                          -->
-	<pathSamplingAnalysis fileName="WPN_linked_2020-10-12.mle_ch1.log" resultsFileName="WPN_linked_2020-10-12.mle.result_ch1.log">
+	<pathSamplingAnalysis fileName="WPN_linked_2020-10-12_ch1.mle.log" resultsFileName="WPN_linked_2020-10-12_ch1.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</pathSamplingAnalysis>
 
 	<!-- Stepping-stone sampling estimator from collected samples                -->
-	<steppingStoneSamplingAnalysis fileName="WPN_linked_2020-10-12.mle_ch1.log" resultsFileName="WPN_linked_2020-10-12.mle.result_ch1.log">
+	<steppingStoneSamplingAnalysis fileName="WPN_linked_2020-10-12_ch1.mle.log" resultsFileName="WPN_linked_2020-10-12_ch1.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</steppingStoneSamplingAnalysis>

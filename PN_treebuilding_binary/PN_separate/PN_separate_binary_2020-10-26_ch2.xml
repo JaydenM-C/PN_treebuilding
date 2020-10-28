@@ -1221,7 +1221,85 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Generate a random starting tree under the coalescent process            -->
-	<coalescentSimulator id="startingTree">
+	<coalescentSimulator id="PN_cognates_2020-10-26.startingTree">
+		<coalescentSimulator>
+			<taxa idref="Bandjalangic"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="CentralNSW"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Gumbaynggiric"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Kalkatungic"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="KanyaraMantharta"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Karnic"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Kartu"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Marrngu"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Mayi"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Ngayarta"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="NgumpinYapa"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="PamaMaric"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="SouthWest"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="ThuraYura"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="WakaKabi"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Warluwaric"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator height="3500">
+			<taxa idref="Wati"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<coalescentSimulator>
+			<taxa idref="Yolngu"/>
+			<constantSize idref="initialDemo"/>
+		</coalescentSimulator>
+		<taxa idref="taxa"/>
+		<constantSize idref="initialDemo"/>
+	</coalescentSimulator>
+
+	<!-- Generate a random starting tree under the coalescent process            -->
+	<coalescentSimulator id="biphone_binary_2020-10-26.startingTree">
 		<coalescentSimulator>
 			<taxa idref="Bandjalangic"/>
 			<constantSize idref="initialDemo"/>
@@ -1299,371 +1377,736 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	</coalescentSimulator>
 
 	<!-- Generate a tree model                                                   -->
-	<treeModel id="treeModel">
-		<coalescentTree idref="startingTree"/>
+	<treeModel id="PN_cognates_2020-10-26.treeModel">
+		<coalescentTree idref="PN_cognates_2020-10-26.startingTree"/>
 		<rootHeight>
-			<parameter id="treeModel.rootHeight"/>
+			<parameter id="PN_cognates_2020-10-26.treeModel.rootHeight"/>
 		</rootHeight>
 		<nodeHeights internalNodes="true">
-			<parameter id="treeModel.internalNodeHeights"/>
+			<parameter id="PN_cognates_2020-10-26.treeModel.internalNodeHeights"/>
 		</nodeHeights>
 		<nodeHeights internalNodes="true" rootNode="true">
-			<parameter id="treeModel.allInternalNodeHeights"/>
+			<parameter id="PN_cognates_2020-10-26.treeModel.allInternalNodeHeights"/>
 		</nodeHeights>
 	</treeModel>
 
 	<!-- Statistic for sum of the branch lengths of the tree (tree length)       -->
-	<treeLengthStatistic id="treeLength">
-		<treeModel idref="treeModel"/>
+	<treeLengthStatistic id="PN_cognates_2020-10-26.treeLength">
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</treeLengthStatistic>
 
 	<!-- Statistic for time of most recent common ancestor of tree               -->
-	<tmrcaStatistic id="age(root)" absolute="true">
-		<treeModel idref="treeModel"/>
+	<tmrcaStatistic id="PN_cognates_2020-10-26.age(root)" absolute="true">
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
 
+	
+
+	<!-- Generate a tree model                                                   -->
+	<treeModel id="biphone_binary_2020-10-26.treeModel">
+		<coalescentTree idref="biphone_binary_2020-10-26.startingTree"/>
+		<rootHeight>
+			<parameter id="biphone_binary_2020-10-26.treeModel.rootHeight"/>
+		</rootHeight>
+		<nodeHeights internalNodes="true">
+			<parameter id="biphone_binary_2020-10-26.treeModel.internalNodeHeights"/>
+		</nodeHeights>
+		<nodeHeights internalNodes="true" rootNode="true">
+			<parameter id="biphone_binary_2020-10-26.treeModel.allInternalNodeHeights"/>
+		</nodeHeights>
+	</treeModel>
+
+	<!-- Statistic for sum of the branch lengths of the tree (tree length)       -->
+	<treeLengthStatistic id="biphone_binary_2020-10-26.treeLength">
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</treeLengthStatistic>
+
+	<!-- Statistic for time of most recent common ancestor of tree               -->
+	<tmrcaStatistic id="biphone_binary_2020-10-26.age(root)" absolute="true">
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	
 
 	<!-- Taxon Sets                                                              -->
 	
-	<tmrcaStatistic id="tmrca(Bandjalangic)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Bandjalangic)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Bandjalangic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Bandjalangic)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Bandjalangic)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Bandjalangic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Bandjalangic)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Bandjalangic)">
 		<mrca>
 			<taxa idref="Bandjalangic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(CentralNSW)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.CentralNSW)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="CentralNSW"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(CentralNSW)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.CentralNSW)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="CentralNSW"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(CentralNSW)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.CentralNSW)">
 		<mrca>
 			<taxa idref="CentralNSW"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Gumbaynggiric)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Gumbaynggiric)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Gumbaynggiric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Gumbaynggiric)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Gumbaynggiric)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Gumbaynggiric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Gumbaynggiric)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Gumbaynggiric)">
 		<mrca>
 			<taxa idref="Gumbaynggiric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Kalkatungic)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Kalkatungic)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Kalkatungic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Kalkatungic)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Kalkatungic)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Kalkatungic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Kalkatungic)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Kalkatungic)">
 		<mrca>
 			<taxa idref="Kalkatungic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(KanyaraMantharta)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.KanyaraMantharta)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="KanyaraMantharta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(KanyaraMantharta)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.KanyaraMantharta)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="KanyaraMantharta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(KanyaraMantharta)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.KanyaraMantharta)">
 		<mrca>
 			<taxa idref="KanyaraMantharta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Karnic)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Karnic)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Karnic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Karnic)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Karnic)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Karnic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Karnic)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Karnic)">
 		<mrca>
 			<taxa idref="Karnic"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Kartu)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Kartu)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Kartu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Kartu)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Kartu)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Kartu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Kartu)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Kartu)">
 		<mrca>
 			<taxa idref="Kartu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Marrngu)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Marrngu)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Marrngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Marrngu)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Marrngu)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Marrngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Marrngu)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Marrngu)">
 		<mrca>
 			<taxa idref="Marrngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Mayi)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Mayi)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Mayi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Mayi)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Mayi)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Mayi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Mayi)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Mayi)">
 		<mrca>
 			<taxa idref="Mayi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Ngayarta)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Ngayarta)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Ngayarta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Ngayarta)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Ngayarta)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Ngayarta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Ngayarta)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Ngayarta)">
 		<mrca>
 			<taxa idref="Ngayarta"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(NgumpinYapa)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.NgumpinYapa)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="NgumpinYapa"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(NgumpinYapa)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.NgumpinYapa)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="NgumpinYapa"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(NgumpinYapa)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.NgumpinYapa)">
 		<mrca>
 			<taxa idref="NgumpinYapa"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(PamaMaric)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.PamaMaric)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="PamaMaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(PamaMaric)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.PamaMaric)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="PamaMaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(PamaMaric)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.PamaMaric)">
 		<mrca>
 			<taxa idref="PamaMaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(SouthWest)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.SouthWest)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="SouthWest"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(SouthWest)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.SouthWest)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="SouthWest"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(SouthWest)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.SouthWest)">
 		<mrca>
 			<taxa idref="SouthWest"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(ThuraYura)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.ThuraYura)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="ThuraYura"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(ThuraYura)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.ThuraYura)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="ThuraYura"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(ThuraYura)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.ThuraYura)">
 		<mrca>
 			<taxa idref="ThuraYura"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WakaKabi)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.WakaKabi)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="WakaKabi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(WakaKabi)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.WakaKabi)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="WakaKabi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WakaKabi)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.WakaKabi)">
 		<mrca>
 			<taxa idref="WakaKabi"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Warluwaric)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Warluwaric)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Warluwaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Warluwaric)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Warluwaric)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Warluwaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Warluwaric)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Warluwaric)">
 		<mrca>
 			<taxa idref="Warluwaric"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Wati)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Wati)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Wati"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Wati)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Wati)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Wati"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Wati)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Wati)">
 		<mrca>
 			<taxa idref="Wati"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(Yolngu)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(PN_cognates_2020-10-26.Yolngu)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Yolngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<tmrcaStatistic id="age(Yolngu)" absolute="true" includeStem="false">
+	<tmrcaStatistic id="age(PN_cognates_2020-10-26.Yolngu)" absolute="true" includeStem="false">
 		<mrca>
 			<taxa idref="Yolngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(Yolngu)">
+	<monophylyStatistic id="monophyly(PN_cognates_2020-10-26.Yolngu)">
 		<mrca>
 			<taxa idref="Yolngu"/>
 		</mrca>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 	</monophylyStatistic>
 
+		<!-- Taxon Sets                                                              -->
+	
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Bandjalangic)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Bandjalangic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Bandjalangic)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Bandjalangic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Bandjalangic)">
+		<mrca>
+			<taxa idref="Bandjalangic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.CentralNSW)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="CentralNSW"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.CentralNSW)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="CentralNSW"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.CentralNSW)">
+		<mrca>
+			<taxa idref="CentralNSW"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Gumbaynggiric)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Gumbaynggiric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Gumbaynggiric)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Gumbaynggiric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Gumbaynggiric)">
+		<mrca>
+			<taxa idref="Gumbaynggiric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Kalkatungic)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Kalkatungic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Kalkatungic)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Kalkatungic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Kalkatungic)">
+		<mrca>
+			<taxa idref="Kalkatungic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.KanyaraMantharta)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="KanyaraMantharta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.KanyaraMantharta)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="KanyaraMantharta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.KanyaraMantharta)">
+		<mrca>
+			<taxa idref="KanyaraMantharta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Karnic)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Karnic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Karnic)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Karnic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Karnic)">
+		<mrca>
+			<taxa idref="Karnic"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Kartu)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Kartu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Kartu)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Kartu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Kartu)">
+		<mrca>
+			<taxa idref="Kartu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Marrngu)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Marrngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Marrngu)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Marrngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Marrngu)">
+		<mrca>
+			<taxa idref="Marrngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Mayi)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Mayi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Mayi)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Mayi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Mayi)">
+		<mrca>
+			<taxa idref="Mayi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Ngayarta)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Ngayarta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Ngayarta)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Ngayarta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Ngayarta)">
+		<mrca>
+			<taxa idref="Ngayarta"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.NgumpinYapa)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="NgumpinYapa"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.NgumpinYapa)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="NgumpinYapa"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.NgumpinYapa)">
+		<mrca>
+			<taxa idref="NgumpinYapa"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.PamaMaric)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="PamaMaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.PamaMaric)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="PamaMaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.PamaMaric)">
+		<mrca>
+			<taxa idref="PamaMaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.SouthWest)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="SouthWest"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.SouthWest)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="SouthWest"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.SouthWest)">
+		<mrca>
+			<taxa idref="SouthWest"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.ThuraYura)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="ThuraYura"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.ThuraYura)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="ThuraYura"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.ThuraYura)">
+		<mrca>
+			<taxa idref="ThuraYura"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.WakaKabi)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="WakaKabi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.WakaKabi)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="WakaKabi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.WakaKabi)">
+		<mrca>
+			<taxa idref="WakaKabi"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Warluwaric)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Warluwaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Warluwaric)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Warluwaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Warluwaric)">
+		<mrca>
+			<taxa idref="Warluwaric"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Wati)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Wati"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Wati)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Wati"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Wati)">
+		<mrca>
+			<taxa idref="Wati"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	<tmrcaStatistic id="tmrca(biphone_binary_2020-10-26.Yolngu)" absolute="false" includeStem="false">
+		<mrca>
+			<taxa idref="Yolngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<tmrcaStatistic id="age(biphone_binary_2020-10-26.Yolngu)" absolute="true" includeStem="false">
+		<mrca>
+			<taxa idref="Yolngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</tmrcaStatistic>
+	<monophylyStatistic id="monophyly(biphone_binary_2020-10-26.Yolngu)">
+		<mrca>
+			<taxa idref="Yolngu"/>
+		</mrca>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+	</monophylyStatistic>
+	
+
 	<!-- Generate a speciation likelihood for Yule or Birth Death                -->
-	<speciationLikelihood id="speciation">
+	<speciationLikelihood id="PN_cognates_2020-10-26.speciation">
 		<model>
 			<birthDeathModel idref="birthDeath"/>
 		</model>
 		<speciesTree>
-			<treeModel idref="treeModel"/>
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
+		</speciesTree>
+	</speciationLikelihood>
+	
+
+	<!-- Generate a speciation likelihood for Yule or Birth Death                -->
+	<speciationLikelihood id="biphone_binary_2020-10-26.speciation">
+		<model>
+			<birthDeathModel idref="birthDeath"/>
+		</model>
+		<speciesTree>
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		</speciesTree>
 	</speciationLikelihood>
 	
 
 	<!-- The uncorrelated relaxed clock (Drummond, Ho, Phillips & Rambaut (2006) PLoS Biology 4, e88 )-->
 	<discretizedBranchRates id="PN_cognates_2020-10-26.branchRates">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		<distribution>
 			<logNormalDistributionModel meanInRealSpace="true">
 				<mean>
@@ -1680,24 +2123,24 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	</discretizedBranchRates>
 	
 	<rateStatistic id="PN_cognates_2020-10-26.meanRate" name="PN_cognates_2020-10-26.meanRate" mode="mean" internal="true" external="true">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
 	</rateStatistic>
 	
 	<rateStatistic id="PN_cognates_2020-10-26.coefficientOfVariation" name="PN_cognates_2020-10-26.coefficientOfVariation" mode="coefficientOfVariation" internal="true" external="true">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
 	</rateStatistic>
 	
 	<rateCovarianceStatistic id="PN_cognates_2020-10-26.covariance" name="PN_cognates_2020-10-26.covariance">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
 	</rateCovarianceStatistic>
 	
 
 	<!-- The uncorrelated relaxed clock (Drummond, Ho, Phillips & Rambaut (2006) PLoS Biology 4, e88 )-->
 	<discretizedBranchRates id="biphone_binary_2020-10-26.branchRates">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		<distribution>
 			<logNormalDistributionModel meanInRealSpace="true">
 				<mean>
@@ -1714,17 +2157,17 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	</discretizedBranchRates>
 	
 	<rateStatistic id="biphone_binary_2020-10-26.meanRate" name="biphone_binary_2020-10-26.meanRate" mode="mean" internal="true" external="true">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-26.branchRates"/>
 	</rateStatistic>
 	
 	<rateStatistic id="biphone_binary_2020-10-26.coefficientOfVariation" name="biphone_binary_2020-10-26.coefficientOfVariation" mode="coefficientOfVariation" internal="true" external="true">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-26.branchRates"/>
 	</rateStatistic>
 	
 	<rateCovarianceStatistic id="biphone_binary_2020-10-26.covariance" name="biphone_binary_2020-10-26.covariance">
-		<treeModel idref="treeModel"/>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-26.branchRates"/>
 	</rateCovarianceStatistic>
 	
@@ -1786,15 +2229,14 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<!--                                                                         -->
 	<statistic id="mu.2" name="mu">
-		<siteModel idref="siteModel.2"/>
+		<siteModel idref="siteModel"/>
 	</statistic>
-
 
 
 	<!-- Likelihood for tree given sequence data                                 -->
 	<treeLikelihood id="PN_cognates_2020-10-26.treeLikelihood" useAmbiguities="true">
 		<patterns idref="PN_cognates_2020-10-26.patterns"/>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		<siteModel idref="siteModel"/>
 		<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
 	</treeLikelihood>
@@ -1803,7 +2245,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	<!-- Likelihood for tree given sequence data                                 -->
 	<treeLikelihood id="biphone_binary_2020-10-26.treeLikelihood" useAmbiguities="true">
 		<patterns idref="biphone_binary_2020-10-26.patterns"/>
-		<treeModel idref="treeModel"/>
+		<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 		<siteModel idref="siteModel.2"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-26.branchRates"/>
 	</treeLikelihood>
@@ -1841,7 +2283,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</scaleOperator>
 		<upDownOperator scaleFactor="0.75" weight="3">
 			<up>
-				<parameter idref="treeModel.allInternalNodeHeights"/>
+				<parameter idref="PN_cognates_2020-10-26.treeModel.allInternalNodeHeights"/>
 			</up>
 			<down>
 				<parameter idref="PN_cognates_2020-10-26.ucld.mean"/>
@@ -1861,7 +2303,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</scaleOperator>
 		<upDownOperator scaleFactor="0.75" weight="3">
 			<up>
-				<parameter idref="treeModel.allInternalNodeHeights"/>
+				<parameter idref="biphone_binary_2020-10-26.treeModel.allInternalNodeHeights"/>
 			</up>
 			<down>
 				<parameter idref="biphone_binary_2020-10-26.ucld.mean"/>
@@ -1874,22 +2316,40 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<parameter idref="biphone_binary_2020-10-26.branchRates.categories"/>
 		</uniformIntegerOperator>
 		<subtreeSlide size="1.0" gaussian="true" weight="30">
-			<treeModel idref="treeModel"/>
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		</subtreeSlide>
 		<narrowExchange weight="30">
-			<treeModel idref="treeModel"/>
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		</narrowExchange>
 		<wideExchange weight="3">
-			<treeModel idref="treeModel"/>
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		</wideExchange>
 		<wilsonBalding weight="3">
-			<treeModel idref="treeModel"/>
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 		</wilsonBalding>
 		<scaleOperator scaleFactor="0.75" weight="3">
-			<parameter idref="treeModel.rootHeight"/>
+			<parameter idref="PN_cognates_2020-10-26.treeModel.rootHeight"/>
 		</scaleOperator>
 		<uniformOperator weight="30">
-			<parameter idref="treeModel.internalNodeHeights"/>
+			<parameter idref="PN_cognates_2020-10-26.treeModel.internalNodeHeights"/>
+		</uniformOperator>
+		<subtreeSlide size="1.0" gaussian="true" weight="30">
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+		</subtreeSlide>
+		<narrowExchange weight="30">
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+		</narrowExchange>
+		<wideExchange weight="3">
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+		</wideExchange>
+		<wilsonBalding weight="3">
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
+		</wilsonBalding>
+		<scaleOperator scaleFactor="0.75" weight="3">
+			<parameter idref="biphone_binary_2020-10-26.treeModel.rootHeight"/>
+		</scaleOperator>
+		<uniformOperator weight="30">
+			<parameter idref="biphone_binary_2020-10-26.treeModel.internalNodeHeights"/>
 		</uniformOperator>
 		<scaleOperator scaleFactor="0.75" weight="3">
 			<parameter idref="birthDeath.meanGrowthRate"/>
@@ -1899,31 +2359,54 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Define MCMC                                                             -->
-	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="PN_linked_2020-10-12.ops">
+	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="PN_binary_separate_2020-10-26.ops">
 		<joint id="joint">
 			<prior id="prior">
 				<booleanLikelihood>
-					<monophylyStatistic idref="monophyly(PamaMaric)"/>
-					<monophylyStatistic idref="monophyly(SouthWest)"/>
-					<monophylyStatistic idref="monophyly(ThuraYura)"/>
-					<monophylyStatistic idref="monophyly(Mayi)"/>
-					<monophylyStatistic idref="monophyly(Kalkatungic)"/>
-					<monophylyStatistic idref="monophyly(Gumbaynggiric)"/>
-					<monophylyStatistic idref="monophyly(Marrngu)"/>
-					<monophylyStatistic idref="monophyly(Kartu)"/>
-					<monophylyStatistic idref="monophyly(WakaKabi)"/>
-					<monophylyStatistic idref="monophyly(Karnic)"/>
-					<monophylyStatistic idref="monophyly(Ngayarta)"/>
-					<monophylyStatistic idref="monophyly(Yolngu)"/>
-					<monophylyStatistic idref="monophyly(NgumpinYapa)"/>
-					<monophylyStatistic idref="monophyly(Warluwaric)"/>
-					<monophylyStatistic idref="monophyly(Bandjalangic)"/>
-					<monophylyStatistic idref="monophyly(Wati)"/>
-					<monophylyStatistic idref="monophyly(KanyaraMantharta)"/>
-					<monophylyStatistic idref="monophyly(CentralNSW)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.PamaMaric)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.SouthWest)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.ThuraYura)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Mayi)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Kalkatungic)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Gumbaynggiric)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Marrngu)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Kartu)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.WakaKabi)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Karnic)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Ngayarta)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Yolngu)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.NgumpinYapa)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Warluwaric)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Bandjalangic)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.Wati)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.KanyaraMantharta)"/>
+					<monophylyStatistic idref="monophyly(PN_cognates_2020-10-26.CentralNSW)"/>
+				</booleanLikelihood>
+				<booleanLikelihood>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.PamaMaric)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.SouthWest)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.ThuraYura)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Mayi)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Kalkatungic)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Gumbaynggiric)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Marrngu)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Kartu)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.WakaKabi)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Karnic)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Ngayarta)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Yolngu)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.NgumpinYapa)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Warluwaric)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Bandjalangic)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.Wati)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.KanyaraMantharta)"/>
+					<monophylyStatistic idref="monophyly(biphone_binary_2020-10-26.CentralNSW)"/>
 				</booleanLikelihood>
 				<gammaPrior shape="2.0" scale="359.0" offset="3000.0">
-					<statistic idref="tmrca(Wati)"/>
+					<statistic idref="tmrca(biphone_binary_2020-10-26.Wati)"/>
+				</gammaPrior>
+				<gammaPrior shape="2.0" scale="359.0" offset="3000.0">
+					<statistic idref="tmrca(PN_cognates_2020-10-26.Wati)"/>
 				</gammaPrior>
 				<uniformPrior lower="0.0" upper="1.0">
 					<parameter idref="bcov.alpha"/>
@@ -1958,13 +2441,18 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 				<gammaPrior shape="0.5396" scale="0.3819" offset="0.0">
 					<parameter idref="biphone_binary_2020-10-26.ucld.stdev"/>
 				</gammaPrior>
-				<normalPrior mean="5791.0" stdev="730.0">
-					<parameter idref="treeModel.rootHeight"/>
-				</normalPrior>
+				<uniformPrior lower="3000.0" upper="7000.0">
+					<parameter idref="PN_cognates_2020-10-26.treeModel.rootHeight"/>
+				</uniformPrior>
+				<uniformPrior lower="3000.0" upper="7000.0">
+					<parameter idref="biphone_binary_2020-10-26.treeModel.rootHeight"/>
+				</uniformPrior>
 				<uniformPrior lower="0.0" upper="1.0">
 					<parameter idref="birthDeath.meanGrowthRate"/>
 				</uniformPrior>
-				<speciationLikelihood idref="speciation"/>
+				<speciationLikelihood idref="PN_cognates_2020-10-26.speciation"/>
+				
+				<speciationLikelihood idref="biphone_binary_2020-10-26.speciation"/>
 				
 				
 				<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
@@ -1990,8 +2478,11 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<column label="Likelihood" dp="4" width="12">
 				<likelihood idref="likelihood"/>
 			</column>
-			<column label="rootHeight" sf="6" width="12">
-				<parameter idref="treeModel.rootHeight"/>
+			<column label="PN_cognates_2020-10-26.rootHeight" sf="6" width="12">
+				<parameter idref="PN_cognates_2020-10-26.treeModel.rootHeight"/>
+			</column>
+			<column label="biphone_binary_2020-10-26.rootHeight" sf="6" width="12">
+				<parameter idref="biphone_binary_2020-10-26.treeModel.rootHeight"/>
 			</column>
 			<column label="PN_cognates_2020-10-26.ucld.mean" sf="6" width="12">
 				<parameter idref="PN_cognates_2020-10-26.ucld.mean"/>
@@ -2002,49 +2493,86 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</log>
 
 		<!-- write log to file                                                       -->
-		<log id="fileLog" logEvery="10000" fileName="PN_linked_2020-10-12_ch1.log" overwrite="false">
+		<log id="fileLog" logEvery="10000" fileName="PN_binary_separate_2020-10-26_ch2.log" overwrite="false">
 			<joint idref="joint"/>
 			<prior idref="prior"/>
 			<likelihood idref="likelihood"/>
-			<parameter idref="treeModel.rootHeight"/>
-			<tmrcaStatistic idref="age(root)"/>
-			<treeLengthStatistic idref="treeLength"/>
-			<tmrcaStatistic idref="tmrca(Bandjalangic)"/>
-			<tmrcaStatistic idref="tmrca(CentralNSW)"/>
-			<tmrcaStatistic idref="tmrca(Gumbaynggiric)"/>
-			<tmrcaStatistic idref="tmrca(Kalkatungic)"/>
-			<tmrcaStatistic idref="tmrca(KanyaraMantharta)"/>
-			<tmrcaStatistic idref="tmrca(Karnic)"/>
-			<tmrcaStatistic idref="tmrca(Kartu)"/>
-			<tmrcaStatistic idref="tmrca(Marrngu)"/>
-			<tmrcaStatistic idref="tmrca(Mayi)"/>
-			<tmrcaStatistic idref="tmrca(Ngayarta)"/>
-			<tmrcaStatistic idref="tmrca(NgumpinYapa)"/>
-			<tmrcaStatistic idref="tmrca(PamaMaric)"/>
-			<tmrcaStatistic idref="tmrca(SouthWest)"/>
-			<tmrcaStatistic idref="tmrca(ThuraYura)"/>
-			<tmrcaStatistic idref="tmrca(WakaKabi)"/>
-			<tmrcaStatistic idref="tmrca(Warluwaric)"/>
-			<tmrcaStatistic idref="tmrca(Wati)"/>
-			<tmrcaStatistic idref="tmrca(Yolngu)"/>
-			<tmrcaStatistic idref="age(Bandjalangic)"/>
-			<tmrcaStatistic idref="age(CentralNSW)"/>
-			<tmrcaStatistic idref="age(Gumbaynggiric)"/>
-			<tmrcaStatistic idref="age(Kalkatungic)"/>
-			<tmrcaStatistic idref="age(KanyaraMantharta)"/>
-			<tmrcaStatistic idref="age(Karnic)"/>
-			<tmrcaStatistic idref="age(Kartu)"/>
-			<tmrcaStatistic idref="age(Marrngu)"/>
-			<tmrcaStatistic idref="age(Mayi)"/>
-			<tmrcaStatistic idref="age(Ngayarta)"/>
-			<tmrcaStatistic idref="age(NgumpinYapa)"/>
-			<tmrcaStatistic idref="age(PamaMaric)"/>
-			<tmrcaStatistic idref="age(SouthWest)"/>
-			<tmrcaStatistic idref="age(ThuraYura)"/>
-			<tmrcaStatistic idref="age(WakaKabi)"/>
-			<tmrcaStatistic idref="age(Warluwaric)"/>
-			<tmrcaStatistic idref="age(Wati)"/>
-			<tmrcaStatistic idref="age(Yolngu)"/>
+			<parameter idref="PN_cognates_2020-10-26.treeModel.rootHeight"/>
+			<parameter idref="biphone_binary_2020-10-26.treeModel.rootHeight"/>
+			<treeLengthStatistic idref="PN_cognates_2020-10-26.treeLength"/>
+			<treeLengthStatistic idref="biphone_binary_2020-10-26.treeLength"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Bandjalangic)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.CentralNSW)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Gumbaynggiric)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Kalkatungic)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.KanyaraMantharta)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Karnic)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Kartu)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Marrngu)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Mayi)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Ngayarta)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.NgumpinYapa)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.PamaMaric)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.SouthWest)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.ThuraYura)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.WakaKabi)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Warluwaric)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Wati)"/>
+			<tmrcaStatistic idref="tmrca(PN_cognates_2020-10-26.Yolngu)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Bandjalangic)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.CentralNSW)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Gumbaynggiric)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Kalkatungic)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.KanyaraMantharta)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Karnic)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Kartu)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Marrngu)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Mayi)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Ngayarta)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.NgumpinYapa)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.PamaMaric)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.SouthWest)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.ThuraYura)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.WakaKabi)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Warluwaric)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Wati)"/>
+			<tmrcaStatistic idref="age(PN_cognates_2020-10-26.Yolngu)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Bandjalangic)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.CentralNSW)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Gumbaynggiric)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Kalkatungic)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.KanyaraMantharta)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Karnic)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Kartu)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Marrngu)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Mayi)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Ngayarta)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.NgumpinYapa)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.PamaMaric)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.SouthWest)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.ThuraYura)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.WakaKabi)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Warluwaric)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Wati)"/>
+			<tmrcaStatistic idref="tmrca(biphone_binary_2020-10-26.Yolngu)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Bandjalangic)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.CentralNSW)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Gumbaynggiric)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Kalkatungic)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.KanyaraMantharta)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Karnic)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Kartu)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Marrngu)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Mayi)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Ngayarta)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.NgumpinYapa)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.PamaMaric)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.SouthWest)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.ThuraYura)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.WakaKabi)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Warluwaric)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Wati)"/>
+			<tmrcaStatistic idref="age(biphone_binary_2020-10-26.Yolngu)"/>
 			<parameter idref="birthDeath.meanGrowthRate"/>
 			<parameter idref="birthDeath.relativeDeathRate"/>
 			<parameter idref="birthDeath.sampleProbability"/>
@@ -2077,20 +2605,28 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 
 
-			<speciationLikelihood idref="speciation"/>
+			<speciationLikelihood idref="PN_cognates_2020-10-26.speciation"/>
+			
+			<speciationLikelihood idref="biphone_binary_2020-10-26.speciation"/>
 			
 		</log>
 
 		<!-- write tree log to file                                                  -->
-		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="PN_linked_2020-10-12_ch1.trees" sortTranslationTable="true">
-			<treeModel idref="treeModel"/>
+		<logTree id="PN_cognates_2020-10-26.treeFileLog" logEvery="10000" nexusFormat="true" fileName="PN_binary_separate_2020-10-26.PN_cognates_2020-10-26_ch2.trees" sortTranslationTable="true">
+			<treeModel idref="PN_cognates_2020-10-26.treeModel"/>
 			<trait name="rate" tag="PN_cognates_2020-10-26.rate">
 				<discretizedBranchRates idref="PN_cognates_2020-10-26.branchRates"/>
 			</trait>
+			<joint idref="joint"/>
+
+		</logTree>
+		<logTree id="biphone_binary_2020-10-26.treeFileLog" logEvery="10000" nexusFormat="true" fileName="PN_binary_separate_2020-10-26.default_ch2.trees" sortTranslationTable="true">
+			<treeModel idref="biphone_binary_2020-10-26.treeModel"/>
 			<trait name="rate" tag="biphone_binary_2020-10-26.rate">
 				<discretizedBranchRates idref="biphone_binary_2020-10-26.branchRates"/>
 			</trait>
 			<joint idref="joint"/>
+
 
 		</logTree>
 	</mcmc>
@@ -2111,19 +2647,19 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 				<prior idref="prior"/>
 			</destination>
 		</pathLikelihood>
-		<log id="MLELog" logEvery="10000" fileName="PN_linked_2020-10-12.mle_ch1.log">
+		<log id="MLELog" logEvery="10000" fileName="PN_binary_separate_2020-10-26_ch2.mle.log">
 			<pathLikelihood idref="pathLikelihood"/>
 		</log>
 	</marginalLikelihoodEstimator>
 
 	<!-- Path sampling estimator from collected samples                          -->
-	<pathSamplingAnalysis fileName="PN_linked_2020-10-12.mle_ch1.log" resultsFileName="PN_linked_2020-10-12.mle.result_ch1.log">
+	<pathSamplingAnalysis fileName="PN_binary_separate_2020-10-26_ch2.mle.log" resultsFileName="PN_binary_separate_2020-10-26_ch2.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</pathSamplingAnalysis>
 
 	<!-- Stepping-stone sampling estimator from collected samples                -->
-	<steppingStoneSamplingAnalysis fileName="PN_linked_2020-10-12.mle_ch1.log" resultsFileName="PN_linked_2020-10-12.mle.result_ch1.log">
+	<steppingStoneSamplingAnalysis fileName="PN_binary_separate_2020-10-26_ch2.mle.log" resultsFileName="PN_binary_separate_2020-10-26_ch2.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</steppingStoneSamplingAnalysis>
