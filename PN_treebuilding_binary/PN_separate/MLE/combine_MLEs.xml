@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+
+	<beast version="1.10.5">
+
+		<pathSamplingAnalysis fileName="../output/PN_separate_binary_2020-10-26_ch1.mle.log ../output/PN_separate_binary_2020-10-26_ch2.mle.log" resultsFileName="PN_separate_binary_2020-10-26.mle.result.log">
+			<likelihoodColumn name="pathLikelihood.delta"/>
+			<thetaColumn name="pathLikelihood.theta"/>
+		</pathSamplingAnalysis>
+
+		<!-- Stepping-stone sampling estimator from collected samples                -->
+		<steppingStoneSamplingAnalysis fileName="../output/PN_separate_binary_2020-10-26_ch1.mle.log ../output/PN_separate_binary_2020-10-26_ch2.mle.log" resultsFileName="PN_separate_binary_2020-10-26.mle.result.log">
+			<likelihoodColumn name="pathLikelihood.delta"/>
+			<thetaColumn name="pathLikelihood.theta"/>
+		</steppingStoneSamplingAnalysis>
+
+	</beast>
