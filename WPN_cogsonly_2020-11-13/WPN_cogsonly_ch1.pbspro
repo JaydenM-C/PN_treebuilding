@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#PBS -A UQ-HASS-LC
+#PBS -l select=1:ncpus=8:mpiprocs=8:mem=32GB:vmem=32GB,walltime=100:00:00
+
+cp -r $HOME/WPN_cogsonly_2020-11-13/WPN_linked/WPN_cogsonly_2020-11-13_ch1.xml $TMPDIR
+cp -r $HOME/WPN_cogsonly_2020-11-13/BEASTv1.10.4 $TMPDIR
+
+cd $TMPDIR
+
+module load beagle
+
+BEASTv1.10.4/bin/beast -beagle_instances 4 WPN_cogsonly_2020-11-13_ch1.xml
+
+cp WPN_cogsonly* $HOME/WPN_cogsonly_2020-11-13/WPN_cogsonly/output
+
