@@ -1,1 +1,0 @@
-This is a duplicate of WPN_separate_2020-10-30, except that binary biphone data has been removed. Sound class data has been transformed using the Gabe Hassler method, which involves transforming 0s into the smallest non-zero value divided in half.

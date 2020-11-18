@@ -1,0 +1,156 @@
+
+Operator analysis
+Operator                                          Tuning   Count      Time     Time/Op  Pr(accept) Smoothed_Pr(accept)
+bcov.alpha                                        0.786   2531       1905     0.75     0.2323      0.2         
+scale(bcov.s)                                     0.445   2623       2011     0.77     0.2318      0.18        
+frequencies                                       0.019   2529       1971     0.78     0.2329      0.2         
+bcov.alpha.2                                      9.471   2514       2139     0.85     0.2339      0.25        
+scale(bcov.s.2)                                   0.411   2539       2118     0.83     0.2328      0.27        
+frequencies.2                                     0.145   2581       2410     0.93     0.2309      0.27        
+scale(alpha)                                      0.568   2509       2133     0.85     0.2276      0.21        
+scale(WPN_cognates_2020-10-12.ucld.mean)          0.918   7668       5111     0.67     0.2345      0.24        
+scale(WPN_cognates_2020-10-12.ucld.stdev)         0.753   7704       5833     0.76     0.2325      0.23        
+up:nodeHeights(WPN_cognates_2020-10-12.treeModel) down:WPN_cognates_2020-10-12.ucld.mean 0.821   7833       3692     0.47     0.2367      0.23        
+swapOperator(WPN_cognates_2020-10-12.branchRates.categories)        25431      12412    0.49     0.1886      0.24        
+uniformInteger(WPN_cognates_2020-10-12.branchRates.categories)        25556      11641    0.46     0.2973      0.29        
+scale(biphone_binary_2020-10-12.ucld.mean)        0.75    7632       6332     0.83     0.2328      0.3         
+scale(biphone_binary_2020-10-12.ucld.stdev)       0.543   7867       6631     0.84     0.2319      0.25        
+up:nodeHeights(WPN_phonotactics_2020-10-12.treeModel) down:biphone_binary_2020-10-12.ucld.mean 0.946   7749       4545     0.59     0.2344      0.23        
+swapOperator(biphone_binary_2020-10-12.branchRates.categories)        25463      12022    0.47     0.2758      0.3         
+uniformInteger(biphone_binary_2020-10-12.branchRates.categories)        25852      11129    0.43     0.4067      0.38        
+subtreeSlide(WPN_cognates_2020-10-12.treeModel)   661.918 76591      28234    0.37     0.2343      0.23        
+Narrow Exchange(WPN_cognates_2020-10-12.treeModel)        76762      22074    0.29     0.0527      0.02        
+Wide Exchange(WPN_cognates_2020-10-12.treeModel)          7581       346      0.05     0.0013      0.0         
+wilsonBalding(WPN_cognates_2020-10-12.treeModel)          7550       771      0.1      0.0019      0.01        
+scale(WPN_cognates_2020-10-12.treeModel.rootHeight)0.092   7554       2005     0.27     0.2339      0.23        
+uniform(nodeHeights(WPN_cognates_2020-10-12.treeModel))        76767      35089    0.46     0.2613      0.3         
+subtreeSlide(WPN_phonotactics_2020-10-12.treeModel)461.711 76665      78970    1.03     0.2349      0.18        
+Narrow Exchange(WPN_phonotactics_2020-10-12.treeModel)        76813      73437    0.96     0.0823      0.08        
+Wide Exchange(WPN_phonotactics_2020-10-12.treeModel)        7677       766      0.1      0.0023      0.0         
+wilsonBalding(WPN_phonotactics_2020-10-12.treeModel)        7560       1773     0.23     0.0033      0.0         
+scale(WPN_phonotactics_2020-10-12.treeModel.rootHeight)0.265   7545       4086     0.54     0.2333      0.22        
+uniform(nodeHeights(WPN_phonotactics_2020-10-12.treeModel))        76504      99010    1.29     0.3301      0.33        
+scale(birthDeath.meanGrowthRate)                  0.553   7500       3062     0.41     0.236       0.24        
+precisionGibbsOperator                                    2589       1091     0.42     1.0         1.0         
+precisionGibbsOperator                                    2537       1037     0.41     1.0         1.0         
+precisionGibbsOperator                                    2556       1004     0.39     1.0         1.0         
+precisionGibbsOperator                                    2625       1042     0.4      1.0         1.0         
+precisionGibbsOperator                                    2610       1301     0.5      1.0         1.0         
+precisionGibbsOperator                                    2508       987      0.39     1.0         1.0         
+precisionGibbsOperator                                    2580       1077     0.42     1.0         1.0         
+precisionGibbsOperator                                    2643       1055     0.4      1.0         1.0         
+precisionGibbsOperator                                    2618       1106     0.42     1.0         1.0         
+precisionGibbsOperator                                    2652       1086     0.41     1.0         1.0         
+precisionGibbsOperator                                    2535       1004     0.4      1.0         1.0         
+precisionGibbsOperator                                    2553       1234     0.48     1.0         1.0         
+precisionGibbsOperator                                    2509       1035     0.41     1.0         1.0         
+precisionGibbsOperator                                    2468       1107     0.45     1.0         1.0         
+precisionGibbsOperator                                    2518       988      0.39     1.0         1.0         
+precisionGibbsOperator                                    2502       1051     0.42     1.0         1.0         
+precisionGibbsOperator                                    2478       976      0.39     1.0         1.0         
+precisionGibbsOperator                                    2541       948      0.37     1.0         1.0         
+precisionGibbsOperator                                    2555       1019     0.4      1.0         1.0         
+precisionGibbsOperator                                    2593       1025     0.4      1.0         1.0         
+precisionGibbsOperator                                    2629       1009     0.38     1.0         1.0         
+precisionGibbsOperator                                    2534       1058     0.42     1.0         1.0         
+precisionGibbsOperator                                    2524       1010     0.4      1.0         1.0         
+precisionGibbsOperator                                    2513       1103     0.44     1.0         1.0         
+precisionGibbsOperator                                    2509       962      0.38     1.0         1.0         
+precisionGibbsOperator                                    2507       913      0.36     1.0         1.0         
+precisionGibbsOperator                                    2603       1088     0.42     1.0         1.0         
+precisionGibbsOperator                                    2598       1019     0.39     1.0         1.0         
+precisionGibbsOperator                                    2519       1065     0.42     1.0         1.0         
+precisionGibbsOperator                                    2641       1096     0.41     1.0         1.0         
+precisionGibbsOperator                                    2619       993      0.38     1.0         1.0         
+precisionGibbsOperator                                    2413       969      0.4      1.0         1.0         
+precisionGibbsOperator                                    2551       1010     0.4      1.0         1.0         
+precisionGibbsOperator                                    2508       1011     0.4      1.0         1.0         
+precisionGibbsOperator                                    2558       1007     0.39     1.0         1.0         
+precisionGibbsOperator                                    2530       1034     0.41     1.0         1.0         
+precisionGibbsOperator                                    2462       953      0.39     1.0         1.0         
+precisionGibbsOperator                                    2568       1055     0.41     1.0         1.0         
+precisionGibbsOperator                                    2572       1051     0.41     1.0         1.0         
+precisionGibbsOperator                                    2598       974      0.37     1.0         1.0         
+precisionGibbsOperator                                    2569       1027     0.4      1.0         1.0         
+precisionGibbsOperator                                    2530       1010     0.4      1.0         1.0         
+precisionGibbsOperator                                    2643       1029     0.39     1.0         1.0         
+precisionGibbsOperator                                    2568       962      0.37     1.0         1.0         
+precisionGibbsOperator                                    2536       1044     0.41     1.0         1.0         
+precisionGibbsOperator                                    2507       979      0.39     1.0         1.0         
+precisionGibbsOperator                                    2542       1044     0.41     1.0         1.0         
+precisionGibbsOperator                                    2560       1014     0.4      1.0         1.0         
+precisionGibbsOperator                                    2526       1053     0.42     1.0         1.0         
+precisionGibbsOperator                                    2541       969      0.38     1.0         1.0         
+precisionGibbsOperator                                    2623       973      0.37     1.0         1.0         
+precisionGibbsOperator                                    2533       1023     0.4      1.0         1.0         
+precisionGibbsOperator                                    2604       1053     0.4      1.0         1.0         
+precisionGibbsOperator                                    2530       1090     0.43     1.0         1.0         
+precisionGibbsOperator                                    2482       1123     0.45     1.0         1.0         
+precisionGibbsOperator                                    2522       1004     0.4      1.0         1.0         
+precisionGibbsOperator                                    2602       1016     0.39     1.0         1.0         
+precisionGibbsOperator                                    2549       1095     0.43     1.0         1.0         
+precisionGibbsOperator                                    2517       950      0.38     1.0         1.0         
+precisionGibbsOperator                                    2528       967      0.38     1.0         1.0         
+precisionGibbsOperator                                    2552       1034     0.41     1.0         1.0         
+precisionGibbsOperator                                    2596       1131     0.44     1.0         1.0         
+precisionGibbsOperator                                    2590       1209     0.47     1.0         1.0         
+precisionGibbsOperator                                    2530       976      0.39     1.0         1.0         
+precisionGibbsOperator                                    2562       1009     0.39     1.0         1.0         
+precisionGibbsOperator                                    2581       982      0.38     1.0         1.0         
+precisionGibbsOperator                                    2501       1062     0.42     1.0         1.0         
+precisionGibbsOperator                                    2566       983      0.38     1.0         1.0         
+precisionGibbsOperator                                    2539       999      0.39     1.0         1.0         
+precisionGibbsOperator                                    2577       1000     0.39     1.0         1.0         
+precisionGibbsOperator                                    2496       957      0.38     1.0         1.0         
+precisionGibbsOperator                                    2498       999      0.4      1.0         1.0         
+precisionGibbsOperator                                    2607       1047     0.4      1.0         1.0         
+precisionGibbsOperator                                    2507       1009     0.4      1.0         1.0         
+precisionGibbsOperator                                    2522       1007     0.4      1.0         1.0         
+precisionGibbsOperator                                    2498       1029     0.41     1.0         1.0         
+precisionGibbsOperator                                    2515       976      0.39     1.0         1.0         
+precisionGibbsOperator                                    2447       969      0.4      1.0         1.0         
+precisionGibbsOperator                                    2530       938      0.37     1.0         1.0         
+precisionGibbsOperator                                    2529       979      0.39     1.0         1.0         
+precisionGibbsOperator                                    2508       1038     0.41     1.0         1.0         
+precisionGibbsOperator                                    2450       954      0.39     1.0         1.0         
+precisionGibbsOperator                                    2451       1001     0.41     1.0         1.0         
+precisionGibbsOperator                                    2527       1021     0.4      1.0         1.0         
+precisionGibbsOperator                                    2585       1042     0.4      1.0         1.0         
+precisionGibbsOperator                                    2514       974      0.39     1.0         1.0         
+precisionGibbsOperator                                    2491       1073     0.43     1.0         1.0         
+precisionGibbsOperator                                    2522       1088     0.43     1.0         1.0         
+precisionGibbsOperator                                    2467       1091     0.44     1.0         1.0         
+precisionGibbsOperator                                    2518       995      0.4      1.0         1.0         
+precisionGibbsOperator                                    2667       1067     0.4      1.0         1.0         
+precisionGibbsOperator                                    2609       1096     0.42     1.0         1.0         
+precisionGibbsOperator                                    2492       966      0.39     1.0         1.0         
+precisionGibbsOperator                                    2504       986      0.39     1.0         1.0         
+precisionGibbsOperator                                    2518       1076     0.43     1.0         1.0         
+precisionGibbsOperator                                    2463       1145     0.46     1.0         1.0         
+precisionGibbsOperator                                    2567       1086     0.42     1.0         1.0         
+precisionGibbsOperator                                    2480       1045     0.42     1.0         1.0         
+precisionGibbsOperator                                    2520       1024     0.41     1.0         1.0         
+precisionGibbsOperator                                    2567       1091     0.43     1.0         1.0         
+precisionGibbsOperator                                    2588       1158     0.45     1.0         1.0         
+precisionGibbsOperator                                    2594       1184     0.46     1.0         1.0         
+precisionGibbsOperator                                    2505       1139     0.45     1.0         1.0         
+precisionGibbsOperator                                    2514       985      0.39     1.0         1.0         
+precisionGibbsOperator                                    2572       1072     0.42     1.0         1.0         
+precisionGibbsOperator                                    2588       1124     0.43     1.0         1.0         
+precisionGibbsOperator                                    2494       1020     0.41     1.0         1.0         
+precisionGibbsOperator                                    2459       1034     0.42     1.0         1.0         
+precisionGibbsOperator                                    2504       1036     0.41     1.0         1.0         
+precisionGibbsOperator                                    2605       1071     0.41     1.0         1.0         
+precisionGibbsOperator                                    2510       1184     0.47     1.0         1.0         
+precisionGibbsOperator                                    2603       1083     0.42     1.0         1.0         
+precisionGibbsOperator                                    2549       1102     0.43     1.0         1.0         
+precisionGibbsOperator                                    2601       1263     0.49     1.0         1.0         
+precisionGibbsOperator                                    2557       1160     0.45     1.0         1.0         
+precisionGibbsOperator                                    2569       970      0.38     1.0         1.0         
+precisionGibbsOperator                                    2554       1010     0.4      1.0         1.0         
+precisionGibbsOperator                                    2532       1153     0.46     1.0         1.0         
+precisionGibbsOperator                                    2562       1091     0.43     1.0         1.0         
+precisionGibbsOperator                                    2543       1088     0.43     1.0         1.0         
+precisionGibbsOperator                                    2565       1149     0.45     1.0         1.0         
+precisionGibbsOperator                                    2481       1079     0.43     1.0         1.0         
+
