@@ -86,7 +86,6 @@
 		<taxon idref="Ngarluma"/>
 		<taxon idref="Nyamal"/>
 		<taxon idref="Panyjima"/>
-		<taxon idref="Wangkatja"/>
 		<taxon idref="Yindjibarndi"/>
 		<taxon idref="Yinhawangka"/>
 	</taxa>
@@ -117,6 +116,7 @@
 		<taxon idref="PintupiLuritja"/>
 		<taxon idref="Warnman"/>
 		<taxon idref="Yulparija"/>
+		<taxon idref="Wangkatja"/>
 	</taxa>	
 
 	<!-- The sequence alignment (each sequence refers to a taxon above).         -->

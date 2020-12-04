@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.22)  19 NOV 2020 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.3)  4 DEC 2020 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **_main.tex
 (./_main.tex
-LaTeX2e <2020-10-01> patch level 1
-L3 programming layer <2020-10-05> xparse <2020-03-03> (/Users/jaydencordes/Libr
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03> (/Users/jaydencordes/Libr
 ary/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
@@ -714,7 +714,7 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 ef
 File: blx-compat.def 2020/08/23 v3.15a biblatex compatibility (PK/MW)
 ) (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-10-05 L3 programming layer (loader) 
+Package: expl3 2020-10-27 L3 programming layer (loader) 
 
 (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-p
 dftex.def
@@ -723,7 +723,7 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box68
 ))
 Package biblatex Info: expl3
-(biblatex)             2020-10-05 L3 programming layer (loader) 
+(biblatex)             2020-10-27 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 Package biblatex Info: Trying to load expl3 case changing code...
@@ -733,7 +733,7 @@ Package biblatex Info: ... file 'blx-case-expl3.def' found.
 l3.def
 (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpa
 rse.sty
-Package: xparse 2020-10-05 L3 Experimental document command parser
+Package: xparse 2020-10-27 L3 Experimental document command parser
 
 (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpa
 rse-generic.tex))
@@ -921,7 +921,43 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '_main.bbl' found.
-(./_main.bbl)
+(./_main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                baker_word_2014
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                dixon_languages_1980
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                hamilton_phonetic_1996
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                round_phonotactics_2021
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                round_segment_2021
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 95.
 Package biblatex Info: Reference segment=0 on input line 95.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
@@ -970,42 +1006,109 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/Users/jaydencordes/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.m
 ap}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
+(Font)              <10> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 130.
+(Font)              <7> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 130.
-[2] [3]
+(Font)              <5> on input line 132.
+[2] [3] [4] [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-56.
+91.
 (/Users/jaydencordes/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4pdfTeX warning (ext4): destination with the same identifier (name{table.1})
- has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.186 \begin{landscape}
-                       \begin{table}]
-Overfull \hbox (22.39328pt too wide) in paragraph at lines 191--216
+) [6] [7]
+Overfull \hbox (20.74861pt too wide) in paragraph at lines 218--243
  [][] 
  []
 
-[5pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
+[8pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.217 \end{landscape}
-                     ] [6
+l.244 \end{landscape}
+                     ] [9
 
 
-] [7pdfTeX warning (ext4): destination with the same identifier (name{table.3})
- has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.257 
-      ] [8] [9] [10] (./_main.aux)
+]
+<fig/cogs_vs_bba2018.pdf, id=291, 578.16pt x 722.7pt>
+File: fig/cogs_vs_bba2018.pdf Graphic file (type pdf)
+<use fig/cogs_vs_bba2018.pdf>
+Package pdftex.def Info: fig/cogs_vs_bba2018.pdf  used on input line 264.
+(pdftex.def)             Requested size: 469.75385pt x 587.1923pt.
+[10]
+Overfull \hbox (119.20778pt too wide) in paragraph at lines 272--273
+\T1/lmr/m/n/10 (-20) ([][][][][]).
+ []
+
+[11 <./fig/cogs_vs_bba2018.pdf>] [12]
+<fig/joint_trace_ch1-10.pdf, id=336, 1475.5125pt x 947.54pt>
+File: fig/joint_trace_ch1-10.pdf Graphic file (type pdf)
+<use fig/joint_trace_ch1-10.pdf>
+Package pdftex.def Info: fig/joint_trace_ch1-10.pdf  used on input line 285.
+(pdftex.def)             Requested size: 469.74208pt x 301.6575pt.
+<fig/joint_trace_dens_1-2_5-10.pdf, id=337, 1475.5125pt x 909.3975pt>
+File: fig/joint_trace_dens_1-2_5-10.pdf Graphic file (type pdf)
+<use fig/joint_trace_dens_1-2_5-10.pdf>
+Package pdftex.def Info: fig/joint_trace_dens_1-2_5-10.pdf  used on input line 
+286.
+(pdftex.def)             Requested size: 469.74208pt x 289.51451pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
+[][]
+ []
+
+[13 <./fig/joint_trace_ch1-10.pdf>]
+
+LaTeX Warning: Reference `cogs-vs-linked-all' on page 14 undefined on input lin
+e 297.
+
+<fig/cogs_vs_linked_all.pdf, id=349, 578.16pt x 722.7pt>
+File: fig/cogs_vs_linked_all.pdf Graphic file (type pdf)
+<use fig/cogs_vs_linked_all.pdf>
+Package pdftex.def Info: fig/cogs_vs_linked_all.pdf  used on input line 299.
+(pdftex.def)             Requested size: 469.75385pt x 587.1923pt.
+[14 <./fig/joint_trace_dens_1-2_5-10.pdf>] [15 <./fig/cogs_vs_linked_all.pdf>] 
+[16]
+<fig/cb2015_vs_bba2018.pdf, id=394, 445.665pt x 722.7pt>
+File: fig/cb2015_vs_bba2018.pdf Graphic file (type pdf)
+<use fig/cb2015_vs_bba2018.pdf>
+Package pdftex.def Info: fig/cb2015_vs_bba2018.pdf  used on input line 341.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[17 <./fig/cb2015_vs_bba2018.pdf>]
+<fig/cogs_vs_cb2015.pdf, id=420, 445.665pt x 722.7pt>
+File: fig/cogs_vs_cb2015.pdf Graphic file (type pdf)
+<use fig/cogs_vs_cb2015.pdf>
+Package pdftex.def Info: fig/cogs_vs_cb2015.pdf  used on input line 343.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[18 <./fig/cogs_vs_cb2015.pdf>]
+<fig/bba2018_vs_linked_all.pdf, id=445, 445.665pt x 722.7pt>
+File: fig/bba2018_vs_linked_all.pdf Graphic file (type pdf)
+<use fig/bba2018_vs_linked_all.pdf>
+Package pdftex.def Info: fig/bba2018_vs_linked_all.pdf  used on input line 345.
+
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[19 <./fig/bba2018_vs_linked_all.pdf>]
+<fig/cogs_vs_linked.pdf, id=471, 445.665pt x 722.7pt>
+File: fig/cogs_vs_linked.pdf Graphic file (type pdf)
+<use fig/cogs_vs_linked.pdf>
+Package pdftex.def Info: fig/cogs_vs_linked.pdf  used on input line 347.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[20 <./fig/cogs_vs_linked.pdf>]
+<fig/linked_all_vs_linked.pdf, id=496, 445.665pt x 722.7pt>
+File: fig/linked_all_vs_linked.pdf Graphic file (type pdf)
+<use fig/linked_all_vs_linked.pdf>
+Package pdftex.def Info: fig/linked_all_vs_linked.pdf  used on input line 349.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[21 <./fig/linked_all_vs_linked.pdf>]
+<fig/separate_cogs_vs_phonotactics_alldata.pdf, id=521, 445.665pt x 722.7pt>
+File: fig/separate_cogs_vs_phonotactics_alldata.pdf Graphic file (type pdf)
+<use fig/separate_cogs_vs_phonotactics_alldata.pdf>
+Package pdftex.def Info: fig/separate_cogs_vs_phonotactics_alldata.pdf  used on
+ input line 351.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+[22 <./fig/separate_cogs_vs_phonotactics_alldata.pdf>] [23] [24] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 5986ACC5326FAE3967B7B93BFED53B21;1224.
+(rerunfilecheck)             Checksum: 2254DFF1DFF3FE831E82862F1CA000C3;3312.
 
 LaTeX Warning: There were undefined references.
 
@@ -1018,31 +1121,34 @@ Package logreq Info: Writing requests to '_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21124 strings out of 481861
- 354242 string characters out of 5929578
- 1113593 words of memory out of 5000000
- 36904 multiletter control sequences out of 15000+600000
- 600285 words of font info for 139 fonts, out of 8000000 for 9000
+ 21243 strings out of 481441
+ 357006 string characters out of 5919285
+ 1117208 words of memory out of 5000000
+ 37396 multiletter control sequences out of 15000+600000
+ 600451 words of font info for 141 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,9n,67p,3176b,1884s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
-{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{
-/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/U
-sers/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<
-/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
-></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.p
-fb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10
-.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr1
-0.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr
-17.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-r6.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-r7.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-r8.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-ri10.pfb>
-Output written on _main.pdf (10 pages, 251110 bytes).
+ 66i,9n,73p,3176b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.
+enc}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
+t.enc}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.
+enc}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
+c}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+}</Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.p
+fb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12
+.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi
+10.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
+mi7.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
+mr10.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/
+lmr17.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
+/lmr6.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
+/lmr7.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
+/lmr8.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
+/lmri10.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/
+lm/lmsy10.pfb>
+Output written on _main.pdf (24 pages, 1362076 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 14401 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 659 PDF objects out of 1000 (max. 8388607)
+ 556 compressed objects within 6 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 14539 words of extra memory for PDF output out of 17280 (max. 10000000)
 

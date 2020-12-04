@@ -35726,7 +35726,6 @@
 		<taxon idref="Ngarluma"/>
 		<taxon idref="Nyamal"/>
 		<taxon idref="Panyjima"/>
-		<taxon idref="Wangkatja"/>
 		<taxon idref="Yindjibarndi"/>
 		<taxon idref="Yinhawangka"/>
 	</taxa>
@@ -35757,6 +35756,7 @@
 		<taxon idref="PintupiLuritja"/>
 		<taxon idref="Warnman"/>
 		<taxon idref="Yulparija"/>
+		<taxon idref="Wangkatja"/>
 	</taxa>	
 
 	<!-- The sequence alignment (each sequence refers to a taxon above).         -->
@@ -42717,7 +42717,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Define MCMC                                                             -->
-	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="WPN_linked_2020-11-03_ch1.ops">
+	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="WPN_linked_2020-11-18_ch1.ops">
 		<joint id="joint">
 			<prior id="prior">
 				<booleanLikelihood>
@@ -43062,7 +43062,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</log>
 
 		<!-- write log to file                                                       -->
-		<log id="fileLog" logEvery="10000" fileName="WPN_linked_2020-11-03_ch1.log" overwrite="false">
+		<log id="fileLog" logEvery="10000" fileName="WPN_linked_2020-11-18_ch1.log" overwrite="false">
 			<joint idref="joint"/>
 			<prior idref="prior"/>
 			<likelihood idref="likelihood"/>
@@ -43101,7 +43101,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</log>
 
 		<!-- write tree log to file                                                  -->
-		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="WPN_linked_2020-11-03_ch1.trees" sortTranslationTable="true">
+		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="WPN_linked_2020-11-18_ch1.trees" sortTranslationTable="true">
 			<treeModel idref="treeModel"/>
 			<trait name="rate" tag="WPN_cognates_2020-10-12.rate">
 				<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
@@ -43127,19 +43127,19 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 				<prior idref="prior"/>
 			</destination>
 		</pathLikelihood>
-		<log id="MLELog" logEvery="10000" fileName="WPN_linked_2020-11-03_ch1.mle.log">
+		<log id="MLELog" logEvery="10000" fileName="WPN_linked_2020-11-18_ch1.mle.log">
 			<pathLikelihood idref="pathLikelihood"/>
 		</log>
 	</marginalLikelihoodEstimator>
 
 	<!-- Path sampling estimator from collected samples                          -->
-	<pathSamplingAnalysis fileName="WPN_linked_2020-11-03_ch1.mle.log" resultsFileName="WPN_linked_2020-11-03_ch1.mle.result.log">
+	<pathSamplingAnalysis fileName="WPN_linked_2020-11-18_ch1.mle.log" resultsFileName="WPN_linked_2020-11-18_ch1.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</pathSamplingAnalysis>
 
 	<!-- Stepping-stone sampling estimator from collected samples                -->
-	<steppingStoneSamplingAnalysis fileName="WPN_linked_2020-11-03_ch1.mle.log" resultsFileName="WPN_linked_2020-11-03_ch1.mle.result.log">
+	<steppingStoneSamplingAnalysis fileName="WPN_linked_2020-11-18_ch1.mle.log" resultsFileName="WPN_linked_2020-11-18_ch1.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</steppingStoneSamplingAnalysis>

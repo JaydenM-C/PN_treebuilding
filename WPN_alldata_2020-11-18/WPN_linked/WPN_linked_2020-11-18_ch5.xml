@@ -35698,7 +35698,7 @@
 		</taxon>
 	</taxa>
 	
-	
+
 	<taxa id="KanyaraMantharta">
 		<taxon idref="Jiwarli"/>
 		<taxon idref="Payungu"/>
@@ -35757,8 +35757,7 @@
 		<taxon idref="Warnman"/>
 		<taxon idref="Yulparija"/>
 		<taxon idref="Wangkatja"/>
-	</taxa>
-	
+	</taxa>	
 
 	<!-- The sequence alignment (each sequence refers to a taxon above).         -->
 	<!-- ntax=44 nchar=1097                                                      -->
@@ -36127,7 +36126,7 @@
 	
 
 	<!-- The unique patterns from 1 to end                                       -->
-	<!-- npatterns=2522                                                          -->
+	<!-- npatterns=1058                                                          -->
 	<patterns id="WPN_cognates_2020-10-12.patterns" from="1" strip="false">
 		<alignment idref="alignment1"/>
 	</patterns>
@@ -36135,7 +36134,7 @@
 	
 
 	<!-- The unique patterns from 1 to end                                       -->
-	<!-- npatterns=728                                                           -->
+	<!-- npatterns=276                                                           -->
 	<patterns id="biphone_binary_2020-10-12.patterns" from="1" strip="false">
 		<alignment idref="alignment2"/>
 	</patterns>
@@ -36167,7 +36166,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Generate a random starting tree under the coalescent process            -->
-	<coalescentSimulator id="WPN_cognates_2020-10-12.startingTree">
+	<coalescentSimulator id="startingTree">
 		<coalescentSimulator>
 			<taxa idref="KanyaraMantharta"/>
 			<constantSize idref="initialDemo"/>
@@ -36204,307 +36203,139 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		<constantSize idref="initialDemo"/>
 	</coalescentSimulator>	
 
-	<!-- Generate a random starting tree under the coalescent process            -->
-	<coalescentSimulator id="WPN_phonotactics_2020-11-13.startingTree">
-		<coalescentSimulator>
-			<taxa idref="KanyaraMantharta"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="Kartu"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="Marrngu"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="Ngayarta"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="NgumpinYapa"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="SouthWest"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator>
-			<taxa idref="ThuraYura"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<coalescentSimulator height="3500">
-			<taxa idref="Wati"/>
-			<constantSize idref="initialDemo"/>
-		</coalescentSimulator>
-		<taxa idref="taxa"/>
-		<constantSize idref="initialDemo"/>
-	</coalescentSimulator>
-
 	<!-- Generate a tree model                                                   -->
-	<treeModel id="WPN_cognates_2020-10-12.treeModel">
-		<coalescentTree idref="WPN_cognates_2020-10-12.startingTree"/>
+	<treeModel id="treeModel">
+		<coalescentTree idref="startingTree"/>
 		<rootHeight>
-			<parameter id="WPN_cognates_2020-10-12.treeModel.rootHeight"/>
+			<parameter id="treeModel.rootHeight"/>
 		</rootHeight>
 		<nodeHeights internalNodes="true">
-			<parameter id="WPN_cognates_2020-10-12.treeModel.internalNodeHeights"/>
+			<parameter id="treeModel.internalNodeHeights"/>
 		</nodeHeights>
 		<nodeHeights internalNodes="true" rootNode="true">
-			<parameter id="WPN_cognates_2020-10-12.treeModel.allInternalNodeHeights"/>
+			<parameter id="treeModel.allInternalNodeHeights"/>
 		</nodeHeights>
 	</treeModel>
 
 	<!-- Statistic for sum of the branch lengths of the tree (tree length)       -->
-	<treeLengthStatistic id="WPN_cognates_2020-10-12.treeLength">
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
-	</treeLengthStatistic>
-	
-
-	<!-- Generate a tree model                                                   -->
-	<treeModel id="WPN_phonotactics_2020-11-13.treeModel">
-		<coalescentTree idref="WPN_phonotactics_2020-11-13.startingTree"/>
-		<rootHeight>
-			<parameter id="WPN_phonotactics_2020-11-13.treeModel.rootHeight"/>
-		</rootHeight>
-		<nodeHeights internalNodes="true">
-			<parameter id="WPN_phonotactics_2020-11-13.treeModel.internalNodeHeights"/>
-		</nodeHeights>
-		<nodeHeights internalNodes="true" rootNode="true">
-			<parameter id="WPN_phonotactics_2020-11-13.treeModel.allInternalNodeHeights"/>
-		</nodeHeights>
-	</treeModel>
-
-	<!-- Statistic for sum of the branch lengths of the tree (tree length)       -->
-	<treeLengthStatistic id="WPN_phonotactics_2020-11-13.treeLength">
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+	<treeLengthStatistic id="treeLength">
+		<treeModel idref="treeModel"/>
 	</treeLengthStatistic>
 	
 
 	<!-- Taxon Sets                                                              -->
 	
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.KanyaraMantharta)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(KanyaraMantharta)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="KanyaraMantharta"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.KanyaraMantharta)">
+	<monophylyStatistic id="monophyly(KanyaraMantharta)">
 		<mrca>
 			<taxa idref="KanyaraMantharta"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.Kartu)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(Kartu)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Kartu"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.Kartu)">
+	<monophylyStatistic id="monophyly(Kartu)">
 		<mrca>
 			<taxa idref="Kartu"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.Marrngu)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(Marrngu)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Marrngu"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.Marrngu)">
+	<monophylyStatistic id="monophyly(Marrngu)">
 		<mrca>
 			<taxa idref="Marrngu"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.Ngayarta)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(Ngayarta)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Ngayarta"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.Ngayarta)">
+	<monophylyStatistic id="monophyly(Ngayarta)">
 		<mrca>
 			<taxa idref="Ngayarta"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.NgumpinYapa)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(NgumpinYapa)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="NgumpinYapa"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.NgumpinYapa)">
+	<monophylyStatistic id="monophyly(NgumpinYapa)">
 		<mrca>
 			<taxa idref="NgumpinYapa"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.SouthWest)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(SouthWest)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="SouthWest"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.SouthWest)">
+	<monophylyStatistic id="monophyly(SouthWest)">
 		<mrca>
 			<taxa idref="SouthWest"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.ThuraYura)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(ThuraYura)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="ThuraYura"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.ThuraYura)">
+	<monophylyStatistic id="monophyly(ThuraYura)">
 		<mrca>
 			<taxa idref="ThuraYura"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_cognates_2020-10-12.Wati)" absolute="false" includeStem="false">
+	<tmrcaStatistic id="tmrca(Wati)" absolute="false" includeStem="false">
 		<mrca>
 			<taxa idref="Wati"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_cognates_2020-10-12.Wati)">
+	<monophylyStatistic id="monophyly(Wati)">
 		<mrca>
 			<taxa idref="Wati"/>
 		</mrca>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
-	</monophylyStatistic>
-	
-	<!-- Taxon Sets                                                              -->
-	
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.KanyaraMantharta)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="KanyaraMantharta"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.KanyaraMantharta)">
-		<mrca>
-			<taxa idref="KanyaraMantharta"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.Kartu)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="Kartu"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.Kartu)">
-		<mrca>
-			<taxa idref="Kartu"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.Marrngu)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="Marrngu"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.Marrngu)">
-		<mrca>
-			<taxa idref="Marrngu"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.Ngayarta)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="Ngayarta"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.Ngayarta)">
-		<mrca>
-			<taxa idref="Ngayarta"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.NgumpinYapa)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="NgumpinYapa"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.NgumpinYapa)">
-		<mrca>
-			<taxa idref="NgumpinYapa"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.SouthWest)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="SouthWest"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.SouthWest)">
-		<mrca>
-			<taxa idref="SouthWest"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.ThuraYura)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="ThuraYura"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.ThuraYura)">
-		<mrca>
-			<taxa idref="ThuraYura"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</monophylyStatistic>
-	<tmrcaStatistic id="tmrca(WPN_phonotactics_2020-11-13.Wati)" absolute="false" includeStem="false">
-		<mrca>
-			<taxa idref="Wati"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-	</tmrcaStatistic>
-	<monophylyStatistic id="monophyly(WPN_phonotactics_2020-11-13.Wati)">
-		<mrca>
-			<taxa idref="Wati"/>
-		</mrca>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 	</monophylyStatistic>
 
 	<!-- Generate a speciation likelihood for Yule or Birth Death                -->
-	<speciationLikelihood id="WPN_cognates_2020-10-12.speciation">
+	<speciationLikelihood id="speciation">
 		<model>
 			<birthDeathModel idref="birthDeath"/>
 		</model>
 		<speciesTree>
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
-		</speciesTree>
-	</speciationLikelihood>
-	
-
-	<!-- Generate a speciation likelihood for Yule or Birth Death                -->
-	<speciationLikelihood id="WPN_phonotactics_2020-11-13.speciation">
-		<model>
-			<birthDeathModel idref="birthDeath"/>
-		</model>
-		<speciesTree>
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+			<treeModel idref="treeModel"/>
 		</speciesTree>
 	</speciationLikelihood>
 	
 
 	<!-- The uncorrelated relaxed clock (Drummond, Ho, Phillips & Rambaut (2006) PLoS Biology 4, e88 )-->
 	<discretizedBranchRates id="WPN_cognates_2020-10-12.branchRates">
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<distribution>
 			<logNormalDistributionModel meanInRealSpace="true">
 				<mean>
@@ -36521,24 +36352,24 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	</discretizedBranchRates>
 	
 	<rateStatistic id="WPN_cognates_2020-10-12.meanRate" name="WPN_cognates_2020-10-12.meanRate" mode="mean" internal="true" external="true">
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
 	</rateStatistic>
 	
 	<rateStatistic id="WPN_cognates_2020-10-12.coefficientOfVariation" name="WPN_cognates_2020-10-12.coefficientOfVariation" mode="coefficientOfVariation" internal="true" external="true">
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
 	</rateStatistic>
 	
 	<rateCovarianceStatistic id="WPN_cognates_2020-10-12.covariance" name="WPN_cognates_2020-10-12.covariance">
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
 	</rateCovarianceStatistic>
 	
 
 	<!-- The uncorrelated relaxed clock (Drummond, Ho, Phillips & Rambaut (2006) PLoS Biology 4, e88 )-->
 	<discretizedBranchRates id="biphone_binary_2020-10-12.branchRates">
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<distribution>
 			<logNormalDistributionModel meanInRealSpace="true">
 				<mean>
@@ -36555,17 +36386,17 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	</discretizedBranchRates>
 	
 	<rateStatistic id="biphone_binary_2020-10-12.meanRate" name="biphone_binary_2020-10-12.meanRate" mode="mean" internal="true" external="true">
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-12.branchRates"/>
 	</rateStatistic>
 	
 	<rateStatistic id="biphone_binary_2020-10-12.coefficientOfVariation" name="biphone_binary_2020-10-12.coefficientOfVariation" mode="coefficientOfVariation" internal="true" external="true">
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-12.branchRates"/>
 	</rateStatistic>
 	
 	<rateCovarianceStatistic id="biphone_binary_2020-10-12.covariance" name="biphone_binary_2020-10-12.covariance">
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-12.branchRates"/>
 	</rateCovarianceStatistic>
 	
@@ -36627,11 +36458,10 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<!--                                                                         -->
 	<statistic id="mu.2" name="mu">
-		<siteModel idref="siteModel"/>
+		<siteModel idref="siteModel.2"/>
 	</statistic>
-
-
-
+	
+	
 
 	<!-- START Multivariate diffusion model                                      -->
 
@@ -39187,7 +39017,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	<!-- Likelihood for tree given sequence data                                 -->
 	<treeLikelihood id="WPN_cognates_2020-10-12.treeLikelihood" useAmbiguities="true">
 		<patterns idref="WPN_cognates_2020-10-12.patterns"/>
-		<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<siteModel idref="siteModel"/>
 		<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
 	</treeLikelihood>
@@ -39196,7 +39026,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	<!-- Likelihood for tree given sequence data                                 -->
 	<treeLikelihood id="biphone_binary_2020-10-12.treeLikelihood" useAmbiguities="true">
 		<patterns idref="biphone_binary_2020-10-12.patterns"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<siteModel idref="siteModel.2"/>
 		<discretizedBranchRates idref="biphone_binary_2020-10-12.branchRates"/>
 	</treeLikelihood>
@@ -39206,7 +39036,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Alv_pl_fwd.traitLikelihood" traitName="Alv_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Alv_pl_fwd"/>
 		</traitParameter>
@@ -39229,7 +39059,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Dent_pl_fwd.traitLikelihood" traitName="Alv_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Dent_pl_fwd"/>
 		</traitParameter>
@@ -39252,7 +39082,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Edge_pl_fwd.traitLikelihood" traitName="Alv_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Edge_pl_fwd"/>
 		</traitParameter>
@@ -39275,7 +39105,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Glide_pl_fwd.traitLikelihood" traitName="Alv_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Glide_pl_fwd"/>
 		</traitParameter>
@@ -39298,7 +39128,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Lab_pl_fwd.traitLikelihood" traitName="Alv_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Lab_pl_fwd"/>
 		</traitParameter>
@@ -39321,7 +39151,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Pal_pl_fwd.traitLikelihood" traitName="Alv_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Pal_pl_fwd"/>
 		</traitParameter>
@@ -39344,7 +39174,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Retr_pl_fwd.traitLikelihood" traitName="Alv_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Retr_pl_fwd"/>
 		</traitParameter>
@@ -39367,7 +39197,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Vel_pl_fwd.traitLikelihood" traitName="Alv_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Vel_pl_fwd"/>
 		</traitParameter>
@@ -39390,7 +39220,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Alv_Vowel_pl_fwd.traitLikelihood" traitName="Alv_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Alv_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Alv_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -39413,7 +39243,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Alv_pl_fwd.traitLikelihood" traitName="Dent_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Alv_pl_fwd"/>
 		</traitParameter>
@@ -39436,7 +39266,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Dent_pl_fwd.traitLikelihood" traitName="Dent_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Dent_pl_fwd"/>
 		</traitParameter>
@@ -39459,7 +39289,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Lab_pl_fwd.traitLikelihood" traitName="Dent_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Lab_pl_fwd"/>
 		</traitParameter>
@@ -39482,7 +39312,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Pal_pl_fwd.traitLikelihood" traitName="Dent_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Pal_pl_fwd"/>
 		</traitParameter>
@@ -39505,7 +39335,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Vel_pl_fwd.traitLikelihood" traitName="Dent_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Vel_pl_fwd"/>
 		</traitParameter>
@@ -39528,7 +39358,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Dent_Vowel_pl_fwd.traitLikelihood" traitName="Dent_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Dent_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Dent_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -39551,7 +39381,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Alv_pl_fwd.traitLikelihood" traitName="Edge_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Alv_pl_fwd"/>
 		</traitParameter>
@@ -39574,7 +39404,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Dent_pl_fwd.traitLikelihood" traitName="Edge_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Dent_pl_fwd"/>
 		</traitParameter>
@@ -39597,7 +39427,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Edge_pl_fwd.traitLikelihood" traitName="Edge_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Edge_pl_fwd"/>
 		</traitParameter>
@@ -39620,7 +39450,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Glide_pl_fwd.traitLikelihood" traitName="Edge_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Glide_pl_fwd"/>
 		</traitParameter>
@@ -39643,7 +39473,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Lab_pl_fwd.traitLikelihood" traitName="Edge_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Lab_pl_fwd"/>
 		</traitParameter>
@@ -39666,7 +39496,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Pal_pl_fwd.traitLikelihood" traitName="Edge_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Pal_pl_fwd"/>
 		</traitParameter>
@@ -39689,7 +39519,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Retr_pl_fwd.traitLikelihood" traitName="Edge_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Retr_pl_fwd"/>
 		</traitParameter>
@@ -39712,7 +39542,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Vel_pl_fwd.traitLikelihood" traitName="Edge_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Vel_pl_fwd"/>
 		</traitParameter>
@@ -39735,7 +39565,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Vowel_pl_fwd.traitLikelihood" traitName="Edge_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -39758,7 +39588,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Alv_pl_fwd.traitLikelihood" traitName="Glide_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Alv_pl_fwd"/>
 		</traitParameter>
@@ -39781,7 +39611,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Dent_pl_fwd.traitLikelihood" traitName="Glide_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Dent_pl_fwd"/>
 		</traitParameter>
@@ -39804,7 +39634,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Edge_pl_fwd.traitLikelihood" traitName="Glide_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Edge_pl_fwd"/>
 		</traitParameter>
@@ -39827,7 +39657,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Glide_pl_fwd.traitLikelihood" traitName="Glide_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Glide_pl_fwd"/>
 		</traitParameter>
@@ -39850,7 +39680,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Lab_pl_fwd.traitLikelihood" traitName="Glide_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Lab_pl_fwd"/>
 		</traitParameter>
@@ -39873,7 +39703,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Pal_pl_fwd.traitLikelihood" traitName="Glide_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Pal_pl_fwd"/>
 		</traitParameter>
@@ -39896,7 +39726,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Retr_pl_fwd.traitLikelihood" traitName="Glide_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Retr_pl_fwd"/>
 		</traitParameter>
@@ -39919,7 +39749,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Vel_pl_fwd.traitLikelihood" traitName="Glide_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Vel_pl_fwd"/>
 		</traitParameter>
@@ -39942,7 +39772,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Vowel_pl_fwd.traitLikelihood" traitName="Glide_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -39965,7 +39795,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Alv_pl_fwd.traitLikelihood" traitName="Lab_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Alv_pl_fwd"/>
 		</traitParameter>
@@ -39988,7 +39818,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Edge_pl_fwd.traitLikelihood" traitName="Lab_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Edge_pl_fwd"/>
 		</traitParameter>
@@ -40011,7 +39841,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Glide_pl_fwd.traitLikelihood" traitName="Lab_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Glide_pl_fwd"/>
 		</traitParameter>
@@ -40034,7 +39864,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Lab_pl_fwd.traitLikelihood" traitName="Lab_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Lab_pl_fwd"/>
 		</traitParameter>
@@ -40057,7 +39887,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Pal_pl_fwd.traitLikelihood" traitName="Lab_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Pal_pl_fwd"/>
 		</traitParameter>
@@ -40080,7 +39910,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Vel_pl_fwd.traitLikelihood" traitName="Lab_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Vel_pl_fwd"/>
 		</traitParameter>
@@ -40103,7 +39933,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lab_Vowel_pl_fwd.traitLikelihood" traitName="Lab_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lab_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lab_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -40126,7 +39956,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Alv_pl_fwd.traitLikelihood" traitName="Pal_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Alv_pl_fwd"/>
 		</traitParameter>
@@ -40149,7 +39979,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Dent_pl_fwd.traitLikelihood" traitName="Pal_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Dent_pl_fwd"/>
 		</traitParameter>
@@ -40172,7 +40002,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Edge_pl_fwd.traitLikelihood" traitName="Pal_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Edge_pl_fwd"/>
 		</traitParameter>
@@ -40195,7 +40025,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Glide_pl_fwd.traitLikelihood" traitName="Pal_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Glide_pl_fwd"/>
 		</traitParameter>
@@ -40218,7 +40048,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Lab_pl_fwd.traitLikelihood" traitName="Pal_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Lab_pl_fwd"/>
 		</traitParameter>
@@ -40241,7 +40071,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Pal_pl_fwd.traitLikelihood" traitName="Pal_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Pal_pl_fwd"/>
 		</traitParameter>
@@ -40264,7 +40094,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Retr_pl_fwd.traitLikelihood" traitName="Pal_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Retr_pl_fwd"/>
 		</traitParameter>
@@ -40287,7 +40117,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Vel_pl_fwd.traitLikelihood" traitName="Pal_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Vel_pl_fwd"/>
 		</traitParameter>
@@ -40310,7 +40140,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Pal_Vowel_pl_fwd.traitLikelihood" traitName="Pal_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Pal_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Pal_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -40333,7 +40163,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Alv_pl_fwd.traitLikelihood" traitName="Retr_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Alv_pl_fwd"/>
 		</traitParameter>
@@ -40356,7 +40186,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Dent_pl_fwd.traitLikelihood" traitName="Retr_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Dent_pl_fwd"/>
 		</traitParameter>
@@ -40379,7 +40209,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Edge_pl_fwd.traitLikelihood" traitName="Retr_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Edge_pl_fwd"/>
 		</traitParameter>
@@ -40402,7 +40232,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Glide_pl_fwd.traitLikelihood" traitName="Retr_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Glide_pl_fwd"/>
 		</traitParameter>
@@ -40425,7 +40255,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Lab_pl_fwd.traitLikelihood" traitName="Retr_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Lab_pl_fwd"/>
 		</traitParameter>
@@ -40448,7 +40278,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Pal_pl_fwd.traitLikelihood" traitName="Retr_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Pal_pl_fwd"/>
 		</traitParameter>
@@ -40471,7 +40301,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Retr_pl_fwd.traitLikelihood" traitName="Retr_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Retr_pl_fwd"/>
 		</traitParameter>
@@ -40494,7 +40324,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Vel_pl_fwd.traitLikelihood" traitName="Retr_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Vel_pl_fwd"/>
 		</traitParameter>
@@ -40517,7 +40347,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Retr_Vowel_pl_fwd.traitLikelihood" traitName="Retr_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Retr_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Retr_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -40540,7 +40370,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Alv_pl_fwd.traitLikelihood" traitName="Vel_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Alv_pl_fwd"/>
 		</traitParameter>
@@ -40563,7 +40393,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Dent_pl_fwd.traitLikelihood" traitName="Vel_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Dent_pl_fwd"/>
 		</traitParameter>
@@ -40586,7 +40416,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Edge_pl_fwd.traitLikelihood" traitName="Vel_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Edge_pl_fwd"/>
 		</traitParameter>
@@ -40609,7 +40439,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Glide_pl_fwd.traitLikelihood" traitName="Vel_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Glide_pl_fwd"/>
 		</traitParameter>
@@ -40632,7 +40462,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Lab_pl_fwd.traitLikelihood" traitName="Vel_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Lab_pl_fwd"/>
 		</traitParameter>
@@ -40655,7 +40485,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Pal_pl_fwd.traitLikelihood" traitName="Vel_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Pal_pl_fwd"/>
 		</traitParameter>
@@ -40678,7 +40508,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Vel_pl_fwd.traitLikelihood" traitName="Vel_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Vel_pl_fwd"/>
 		</traitParameter>
@@ -40701,7 +40531,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vel_Vowel_pl_fwd.traitLikelihood" traitName="Vel_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vel_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vel_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -40724,7 +40554,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Alv_pl_fwd.traitLikelihood" traitName="Vowel_Alv_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Alv_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Alv_pl_fwd"/>
 		</traitParameter>
@@ -40747,7 +40577,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Dent_pl_fwd.traitLikelihood" traitName="Vowel_Dent_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Dent_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Dent_pl_fwd"/>
 		</traitParameter>
@@ -40770,7 +40600,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Edge_pl_fwd.traitLikelihood" traitName="Vowel_Edge_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Edge_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Edge_pl_fwd"/>
 		</traitParameter>
@@ -40793,7 +40623,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Glide_pl_fwd.traitLikelihood" traitName="Vowel_Glide_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Glide_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Glide_pl_fwd"/>
 		</traitParameter>
@@ -40816,7 +40646,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Lab_pl_fwd.traitLikelihood" traitName="Vowel_Lab_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Lab_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Lab_pl_fwd"/>
 		</traitParameter>
@@ -40839,7 +40669,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Pal_pl_fwd.traitLikelihood" traitName="Vowel_Pal_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Pal_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Pal_pl_fwd"/>
 		</traitParameter>
@@ -40862,7 +40692,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Retr_pl_fwd.traitLikelihood" traitName="Vowel_Retr_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Retr_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Retr_pl_fwd"/>
 		</traitParameter>
@@ -40885,7 +40715,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Vel_pl_fwd.traitLikelihood" traitName="Vowel_Vel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Vel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Vel_pl_fwd"/>
 		</traitParameter>
@@ -40908,7 +40738,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Vowel_pl_fwd.traitLikelihood" traitName="Vowel_Vowel_pl_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Vowel_pl_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Vowel_pl_fwd"/>
 		</traitParameter>
@@ -40931,7 +40761,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Edge_man_fwd.traitLikelihood" traitName="Edge_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Edge_man_fwd"/>
 		</traitParameter>
@@ -40954,7 +40784,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Glide_man_fwd.traitLikelihood" traitName="Edge_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Glide_man_fwd"/>
 		</traitParameter>
@@ -40977,7 +40807,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Lat_man_fwd.traitLikelihood" traitName="Edge_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Lat_man_fwd"/>
 		</traitParameter>
@@ -41000,7 +40830,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Nas_man_fwd.traitLikelihood" traitName="Edge_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Nas_man_fwd"/>
 		</traitParameter>
@@ -41023,7 +40853,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Obs_man_fwd.traitLikelihood" traitName="Edge_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Obs_man_fwd"/>
 		</traitParameter>
@@ -41046,7 +40876,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Rhoglide_man_fwd.traitLikelihood" traitName="Edge_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -41069,7 +40899,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Vibr_man_fwd.traitLikelihood" traitName="Edge_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Vibr_man_fwd"/>
 		</traitParameter>
@@ -41092,7 +40922,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Edge_Vowel_man_fwd.traitLikelihood" traitName="Edge_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Edge_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Edge_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41115,7 +40945,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Glide_man_fwd.traitLikelihood" traitName="Glide_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Glide_man_fwd"/>
 		</traitParameter>
@@ -41138,7 +40968,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Lat_man_fwd.traitLikelihood" traitName="Glide_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Lat_man_fwd"/>
 		</traitParameter>
@@ -41161,7 +40991,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Nas_man_fwd.traitLikelihood" traitName="Glide_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Nas_man_fwd"/>
 		</traitParameter>
@@ -41184,7 +41014,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Obs_man_fwd.traitLikelihood" traitName="Glide_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Obs_man_fwd"/>
 		</traitParameter>
@@ -41207,7 +41037,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Glide_Vowel_man_fwd.traitLikelihood" traitName="Glide_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Glide_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Glide_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41230,7 +41060,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Edge_man_fwd.traitLikelihood" traitName="Lat_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Edge_man_fwd"/>
 		</traitParameter>
@@ -41253,7 +41083,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Glide_man_fwd.traitLikelihood" traitName="Lat_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Glide_man_fwd"/>
 		</traitParameter>
@@ -41276,7 +41106,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Lat_man_fwd.traitLikelihood" traitName="Lat_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Lat_man_fwd"/>
 		</traitParameter>
@@ -41299,7 +41129,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Nas_man_fwd.traitLikelihood" traitName="Lat_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Nas_man_fwd"/>
 		</traitParameter>
@@ -41322,7 +41152,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Obs_man_fwd.traitLikelihood" traitName="Lat_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Obs_man_fwd"/>
 		</traitParameter>
@@ -41345,7 +41175,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Rhoglide_man_fwd.traitLikelihood" traitName="Lat_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -41368,7 +41198,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Vibr_man_fwd.traitLikelihood" traitName="Lat_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Vibr_man_fwd"/>
 		</traitParameter>
@@ -41391,7 +41221,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Lat_Vowel_man_fwd.traitLikelihood" traitName="Lat_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Lat_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Lat_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41414,7 +41244,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Edge_man_fwd.traitLikelihood" traitName="Nas_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Edge_man_fwd"/>
 		</traitParameter>
@@ -41437,7 +41267,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Glide_man_fwd.traitLikelihood" traitName="Nas_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Glide_man_fwd"/>
 		</traitParameter>
@@ -41460,7 +41290,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Lat_man_fwd.traitLikelihood" traitName="Nas_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Lat_man_fwd"/>
 		</traitParameter>
@@ -41483,7 +41313,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Nas_man_fwd.traitLikelihood" traitName="Nas_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Nas_man_fwd"/>
 		</traitParameter>
@@ -41506,7 +41336,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Obs_man_fwd.traitLikelihood" traitName="Nas_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Obs_man_fwd"/>
 		</traitParameter>
@@ -41529,7 +41359,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Rhoglide_man_fwd.traitLikelihood" traitName="Nas_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -41552,7 +41382,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Vibr_man_fwd.traitLikelihood" traitName="Nas_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Vibr_man_fwd"/>
 		</traitParameter>
@@ -41575,7 +41405,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Nas_Vowel_man_fwd.traitLikelihood" traitName="Nas_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Nas_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Nas_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41598,7 +41428,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Edge_man_fwd.traitLikelihood" traitName="Obs_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Edge_man_fwd"/>
 		</traitParameter>
@@ -41621,7 +41451,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Glide_man_fwd.traitLikelihood" traitName="Obs_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Glide_man_fwd"/>
 		</traitParameter>
@@ -41644,7 +41474,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Lat_man_fwd.traitLikelihood" traitName="Obs_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Lat_man_fwd"/>
 		</traitParameter>
@@ -41667,7 +41497,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Nas_man_fwd.traitLikelihood" traitName="Obs_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Nas_man_fwd"/>
 		</traitParameter>
@@ -41690,7 +41520,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Obs_man_fwd.traitLikelihood" traitName="Obs_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Obs_man_fwd"/>
 		</traitParameter>
@@ -41713,7 +41543,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Rhoglide_man_fwd.traitLikelihood" traitName="Obs_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -41736,7 +41566,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Vibr_man_fwd.traitLikelihood" traitName="Obs_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Vibr_man_fwd"/>
 		</traitParameter>
@@ -41759,7 +41589,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Obs_Vowel_man_fwd.traitLikelihood" traitName="Obs_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Obs_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Obs_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41782,7 +41612,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Edge_man_fwd.traitLikelihood" traitName="Rhoglide_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Edge_man_fwd"/>
 		</traitParameter>
@@ -41805,7 +41635,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Glide_man_fwd.traitLikelihood" traitName="Rhoglide_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Glide_man_fwd"/>
 		</traitParameter>
@@ -41828,7 +41658,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Lat_man_fwd.traitLikelihood" traitName="Rhoglide_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Lat_man_fwd"/>
 		</traitParameter>
@@ -41851,7 +41681,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Nas_man_fwd.traitLikelihood" traitName="Rhoglide_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Nas_man_fwd"/>
 		</traitParameter>
@@ -41874,7 +41704,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Obs_man_fwd.traitLikelihood" traitName="Rhoglide_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Obs_man_fwd"/>
 		</traitParameter>
@@ -41897,7 +41727,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Rhoglide_Vowel_man_fwd.traitLikelihood" traitName="Rhoglide_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Rhoglide_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Rhoglide_Vowel_man_fwd"/>
 		</traitParameter>
@@ -41920,7 +41750,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Edge_man_fwd.traitLikelihood" traitName="Vibr_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Edge_man_fwd"/>
 		</traitParameter>
@@ -41943,7 +41773,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Glide_man_fwd.traitLikelihood" traitName="Vibr_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Glide_man_fwd"/>
 		</traitParameter>
@@ -41966,7 +41796,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Lat_man_fwd.traitLikelihood" traitName="Vibr_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Lat_man_fwd"/>
 		</traitParameter>
@@ -41989,7 +41819,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Nas_man_fwd.traitLikelihood" traitName="Vibr_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Nas_man_fwd"/>
 		</traitParameter>
@@ -42012,7 +41842,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Obs_man_fwd.traitLikelihood" traitName="Vibr_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Obs_man_fwd"/>
 		</traitParameter>
@@ -42035,7 +41865,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Rhoglide_man_fwd.traitLikelihood" traitName="Vibr_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -42058,7 +41888,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Vibr_man_fwd.traitLikelihood" traitName="Vibr_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Vibr_man_fwd"/>
 		</traitParameter>
@@ -42081,7 +41911,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vibr_Vowel_man_fwd.traitLikelihood" traitName="Vibr_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vibr_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vibr_Vowel_man_fwd"/>
 		</traitParameter>
@@ -42104,7 +41934,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Edge_man_fwd.traitLikelihood" traitName="Vowel_Edge_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Edge_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Edge_man_fwd"/>
 		</traitParameter>
@@ -42127,7 +41957,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Glide_man_fwd.traitLikelihood" traitName="Vowel_Glide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Glide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Glide_man_fwd"/>
 		</traitParameter>
@@ -42150,7 +41980,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Lat_man_fwd.traitLikelihood" traitName="Vowel_Lat_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Lat_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Lat_man_fwd"/>
 		</traitParameter>
@@ -42173,7 +42003,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Nas_man_fwd.traitLikelihood" traitName="Vowel_Nas_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Nas_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Nas_man_fwd"/>
 		</traitParameter>
@@ -42196,7 +42026,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Obs_man_fwd.traitLikelihood" traitName="Vowel_Obs_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Obs_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Obs_man_fwd"/>
 		</traitParameter>
@@ -42219,7 +42049,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Rhoglide_man_fwd.traitLikelihood" traitName="Vowel_Rhoglide_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Rhoglide_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Rhoglide_man_fwd"/>
 		</traitParameter>
@@ -42242,7 +42072,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Vibr_man_fwd.traitLikelihood" traitName="Vowel_Vibr_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Vibr_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Vibr_man_fwd"/>
 		</traitParameter>
@@ -42265,7 +42095,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 	<traitDataLikelihood id="Vowel_Vowel_man_fwd.traitLikelihood" traitName="Vowel_Vowel_man_fwd" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="false" integrateInternalTraits="true">
 		<multivariateDiffusionModel idref="Vowel_Vowel_man_fwd.diffusionModel"/>
-		<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
+		<treeModel idref="treeModel"/>
 		<traitParameter>
 			<parameter id="leaf.Vowel_Vowel_man_fwd"/>
 		</traitParameter>
@@ -42319,7 +42149,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</scaleOperator>
 		<upDownOperator scaleFactor="0.75" weight="3">
 			<up>
-				<parameter idref="WPN_cognates_2020-10-12.treeModel.allInternalNodeHeights"/>
+				<parameter idref="treeModel.allInternalNodeHeights"/>
 			</up>
 			<down>
 				<parameter idref="WPN_cognates_2020-10-12.ucld.mean"/>
@@ -42339,7 +42169,7 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</scaleOperator>
 		<upDownOperator scaleFactor="0.75" weight="3">
 			<up>
-				<parameter idref="WPN_phonotactics_2020-11-13.treeModel.allInternalNodeHeights"/>
+				<parameter idref="treeModel.allInternalNodeHeights"/>
 			</up>
 			<down>
 				<parameter idref="biphone_binary_2020-10-12.ucld.mean"/>
@@ -42352,40 +42182,22 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<parameter idref="biphone_binary_2020-10-12.branchRates.categories"/>
 		</uniformIntegerOperator>
 		<subtreeSlide size="1.0" gaussian="true" weight="30">
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+			<treeModel idref="treeModel"/>
 		</subtreeSlide>
 		<narrowExchange weight="30">
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+			<treeModel idref="treeModel"/>
 		</narrowExchange>
 		<wideExchange weight="3">
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+			<treeModel idref="treeModel"/>
 		</wideExchange>
 		<wilsonBalding weight="3">
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+			<treeModel idref="treeModel"/>
 		</wilsonBalding>
 		<scaleOperator scaleFactor="0.75" weight="3">
-			<parameter idref="WPN_cognates_2020-10-12.treeModel.rootHeight"/>
+			<parameter idref="treeModel.rootHeight"/>
 		</scaleOperator>
 		<uniformOperator weight="30">
-			<parameter idref="WPN_cognates_2020-10-12.treeModel.internalNodeHeights"/>
-		</uniformOperator>
-		<subtreeSlide size="1.0" gaussian="true" weight="30">
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-		</subtreeSlide>
-		<narrowExchange weight="30">
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-		</narrowExchange>
-		<wideExchange weight="3">
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-		</wideExchange>
-		<wilsonBalding weight="3">
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
-		</wilsonBalding>
-		<scaleOperator scaleFactor="0.75" weight="3">
-			<parameter idref="WPN_phonotactics_2020-11-13.treeModel.rootHeight"/>
-		</scaleOperator>
-		<uniformOperator weight="30">
-			<parameter idref="WPN_phonotactics_2020-11-13.treeModel.internalNodeHeights"/>
+			<parameter idref="treeModel.internalNodeHeights"/>
 		</uniformOperator>
 		<scaleOperator scaleFactor="0.75" weight="3">
 			<parameter idref="birthDeath.meanGrowthRate"/>
@@ -43203,31 +43015,21 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 	
 
 	<!-- Define MCMC                                                             -->
-	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="WPN_separate_2020-11-18_ch3.ops">
+	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="WPN_linked_2020-11-18_ch5.ops">
 		<joint id="joint">
 			<prior id="prior">
 				<booleanLikelihood>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.Marrngu)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.KanyaraMantharta)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.SouthWest)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.ThuraYura)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.Wati)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.NgumpinYapa)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.Kartu)"/>
-					<monophylyStatistic idref="monophyly(WPN_cognates_2020-10-12.Ngayarta)"/>
-				</booleanLikelihood>
-				<booleanLikelihood>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.Marrngu)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.KanyaraMantharta)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.SouthWest)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.ThuraYura)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.Wati)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.NgumpinYapa)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.Kartu)"/>
-					<monophylyStatistic idref="monophyly(WPN_phonotactics_2020-11-13.Ngayarta)"/>
+					<monophylyStatistic idref="monophyly(Marrngu)"/>
+					<monophylyStatistic idref="monophyly(KanyaraMantharta)"/>
+					<monophylyStatistic idref="monophyly(SouthWest)"/>
+					<monophylyStatistic idref="monophyly(ThuraYura)"/>
+					<monophylyStatistic idref="monophyly(Wati)"/>
+					<monophylyStatistic idref="monophyly(NgumpinYapa)"/>
+					<monophylyStatistic idref="monophyly(Kartu)"/>
+					<monophylyStatistic idref="monophyly(Ngayarta)"/>
 				</booleanLikelihood>
 				<gammaPrior shape="2.0" scale="359.0" offset="3000.0">
-					<statistic idref="tmrca(WPN_phonotactics_2020-11-13.Wati)"/>
+					<statistic idref="tmrca(Wati)"/>
 				</gammaPrior>
 				<uniformPrior lower="0.0" upper="1.0">
 					<parameter idref="bcov.alpha"/>
@@ -43263,17 +43065,12 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 					<parameter idref="biphone_binary_2020-10-12.ucld.stdev"/>
 				</gammaPrior>
 				<uniformPrior lower="3000.0" upper="7000.0">
-					<parameter idref="WPN_cognates_2020-10-12.treeModel.rootHeight"/>
-				</uniformPrior>
-				<uniformPrior lower="3000.0" upper="7000.0">
-					<parameter idref="WPN_phonotactics_2020-11-13.treeModel.rootHeight"/>
+					<parameter idref="treeModel.rootHeight"/>
 				</uniformPrior>
 				<uniformPrior lower="0.0" upper="1.0">
 					<parameter idref="birthDeath.meanGrowthRate"/>
 				</uniformPrior>
-				<speciationLikelihood idref="WPN_cognates_2020-10-12.speciation"/>
-				
-				<speciationLikelihood idref="WPN_phonotactics_2020-11-13.speciation"/>
+				<speciationLikelihood idref="speciation"/>
 				
 				
 				<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
@@ -43575,11 +43372,8 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 			<column label="Likelihood" dp="4" width="12">
 				<likelihood idref="likelihood"/>
 			</column>
-			<column label="WPN_cognates_2020-10-12.rootHeight" sf="6" width="12">
-				<parameter idref="WPN_cognates_2020-10-12.treeModel.rootHeight"/>
-			</column>
-			<column label="WPN_phonotactics_2020-11-13.rootHeight" sf="6" width="12">
-				<parameter idref="WPN_phonotactics_2020-11-13.treeModel.rootHeight"/>
+			<column label="rootHeight" sf="6" width="12">
+				<parameter idref="treeModel.rootHeight"/>
 			</column>
 			<column label="WPN_cognates_2020-10-12.ucld.mean" sf="6" width="12">
 				<parameter idref="WPN_cognates_2020-10-12.ucld.mean"/>
@@ -43590,30 +43384,20 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 		</log>
 
 		<!-- write log to file                                                       -->
-		<log id="fileLog" logEvery="10000" fileName="WPN_separate_2020-11-18_ch3.log" overwrite="false">
+		<log id="fileLog" logEvery="10000" fileName="WPN_linked_2020-11-18_ch5.log" overwrite="false">
 			<joint idref="joint"/>
 			<prior idref="prior"/>
 			<likelihood idref="likelihood"/>
-			<parameter idref="WPN_cognates_2020-10-12.treeModel.rootHeight"/>
-			<parameter idref="WPN_phonotactics_2020-11-13.treeModel.rootHeight"/>
-			<treeLengthStatistic idref="WPN_cognates_2020-10-12.treeLength"/>
-			<treeLengthStatistic idref="WPN_phonotactics_2020-11-13.treeLength"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.KanyaraMantharta)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.Kartu)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.Marrngu)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.Ngayarta)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.NgumpinYapa)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.SouthWest)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.ThuraYura)"/>
-			<tmrcaStatistic idref="tmrca(WPN_cognates_2020-10-12.Wati)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.KanyaraMantharta)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.Kartu)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.Marrngu)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.Ngayarta)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.NgumpinYapa)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.SouthWest)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.ThuraYura)"/>
-			<tmrcaStatistic idref="tmrca(WPN_phonotactics_2020-11-13.Wati)"/>
+			<parameter idref="treeModel.rootHeight"/>
+			<treeLengthStatistic idref="treeLength"/>
+			<tmrcaStatistic idref="tmrca(KanyaraMantharta)"/>
+			<tmrcaStatistic idref="tmrca(Kartu)"/>
+			<tmrcaStatistic idref="tmrca(Marrngu)"/>
+			<tmrcaStatistic idref="tmrca(Ngayarta)"/>
+			<tmrcaStatistic idref="tmrca(NgumpinYapa)"/>
+			<tmrcaStatistic idref="tmrca(SouthWest)"/>
+			<tmrcaStatistic idref="tmrca(ThuraYura)"/>
+			<tmrcaStatistic idref="tmrca(Wati)"/>
 			<parameter idref="birthDeath.meanGrowthRate"/>
 			<parameter idref="birthDeath.relativeDeathRate"/>
 			<parameter idref="birthDeath.sampleProbability"/>
@@ -43646,32 +43430,20 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 
 
 
-			<speciationLikelihood idref="WPN_cognates_2020-10-12.speciation"/>
-			
-			<speciationLikelihood idref="WPN_phonotactics_2020-11-13.speciation"/>
+			<speciationLikelihood idref="speciation"/>
 			
 		</log>
 
 		<!-- write tree log to file                                                  -->
-		<logTree id="WPN_cognates_2020-10-12.treeFileLog" logEvery="10000" nexusFormat="true" fileName="WPN_separate_2020-11-18.WPN_cognates_2020-10-12_ch3.trees" sortTranslationTable="true">
-			<treeModel idref="WPN_cognates_2020-10-12.treeModel"/>
+		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="WPN_linked_2020-11-18_ch5.trees" sortTranslationTable="true">
+			<treeModel idref="treeModel"/>
 			<trait name="rate" tag="WPN_cognates_2020-10-12.rate">
 				<discretizedBranchRates idref="WPN_cognates_2020-10-12.branchRates"/>
 			</trait>
-			<joint idref="joint"/>
-
-			<!-- START Multivariate diffusion model                                      -->
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</logTree>
-		<logTree id="WPN_phonotactics_2020-11-13.treeFileLog" logEvery="10000" nexusFormat="true" fileName="WPN_separate_2020-11-18.default_ch3.trees" sortTranslationTable="true">
-			<treeModel idref="WPN_phonotactics_2020-11-13.treeModel"/>
 			<trait name="rate" tag="biphone_binary_2020-10-12.rate">
 				<discretizedBranchRates idref="biphone_binary_2020-10-12.branchRates"/>
 			</trait>
 			<joint idref="joint"/>
-
 
 		</logTree>
 	</mcmc>
@@ -43692,19 +43464,19 @@ JOURNAL OF THEORETICAL BIOLOGY (2009) 261:58-66-->
 				<prior idref="prior"/>
 			</destination>
 		</pathLikelihood>
-		<log id="MLELog" logEvery="10000" fileName="WPN_separate_2020-11-18_ch3.mle.log">
+		<log id="MLELog" logEvery="10000" fileName="WPN_linked_2020-11-18_ch5.mle.log">
 			<pathLikelihood idref="pathLikelihood"/>
 		</log>
 	</marginalLikelihoodEstimator>
 
 	<!-- Path sampling estimator from collected samples                          -->
-	<pathSamplingAnalysis fileName="WPN_separate_2020-11-18_ch3.mle.log" resultsFileName="WPN_separate_2020-11-18_ch3.mle.result.log">
+	<pathSamplingAnalysis fileName="WPN_linked_2020-11-18_ch5.mle.log" resultsFileName="WPN_linked_2020-11-18_ch5.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</pathSamplingAnalysis>
 
 	<!-- Stepping-stone sampling estimator from collected samples                -->
-	<steppingStoneSamplingAnalysis fileName="WPN_separate_2020-11-18_ch3.mle.log" resultsFileName="WPN_separate_2020-11-18_ch3.mle.result.log">
+	<steppingStoneSamplingAnalysis fileName="WPN_linked_2020-11-18_ch5.mle.log" resultsFileName="WPN_linked_2020-11-18_ch5.mle.result.log">
 		<likelihoodColumn name="pathLikelihood.delta"/>
 		<thetaColumn name="pathLikelihood.theta"/>
 	</steppingStoneSamplingAnalysis>
