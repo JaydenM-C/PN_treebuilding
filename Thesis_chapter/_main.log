@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.3)  9 DEC 2020 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.3)  10 DEC 2020 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,7 +1026,12 @@ as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.244 \end{landscape}
-                     ] [9
+                     ]
+
+LaTeX Warning: Reference `fig:cogs-vs-bba2018' on page 9 undefined on input lin
+e 260.
+
+[9
 
 
 ]
@@ -1041,99 +1046,125 @@ Overfull \hbox (119.20778pt too wide) in paragraph at lines 272--273
  []
 
 [11 <./fig/cogs_vs_bba2018.pdf>] [12]
-<fig/joint_trace_ch1-10.pdf, id=340, 1475.5125pt x 947.54pt>
+<fig/joint_trace_ch1-10.pdf, id=341, 623.32875pt x 461.725pt>
 File: fig/joint_trace_ch1-10.pdf Graphic file (type pdf)
 <use fig/joint_trace_ch1-10.pdf>
-Package pdftex.def Info: fig/joint_trace_ch1-10.pdf  used on input line 285.
-(pdftex.def)             Requested size: 469.74208pt x 301.6575pt.
-<fig/joint_trace_dens_1-2_5-10.pdf, id=341, 1475.5125pt x 909.3975pt>
-File: fig/joint_trace_dens_1-2_5-10.pdf Graphic file (type pdf)
-<use fig/joint_trace_dens_1-2_5-10.pdf>
-Package pdftex.def Info: fig/joint_trace_dens_1-2_5-10.pdf  used on input line 
-286.
-(pdftex.def)             Requested size: 469.74208pt x 289.51451pt.
+Package pdftex.def Info: fig/joint_trace_ch1-10.pdf  used on input line 288.
+(pdftex.def)             Requested size: 234.87953pt x 173.98485pt.
+<fig/joint_trace_dens_ch1-10.pdf, id=342, 623.32875pt x 459.7175pt>
+File: fig/joint_trace_dens_ch1-10.pdf Graphic file (type pdf)
+<use fig/joint_trace_dens_ch1-10.pdf>
+Package pdftex.def Info: fig/joint_trace_dens_ch1-10.pdf  used on input line 28
+8.
+(pdftex.def)             Requested size: 234.87953pt x 173.22838pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--287
-[][]
+Overfull \hbox (2.22626pt too wide) in paragraph at lines 288--288
+[][] []
  []
 
-[13 <./fig/joint_trace_ch1-10.pdf>]
 
-LaTeX Warning: Reference `separate-cogs-vs-phonotactics-all-data' on page 14 un
-defined on input line 288.
+LaTeX Warning: Reference `fig:separate-cogs-vs-phonotactics' on page 13 undefin
+ed on input line 291.
 
-<fig/separate_cogs_vs_phonotactics_alldata.pdf, id=353, 445.665pt x 722.7pt>
-File: fig/separate_cogs_vs_phonotactics_alldata.pdf Graphic file (type pdf)
-<use fig/separate_cogs_vs_phonotactics_alldata.pdf>
-Package pdftex.def Info: fig/separate_cogs_vs_phonotactics_alldata.pdf  used on
- input line 292.
-(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+<fig/sep_trace_ch1-10.pdf, id=343, 623.32875pt x 440.64626pt>
+File: fig/sep_trace_ch1-10.pdf Graphic file (type pdf)
+<use fig/sep_trace_ch1-10.pdf>
+Package pdftex.def Info: fig/sep_trace_ch1-10.pdf  used on input line 294.
+(pdftex.def)             Requested size: 234.87953pt x 166.04205pt.
+<fig/sep_trace_dens_ch1-10.pdf, id=344, 623.32875pt x 441.65pt>
+File: fig/sep_trace_dens_ch1-10.pdf Graphic file (type pdf)
+<use fig/sep_trace_dens_ch1-10.pdf>
+Package pdftex.def Info: fig/sep_trace_dens_ch1-10.pdf  used on input line 294.
 
-LaTeX Warning: Float too large for page by 23.94943pt on input line 294.
+(pdftex.def)             Requested size: 234.87953pt x 166.42027pt.
 
+Overfull \hbox (2.22626pt too wide) in paragraph at lines 294--294
+[][] []
+ []
 
-LaTeX Warning: Reference `cogs-vs-linked-all' on page 14 undefined on input lin
-e 333.
-
-<fig/cogs_vs_linked_all.pdf, id=357, 578.16pt x 722.7pt>
-File: fig/cogs_vs_linked_all.pdf Graphic file (type pdf)
-<use fig/cogs_vs_linked_all.pdf>
-Package pdftex.def Info: fig/cogs_vs_linked_all.pdf  used on input line 335.
-(pdftex.def)             Requested size: 469.75385pt x 587.1923pt.
-[14 <./fig/joint_trace_dens_1-2_5-10.pdf>] [15pdfTeX warning (ext4): destinatio
-n with the same identifier (name{figure.1}) has been already used, duplicate ig
-nored
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337 L
-       ikely need to run for much longer and more times, with operators alte...
- <./fig/separate_cogs_vs_phonotactics_alldata.pdf>]
-Overfull \vbox (127.434pt too high) has occurred while \output is active []
+l.295 \end{figure}
+                   <./fig/joint_trace_ch1-10.pdf> <./fig/joint_trace_dens_ch1-1
+0.pdf>]
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
+LaTeX Warning: Reference `fig:covs-vs-linked-all' on page 14 undefined on input
+ line 334.
+
+
+LaTeX Warning: Reference `fig:cogs-vs-linked-all' on page 14 undefined on input
+ line 334.
+
+[14pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337 L
-       ikely need to run for much longer and more times, with operators alte...
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
- been already used, duplicate ignored
+l.335 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.3
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337 L
-       ikely need to run for much longer and more times, with operators alte...
- <./fig/cogs_vs_linked_all.pdf>] [17]
-<fig/cb2015_vs_bba2018.pdf, id=430, 445.665pt x 722.7pt>
+l.335 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.335 
+       <./fig/sep_trace_ch1-10.pdf> <./fig/sep_trace_dens_ch1-10.pdf>]
+<fig/cogs_vs_linked_all.pdf, id=385, 578.16pt x 722.7pt>
+File: fig/cogs_vs_linked_all.pdf Graphic file (type pdf)
+<use fig/cogs_vs_linked_all.pdf>
+Package pdftex.def Info: fig/cogs_vs_linked_all.pdf  used on input line 336.
+(pdftex.def)             Requested size: 469.75385pt x 587.1923pt.
+[15] [16 <./fig/cogs_vs_linked_all.pdf>]
+<fig/separate_cogs_vs_phonotactics_alldata.pdf, id=417, 445.665pt x 722.7pt>
+File: fig/separate_cogs_vs_phonotactics_alldata.pdf Graphic file (type pdf)
+<use fig/separate_cogs_vs_phonotactics_alldata.pdf>
+Package pdftex.def Info: fig/separate_cogs_vs_phonotactics_alldata.pdf  used on
+ input line 342.
+(pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
+
+LaTeX Warning: Float too large for page by 23.94943pt on input line 344.
+
+[17] [18pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.384 \newpage
+               <./fig/separate_cogs_vs_phonotactics_alldata.pdf>]
+<fig/cb2015_vs_bba2018.pdf, id=452, 445.665pt x 722.7pt>
 File: fig/cb2015_vs_bba2018.pdf Graphic file (type pdf)
 <use fig/cb2015_vs_bba2018.pdf>
-Package pdftex.def Info: fig/cb2015_vs_bba2018.pdf  used on input line 377.
+Package pdftex.def Info: fig/cb2015_vs_bba2018.pdf  used on input line 386.
 (pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
-[18 <./fig/cb2015_vs_bba2018.pdf>]
-<fig/cogs_vs_cb2015.pdf, id=455, 445.665pt x 722.7pt>
+[19 <./fig/cb2015_vs_bba2018.pdf>]
+<fig/cogs_vs_cb2015.pdf, id=478, 445.665pt x 722.7pt>
 File: fig/cogs_vs_cb2015.pdf Graphic file (type pdf)
 <use fig/cogs_vs_cb2015.pdf>
-Package pdftex.def Info: fig/cogs_vs_cb2015.pdf  used on input line 379.
+Package pdftex.def Info: fig/cogs_vs_cb2015.pdf  used on input line 388.
 (pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
-[19 <./fig/cogs_vs_cb2015.pdf>]
-<fig/bba2018_vs_linked_all.pdf, id=481, 445.665pt x 722.7pt>
+[20 <./fig/cogs_vs_cb2015.pdf>]
+<fig/bba2018_vs_linked_all.pdf, id=503, 445.665pt x 722.7pt>
 File: fig/bba2018_vs_linked_all.pdf Graphic file (type pdf)
 <use fig/bba2018_vs_linked_all.pdf>
-Package pdftex.def Info: fig/bba2018_vs_linked_all.pdf  used on input line 381.
+Package pdftex.def Info: fig/bba2018_vs_linked_all.pdf  used on input line 390.
 
 (pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
-[20 <./fig/bba2018_vs_linked_all.pdf>]
-<fig/cogs_vs_linked.pdf, id=506, 445.665pt x 722.7pt>
+[21 <./fig/bba2018_vs_linked_all.pdf>]
+<fig/cogs_vs_linked.pdf, id=528, 445.665pt x 722.7pt>
 File: fig/cogs_vs_linked.pdf Graphic file (type pdf)
 <use fig/cogs_vs_linked.pdf>
-Package pdftex.def Info: fig/cogs_vs_linked.pdf  used on input line 383.
+Package pdftex.def Info: fig/cogs_vs_linked.pdf  used on input line 392.
 (pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
-[21 <./fig/cogs_vs_linked.pdf>]
-<fig/linked_all_vs_linked.pdf, id=531, 445.665pt x 722.7pt>
+[22 <./fig/cogs_vs_linked.pdf>]
+<fig/linked_all_vs_linked.pdf, id=553, 445.665pt x 722.7pt>
 File: fig/linked_all_vs_linked.pdf Graphic file (type pdf)
 <use fig/linked_all_vs_linked.pdf>
-Package pdftex.def Info: fig/linked_all_vs_linked.pdf  used on input line 385.
+Package pdftex.def Info: fig/linked_all_vs_linked.pdf  used on input line 394.
 (pdftex.def)             Requested size: 401.1016pt x 650.43501pt.
-[22 <./fig/linked_all_vs_linked.pdf>] [23] [24] (./_main.aux)
+[23 <./fig/linked_all_vs_linked.pdf>] [24] [25] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
 (rerunfilecheck)             Checksum: 2254DFF1DFF3FE831E82862F1CA000C3;3312.
 
@@ -1148,10 +1179,10 @@ Package logreq Info: Writing requests to '_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21249 strings out of 481441
- 357164 string characters out of 5919285
- 1117587 words of memory out of 5000000
- 37401 multiletter control sequences out of 15000+600000
+ 21272 strings out of 481441
+ 357750 string characters out of 5919285
+ 1117661 words of memory out of 5000000
+ 37419 multiletter control sequences out of 15000+600000
  600368 words of font info for 140 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  66i,9n,73p,3176b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1172,10 +1203,10 @@ lmr17.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
 /lmr8.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb>
-Output written on _main.pdf (24 pages, 1363376 bytes).
+Output written on _main.pdf (25 pages, 2152385 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 103 named destinations out of 1000 (max. 500000)
- 14539 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 14549 words of extra memory for PDF output out of 17280 (max. 10000000)
 

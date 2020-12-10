@@ -29,7 +29,7 @@ cb2015_df <- treeio::drop.tip(cb2015_df, setdiff(cb2015_df@phylo$tip.label, cogs
 
 # CB's 2015 tree vs BBA's 2018 tree
 cb2015_vs_bba2018 <- cophylo(cb2015, bba2018)
-cairo_pdf("../fig/cb2015_vs_bba2018.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/cb2015_vs_bba2018.pdf", height = 10, width = 8)
 plot.cophylo(cb2015_vs_bba2018)
 par(mar=c(0,0,1,0))
 title("Bowern (2015) vs Bouckaert, Bowern and Atkinson (2018)")
@@ -42,7 +42,7 @@ bba2018_vs_cogs <- cophylo(cogs, bba2018)
 cairo_pdf("../fig/cogs_vs_bba2018.pdf", height = 10, width = 8)
 plot.cophylo(bba2018_vs_cogs)
 par(mar=c(0,0,1,0))
-title("Cognates only vs Bouckaert, Bowern and Atkinson (2018)")
+title("Cognate-only model vs. Bouckaert, Bowern and Atkinson (2018)")
 nodelabels.cophylo(round(cogs_df$posterior,2), cogs_df$node, cex = .7, adj = 0, which = "left")
 nodelabels.cophylo(round(bba2018_df$posterior,2), bba2018_df$node, cex = .7, adj = 1, which = "right")
 dev.off()
@@ -50,7 +50,7 @@ dev.off()
 # Cogs tree vs CB2015
 # Cogs tree seems closer to 2018 tree than 2015 tree
 cb2015_vs_cogs <- cophylo(cogs, cb2015)
-cairo_pdf("../fig/cogs_vs_cb2015.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/cogs_vs_cb2015.pdf", height = 10, width = 8)
 plot.cophylo(cb2015_vs_cogs)
 par(mar=c(0,0,1,0))
 title("Cognates only vs Bowern (2015)")
@@ -101,7 +101,7 @@ dev.off()
 
 bba2018_vs_linked_all <- cophylo(bba2018, linked_all)
 
-cairo_pdf("../fig/bba2018_vs_linked_all.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/bba2018_vs_linked_all.pdf", height = 10, width = 8)
 plot.cophylo(bba2018_vs_linked_all)
 par(mar=c(0,0,1,0))
 title("Bouckaert, Bowern and Atkinson (2018) vs. all data linked")
@@ -113,7 +113,7 @@ dev.off()
 
 sep_all_cogs_vs_sep_all_phon <- cophylo(sep_all_cogs, sep_all_phon)
 
-cairo_pdf("../fig/separate_cogs_vs_phonotactics_alldata.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/separate_cogs_vs_phonotactics_alldata.pdf", height = 10, width = 8)
 plot.cophylo(sep_all_cogs_vs_sep_all_phon)
 par(mar=c(0,0,1,0))
 title("Separate (all data): cognates element vs phonotactics element")
@@ -125,7 +125,7 @@ dev.off()
 
 cogs_vs_linked <- cophylo(cogs, linked)
 
-cairo_pdf("../fig/cogs_vs_linked.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/cogs_vs_linked.pdf", height = 10, width = 8)
 plot.cophylo(cogs_vs_linked)
 par(mar=c(0,0,1,0))
 title("Cognates vs. linked model (binary biphone data removed)")
@@ -137,7 +137,7 @@ dev.off()
 
 linked_all_vs_linked <- cophylo(linked_all, linked)
 
-cairo_pdf("../fig/linked_all_vs_linked.pdf", height = 10, width = 6.18)
+cairo_pdf("../fig/linked_all_vs_linked.pdf", height = 10, width = 8)
 plot.cophylo(linked_all_vs_linked)
 par(mar=c(0,0,1,0))
 title("Linked models with vs without binary biphone data")

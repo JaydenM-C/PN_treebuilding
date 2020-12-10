@@ -213,7 +213,7 @@ We follow @bouckaert_origin_2018 in constraining the tree topology using clade p
 
 ## Results {#results-prelim-2}
 
-We run four independent MCMC chains of 100 million iterations each and discard the initial 10% burn-in. Logs were inspected and combined in Tracer (v1.7.1) to confirm that each run converged properly in the same probability space and that ESS values for all parameters were sufficiently high (>200). Chains 1--2 converge nicely in the same space, with all ESS values over 800. Chain 3 got stuck in a local optimum in the state space and chain 4 failed to converge, so these were discarded. Chains 1--2 were combined with 10% burn-in on each, giving a 180-million-state tree sample and combined ESS figures all greater than 1,900. A maximum clade credibility tree was produced using TreeAnnotator (v1.10.4). This is displayed in Figure \@fig(cogs-vs-bba2018) next to the same subset of languages from the maximum clade credibility tree in @bouckaert_origin_2018. We recover largely the same topology with some minor differences. These discrepencies seem approximately equivalent to the level of discrepencies between the @bouckaert_origin_2018 phylogeny and phylogenies from @bowern_computational_2012 and @macklin-cordes_phylogenetic_2020.
+We run four independent MCMC chains of 100 million iterations each and discard the initial 10% burn-in. Logs were inspected and combined in Tracer (v1.7.1) to confirm that each run converged properly in the same probability space and that ESS values for all parameters were sufficiently high (>200). Chains 1--2 converge nicely in the same space, with all ESS values over 800. Chain 3 got stuck in a local optimum in the state space and chain 4 failed to converge, so these were discarded. Chains 1--2 were combined with 10% burn-in on each, giving a 180-million-state tree sample and combined ESS figures all greater than 1,900. A maximum clade credibility tree was produced using TreeAnnotator (v1.10.4). This is displayed in Figure \@ref(fig:cogs-vs-bba2018) next to the same subset of languages from the maximum clade credibility tree in @bouckaert_origin_2018. We recover largely the same topology with some minor differences. These discrepencies seem approximately equivalent to the level of discrepencies between the @bouckaert_origin_2018 phylogeny and phylogenies from @bowern_computational_2012 and @macklin-cordes_phylogenetic_2020.
 
 Western Arrernte, the sole representative of the Arandic subgroup, shifts places among deeper nodes in the tree. The internal structure of the Ngumpin-Yapa subgroup also differs, which is interesting since the internal structure of Ngumpin-Yapa also shifts between @bowern_computational_2012 and @bouckaert_origin_2018. In other words, in this instance divergences exist in a subgroup of the tree where there was already uncertainty between different analyses. Overall, notwithstanding these discrepancies, we are content that our model and method is working as it should with cognate data.
 
@@ -236,27 +236,23 @@ We run BEAST on two phylogenetic models: a 'linked' model, which contains a sing
 
 ## Results {#main-results}
 
-One first observation is that, although the MCMC process in BEAST tends to converge over 100 million states, it can also get stuck in local optima within the probability space. When this became clear, we increased the number of independent chains from an initial four to ten. Inspecting the joint probability traces for each of the linked model's ten runs, we find one clearly preferred area of the state space. We remove the one clear outlier chain stuck in a local optimum in state space. Two additional runs are removed since, although they overlap considerably with the others, they too seem to represent a distinct local optimum in the state space. One additional run was removed as it had unusually low ESS values. After removing 15% initial burn-in and combining the remaining chains, we are left with a combined 340-million-state analysis. BEAST computes two marginal likelihood estimates, one via the path sampling method [@baele_improving_2012] and one via the stepping stone sampling method [@baele_accurate_2013]. In normal operation these two estimates should be roughly equivalent. In this instance, the log marginal likelihood estimates for the combined analysis are 564,009 (estimated via path sampling) and 988,203 (estimated via stepping stone sampling). Unfortunately, it is unclear whether or not these log MLE figures are meaningful. Log MLEs for each individual chain vary between 459,380 and 672,466 which is much more variation than we would expect, given that a difference of 20 is generally considered significant. Given that all chains represent the same data and model and converge in approximately the same space, we would expect their log MLEs to be around the same and certainly not as divergent as this. We discuss this further below.
+One first observation is that the MCMC process in BEAST tends to get stuck in local optima within the probability space and occasionally fails to converge as well. When this became clear, we increased the number of independent chains from an initial four to ten. Inspecting the joint probability traces for each of the linked model's ten runs, we find one clearly preferred area of the state space (Figure \@ref(fig:linked-all-trace)). We remove two clear outliers stuck in local optima above and below the others. Two additional runs (visible in Figure \@ref(fig:linked-all-trace) as two overlapping, slightly bimodal distributions, just to the left of the bulk of other chains) are removed since, although they overlap considerably with the others, they too seem to represent a distinct local optimum in the state space (one of these also failed to reach stable convergence). Three more chains failed to reach stable convergence after a reasonable (10--20%) burn-in period and had to be removed. This leaves three stable chains with suitable ESS values and consistent areas of convergence (the three tallest, central peaks in Figure \@ref(fig:linked-all-trace)). After discarding 10% burn-in, we are left with a combined 270-million-state analysis.
 
-```{r linked-all-trace, fig.cap='insert caption'}
+BEAST computes two marginal likelihood estimates, one via the path sampling method [@baele_improving_2012] and one via the stepping stone sampling method [@baele_accurate_2013]. In normal operation these two estimates should be roughly equivalent. In this instance, the log marginal likelihood estimates for the combined analysis are 598,885 (estimated via path sampling) and 988,231 (estimated via stepping stone sampling). Unfortunately, it is unclear whether or not these log MLE figures are meaningful. Log MLEs for each individual chain vary between 459,380 and 672,466 which is much more variation than we would expect, given that a difference of 20 is generally considered significant. Given that all chains represent the same data and model and converge in approximately the same space, we would expect their log MLEs to be around the same and certainly not as divergent as this. We discuss this further below.
+
+```{r linked-all-trace, fig.cap='insert caption', fig.show='hold', out.width='50%'}
 include_graphics("fig/joint_trace_ch1-10.pdf")
-```
-```{r linked-all-trace-density, fig.cap='insert caption'}
-include_graphics("fig/joint_trace_dens_1-2_5-10.pdf")
+include_graphics("fig/joint_trace_dens_ch1-10.pdf")
 ```
 
-The separate model, in which two trees are sampled at each step, one inferred using only cognate data and one inferred using only phonotactic data, fails to reach stable convergence and gives unacceptably low ESS figures in most instances. With a burn-in of 15%, as per the linked model above, only 3 chains give a stable posterior sample with satisfactory ESS values. A fourth stabilises after a 20% burn-in, and three others eventually stabilise in similar areas of the probability space to the others, but only after burn-in values of 50%, 60% and 70%. We apply a consistent 20% burn-in to the four most stable chains and discard the rest. Two of these converge in the same area while the other two converge in spaces of slightly lower joint likelihood. On this evidence, it is not entirely clear which is the most correct posterior distribution. We accept the two higher likelihood chains space as it makes the study's null hypothesis deliberately harder to disprove (the null hypothesis that the joint model is no better than the separate model is harder to disprove if we raise the bar set by the separate model). This gives a posterior sample of 160 million states and a marginally satisfactory ESS of 100 or greater for all parameters. Maximum clade credibility trees for each of the two tree elements---one inferred only with cognate data and the other inferred only with phonotactic data---are depicted in Figure \@ref(separate-cogs-vs-phonotactics-all-data).
+The separate model, in which two trees are sampled at each step, one inferred using only cognate data and one inferred using only phonotactic data, fails to reach stable convergence and gives unacceptably low ESS figures in most instances. With a burn-in of 15%, as per the linked model above, only 3 chains give a stable posterior sample with satisfactory ESS values. A fourth stabilises after a 20% burn-in, and three others eventually stabilise in similar areas of the probability space to the others, but only after burn-in values of 50%, 60% and 70%. We apply a consistent 20% burn-in to the four most stable chains and discard the rest. Two of these converge in the same area while the other two converge in spaces of slightly lower joint likelihood. On this evidence, it is not entirely clear which is the most correct posterior distribution. We accept the two higher likelihood chains space as it makes the study's null hypothesis deliberately harder to disprove (the null hypothesis that the joint model is no better than the separate model is harder to disprove if we raise the bar set by the separate model). This gives a posterior sample of 160 million states and a marginally satisfactory ESS of 100 or greater for all parameters. Maximum clade credibility trees for each of the two tree elements---one inferred only with cognate data and the other inferred only with phonotactic data---are depicted in Figure \@ref(fig:separate-cogs-vs-phonotactics).
 
-```{r separate-all-trace, fig.cap='insert caption'}
-#include_graphics("fig/sep_trace_ch1-10.pdf")
-```
-```{r separate-all-trace-density, fig.cap='insert caption'}
-#include_graphics("fig/sep_trace_dens_ch1-10.pdf")
+```{r separate-all-trace, fig.cap='insert caption', fig.show='hold', out.width='50%'}
+include_graphics("fig/sep_trace_ch1-10.pdf")
+include_graphics("fig/sep_trace_dens_ch1-10.pdf")
 ```
 
-```{r separate-cogs-vs-phonotactics-all-data, fig.cap='Insert caption here. MCC trees from separate model. Cognates on left, phonotactics on right.'}
-include_graphics("fig/separate_cogs_vs_phonotactics_alldata.pdf")
-```
+
 
 The log MLEs for the separate model are 348,287 (estimated via path sampling) and 568,402 (estimated via stepping stone sampling). These MLEs can be compared with MLEs for the linked model in Table \@ref(tab:linked-vs-separate-mles). The linked and separate models can be compared using Bayes factors, following Equation \@ref(eq:bf).
 
@@ -265,30 +261,34 @@ BF = log(MLE_{linked}) - log(MLE_{separate})
 (\#eq:bf)
 \end{equation}
 
-The sign of the Bayes factor indicates which model is preferred. Bayes factors testing support for the linked model over the separate model are give in Table \@ref(tab:linked-vs-separate-bfs). Using both path sampling and stepping stone sampling methods, the Bayes factors seem to indicate decisive support for the linked model over the separate model. .
+The sign of the Bayes factor indicates which model is preferred. Bayes factors testing support for the linked model over the separate model are give in Table \@ref(tab:linked-vs-separate-bfs). Using both path sampling and stepping stone sampling methods, the Bayes factors seem to indicate decisive support for the linked model over the separate model. At face value, these figures are evidence for the hypothesis that including quantitative phonotactic data with more traditional cognate data can strengthen phylogenetic tree inference in linguistics. However, given the extreme divergences between MLE estimates from chain to chain and between MLE inferential methods, this evidence should be considered tenuous at best.
 
 ```{r linked-vs-separate-mles}
-MLEs <- tibble(model = c("Linked", "Separate"),
-               path = c(564009, 348287),
-               stepping_stone = c(988213, 568402)
+MLEs <- tibble(Model = c("Linked", "Separate"),
+               Path = c(598885, 348287),
+               `Stepping stone` = c(988231, 568402)
                )
 
 kable(MLEs, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), caption = "Marginal likelihood estimates (MLEs) estimated via path sampling and stepping stone sampling methods for linked and separate phylogenetic models.")
 ```
 
 ```{r linked-vs-separate-bfs}
-BFs <- tibble(method = c("Path sampling", "Stepping stone"),
-              BF = c(215722, 419811))
+BFs <- tibble(Method = c("Path sampling", "Stepping stone"),
+              BF = c(250598, 419829))
 
 kable(BFs, format = "latex", booktabs = TRUE, format.args = list(big.mark = ","), caption = "Bayes factors indicating support for the linked model over the separate model.")
 ```
 
-To compare the phylogeny inferred using the linked model, which includes phonotactics, to the phylogeny inferred using only cognate data in the previous section, we examine maximum clade credibility trees estimated from each. The cophylogenetic plot is given in Figure \@ref(cogs-vs-linked-all).
-
-
+Another way to evaluate these results is to consider the topologies and posterior support values of maximum clade credibility trees. In Figure \@ref(fig:covs-vs-linked-all), we compare the maximum clade credibility Section \@ref(prelim-1). The linked model posits Western Arrernte as the outermost taxon, branching off first from all other subgroups. This is different to the cognates-only model in Section \@ref(prelim-1) but in line with @bouckaert_origin_2018. The trees are largely congruent although there are some shifts in internal structure in some subgroups. The internal structure of Ngumpin-Yapa shifts once again---the Yapa branch (Warlpiri and Warlmanpa) gets split in the linked model. Overall, there is a general flattening of the tree structure in the linked model, approaching a star phylogeny. One possibility is that the tree structure is being flattened by the addition of the binary phonotactic data. As discussed, this sample of western Pama-Nyungan languages share largely homogenous phoneme inventories and similar phonotactics in binary, permissibility terms. The binary data is relatively low resolution and might be masking phylogenetically informative variation between languages. That said, for the lower order topological structure that is present, the linked model tends to give good posterior support values, with a couple of exceptions. Perhaps unsurprisingly, Ngumpin-Yapa is an exception with very low support values. Another exception is the subgroup of Warnman, Kartujarra and Yulparija in the Wati clade. In other cases though, the addition of phonotactic data in the linked model seems to strengthen some support values, for example, within the Kanyara-Mantharta (languages listed Purduna--Tharrgari in Figure \@ref(fig:cogs-vs-linked-all)) and Kartu (Badimaya--Nhanta) subgroups.
 
 ```{r cogs-vs-linked-all}
 include_graphics("fig/cogs_vs_linked_all.pdf")
+```
+
+The flattening effect of the phonotactic data is evident when MCC trees are calculated for each of the two tree elements of the separate model. Recall that the separate model includes two separate tree elements---one inferred with cognate data only and one inferred with phonotactic data only (both binary and continuous). Maximum clade credibility trees are inferred for each of these elements and plotted in Figure \@ref(fig:separate-cogs-vs-phonotactics-all). Side-by-side, the loss of intermediate tree-like structure is apparent in the phonotactics-only MCC tree. It is perhaps unsurprising then that the linked model, in which a single tree is inferred from all the data together, produces an intermediate level of tree-likeness, less tree-like than the cognates-only model but not as star-like as the phonotactics-only tree in the separate model.
+
+```{r separate-cogs-vs-phonotactics-all, fig.cap='Insert caption here. MCC trees from separate model. Cognates on left, phonotactics on right.'}
+include_graphics("fig/separate_cogs_vs_phonotactics_alldata.pdf")
 ```
 
 Likely need to run for much longer and more times, with operators altered to allow bigger jumps in order to escape optima.
