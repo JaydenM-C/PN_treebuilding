@@ -62,11 +62,11 @@ dev.off()
 ### READING MORE TREES ###
 
 ## All data ##
-linked_all <- ape::read.nexus("../trees/WPN_linked_alldata_2020-11-18_ch7-10_MCCT.tree")
+linked_all <- ape::read.nexus("../trees/WPN_linked_alldata_2020-11-18_ch7-8_10_MCCT.tree")
 sep_all_cogs <- ape::read.nexus("../trees/WPN_separate_alldata_2020-11-18_ch2_7.WPN_cognates.MCCT.tree")
 sep_all_phon <- ape::read.nexus("../trees/WPN_separate_alldata_2020-11-18_ch2_7.default.MCCT.tree")
 
-linked_all_df <- treeio::read.beast("../trees/WPN_linked_alldata_2020-11-18_ch7-10_MCCT.tree") %>%
+linked_all_df <- treeio::read.beast("../trees/WPN_linked_alldata_2020-11-18_ch7-8_10_MCCT.tree") %>%
   treeio::as_tibble(linked_all_df) %>% full_join(tidytree::as_tibble(linked_all))
 sep_all_cogs_df <- treeio::read.beast("../trees/WPN_separate_alldata_2020-11-18_ch2_7.WPN_cognates.MCCT.tree") %>%
   treeio::as_tibble(sep_all_cogs_df) %>% full_join(tidytree::as_tibble(sep_all_cogs))
@@ -74,7 +74,7 @@ sep_all_phon_df <- treeio::read.beast("../trees/WPN_separate_alldata_2020-11-18_
   treeio::as_tibble(sep_all_phon_df) %>% full_join(tidytree::as_tibble(sep_all_phon))
 
 ## Binary biphone data removed ##
-linked <- ape::read.nexus("../trees/WPN_linked_2020-11-03_MCCT.trees")
+linked <- ape::read.nexus("../trees/WPN_linked_2020-11-18_ch1_MCCT.tree")
 sep_cogs <- ape::read.nexus("../trees/WPN_separate_2020-11-18.WPN_cognates.MCCT.trees")
 sep_phon <- ape::read.nexus("../trees/WPN_separate_2020-11-18.WPN_phonotactics.MCCT.trees")
 
