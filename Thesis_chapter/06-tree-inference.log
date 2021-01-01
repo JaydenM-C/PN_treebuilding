@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.22)  31 DEC 2020 10:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.22)  31 DEC 2020 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**_main.tex
-(./_main.tex
+**06-tree-inference.tex
+(./06-tree-inference.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-07> xparse <2020-03-03> (/Users/jaydencordes/Libr
 ary/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -804,8 +804,8 @@ File: biblatex.cfg
 ))
 \@quotelevel=\count426
 \@quotereset=\count427
-(./_main.aux)
-\openout1 = `_main.aux'.
+(./06-tree-inference.aux)
+\openout1 = `06-tree-inference.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
 LaTeX Font Info:    ... okay on input line 95.
@@ -856,9 +856,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 95.
 LaTeX Info: Redefining \pageref on input line 95.
 LaTeX Info: Redefining \nameref on input line 95.
-(./_main.out) (./_main.out)
+(./06-tree-inference.out) (./06-tree-inference.out)
 \@outlinefile=\write4
-\openout4 = `_main.out'.
+\openout4 = `06-tree-inference.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -916,11 +916,11 @@ File: english.lbx 2020/08/23 v3.15a biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `_main.bcf'.
+\openout3 = `06-tree-inference.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '_main.bbl' found.
-(./_main.bbl
+Package biblatex Info: ... file '06-tree-inference.bbl' found.
+(./06-tree-inference.bbl
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
@@ -1013,7 +1013,7 @@ l.232 \end{landscape}
 
 
 ]
-<fig/cogs_vs_bba2018.pdf, id=295, 578.16pt x 722.7pt>
+<fig/cogs_vs_bba2018.pdf, id=294, 578.16pt x 722.7pt>
 File: fig/cogs_vs_bba2018.pdf Graphic file (type pdf)
 <use fig/cogs_vs_bba2018.pdf>
 Package pdftex.def Info: fig/cogs_vs_bba2018.pdf  used on input line 254.
@@ -1027,13 +1027,13 @@ LaTeX Warning: Float too large for page by 8.70673pt on input line 256.
                                                   
 l.267 
        <./fig/cogs_vs_bba2018.pdf>] [11]
-<fig/joint_trace_dens_ch1-10.pdf, id=380, 623.32875pt x 459.7175pt>
+<fig/joint_trace_dens_ch1-10.pdf, id=381, 623.32875pt x 459.7175pt>
 File: fig/joint_trace_dens_ch1-10.pdf Graphic file (type pdf)
 <use fig/joint_trace_dens_ch1-10.pdf>
 Package pdftex.def Info: fig/joint_trace_dens_ch1-10.pdf  used on input line 28
 4.
 (pdftex.def)             Requested size: 234.87953pt x 173.22838pt.
-<fig/joint_trace_ch1-10.pdf, id=381, 623.32875pt x 461.725pt>
+<fig/joint_trace_ch1-10.pdf, id=382, 623.32875pt x 461.725pt>
 File: fig/joint_trace_ch1-10.pdf Graphic file (type pdf)
 <use fig/joint_trace_ch1-10.pdf>
 Package pdftex.def Info: fig/joint_trace_ch1-10.pdf  used on input line 284.
@@ -1049,12 +1049,12 @@ Overfull \hbox (2.22626pt too wide) in paragraph at lines 284--284
                                                   
 l.288 
        <./fig/joint_trace_dens_ch1-10.pdf> <./fig/joint_trace_ch1-10.pdf>]
-<fig/sep_trace_ch1-10.pdf, id=399, 623.32875pt x 440.64626pt>
+<fig/sep_trace_ch1-10.pdf, id=400, 623.32875pt x 440.64626pt>
 File: fig/sep_trace_ch1-10.pdf Graphic file (type pdf)
 <use fig/sep_trace_ch1-10.pdf>
 Package pdftex.def Info: fig/sep_trace_ch1-10.pdf  used on input line 290.
 (pdftex.def)             Requested size: 234.87953pt x 166.04205pt.
-<fig/sep_trace_dens_ch1-10.pdf, id=400, 623.32875pt x 441.65pt>
+<fig/sep_trace_dens_ch1-10.pdf, id=401, 623.32875pt x 441.65pt>
 File: fig/sep_trace_dens_ch1-10.pdf Graphic file (type pdf)
 <use fig/sep_trace_dens_ch1-10.pdf>
 Package pdftex.def Info: fig/sep_trace_dens_ch1-10.pdf  used on input line 290.
@@ -1076,12 +1076,12 @@ l.331
                                                   
 l.331 
        <./fig/sep_trace_ch1-10.pdf> <./fig/sep_trace_dens_ch1-10.pdf>]
-<fig/cogs_vs_linked_all.pdf, id=431, 578.16pt x 722.7pt>
+<fig/cogs_vs_linked_all.pdf, id=432, 578.16pt x 722.7pt>
 File: fig/cogs_vs_linked_all.pdf Graphic file (type pdf)
 <use fig/cogs_vs_linked_all.pdf>
 Package pdftex.def Info: fig/cogs_vs_linked_all.pdf  used on input line 336.
 (pdftex.def)             Requested size: 469.75385pt x 587.1923pt.
-<fig/separate_cogs_vs_phonotactics_alldata.pdf, id=433, 578.16pt x 722.7pt>
+<fig/separate_cogs_vs_phonotactics_alldata.pdf, id=434, 578.16pt x 722.7pt>
 File: fig/separate_cogs_vs_phonotactics_alldata.pdf Graphic file (type pdf)
 <use fig/separate_cogs_vs_phonotactics_alldata.pdf>
 Package pdftex.def Info: fig/separate_cogs_vs_phonotactics_alldata.pdf  used on
@@ -1104,7 +1104,7 @@ d
                                                   
 l.354 
        <./fig/separate_cogs_vs_phonotactics_alldata.pdf>]
-<fig/linked_all_vs_linked.pdf, id=490, 578.16pt x 722.7pt>
+<fig/linked_all_vs_linked.pdf, id=491, 578.16pt x 722.7pt>
 File: fig/linked_all_vs_linked.pdf Graphic file (type pdf)
 <use fig/linked_all_vs_linked.pdf>
 Package pdftex.def Info: fig/linked_all_vs_linked.pdf  used on input line 359.
@@ -1117,9 +1117,9 @@ e.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.371 
-       <./fig/linked_all_vs_linked.pdf>] [19] [20] [21] [22] [23] [24] (./_main
-.aux)
-Package rerunfilecheck Info: File `_main.out' has not changed.
+       <./fig/linked_all_vs_linked.pdf>] [19] [20] [21] [22] [23] [24] (./06-tr
+ee-inference.aux)
+Package rerunfilecheck Info: File `06-tree-inference.out' has not changed.
 (rerunfilecheck)             Checksum: 222611F8C5D4A2F53CBBC2FE7825B352;2830.
 
 LaTeX Warning: There were undefined references.
@@ -1128,18 +1128,18 @@ LaTeX Warning: There were undefined references.
 Package biblatex Warning: Please rerun LaTeX.
 (biblatex)                Page breaks have changed.
 
-Package logreq Info: Writing requests to '_main.run.xml'.
-\openout1 = `_main.run.xml'.
+Package logreq Info: Writing requests to '06-tree-inference.run.xml'.
+\openout1 = `06-tree-inference.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  21403 strings out of 481305
- 361159 string characters out of 5915335
- 1122432 words of memory out of 5000000
+ 361399 string characters out of 5915335
+ 1122504 words of memory out of 5000000
  37604 multiletter control sequences out of 15000+600000
  471733 words of font info for 170 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 66i,9n,73p,4482b,1891s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,9n,73p,4494b,1891s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.
 enc}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
 t.enc}{/Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.
@@ -1157,10 +1157,10 @@ lmr17.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
 /lmr8.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></Users/jaydencordes/Library/TinyTeX/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb>
-Output written on _main.pdf (24 pages, 2042247 bytes).
+Output written on 06-tree-inference.pdf (24 pages, 2042239 bytes).
 PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 633 compressed objects within 7 object streams
+ 714 PDF objects out of 1000 (max. 8388607)
+ 634 compressed objects within 7 object streams
  125 named destinations out of 1000 (max. 500000)
  37041 words of extra memory for PDF output out of 42996 (max. 10000000)
 
