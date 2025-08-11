@@ -1,9 +1,9 @@
 # PN_treebuilding
 Inferring phylogenetic trees with quantitative phonotactic characters
 
-**Results files are stored at https://cloud.rdm.uq.edu.au/index.php/s/L88ncHHqiNtBoy4 (password: phonotactics)**
+**Results files are stored at [https://doi.org/10.14264/4e5077e](https://doi.org/10.14264/4e5077e)**
 
-This repository contains data and code accompanying Chapter 6 of my [PhD thesis](https://github.com/JaydenM-C/final_thesis). The output files are too large for Github, so they have been deposited temporarily on UQ's RDM system [here](https://cloud.rdm.uq.edu.au/index.php/s/L88ncHHqiNtBoy4). The RDM repository is password-protected---the password is "phonotactics". A more permanent, public repository will be confirmed once the thesis has undergone revision.
+This repository contains data and code accompanying Chapter 6 of my [PhD thesis](https://doi.org/10.14264/9d9e8be). The output files are too large for Github, so they have been deposited temporarily on UQ's RDM system [here](https://doi.org/10.14264/4e5077e).
 
 ## (§6.3) Prelim test 1: Evolutionary model for binary biphone data
 
